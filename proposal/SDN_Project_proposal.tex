@@ -53,8 +53,9 @@ potentially be alleviated.
 We propose to develop a simple synthetic application which performs a global operation on data
 that is intentionally unoptimized for locality.  Because this problem can be difficult for application
 programmers to solve based only on application-level information, we will design and develop a simple
-example application where SDN counters and re-configurations are used to improve data locality on the 
-fly.  The application will directly communicate with the controller process (or a proxy on it's behalf)
+%example application where SDN counters and re-configurations are used to improve data locality on the 
+example application where SDN provided network traffic statistics will be used to reconfigure data to improve locality on the
+fly.  The application will directly communicate with the controller process (or a proxy on its behalf)
 to inform the application where data should be migrated in order to improve data locality for subsequent
 operations and/or iterations.
 
