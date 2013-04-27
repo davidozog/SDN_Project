@@ -53,27 +53,27 @@ can potentially be alleviated.
 We propose to develop a simple synthetic application which performs a global
 operation on data that is intentionally unoptimized for locality.  Because this
 problem can be difficult for application programmers to solve based only on
-application-level information, we will design and develop a simple
-%example application where SDN counters and re-configurations are used to
-%improve data locality on the 
-example application where SDN provided network traffic statistics will be used
-to reconfigure data to improve locality on the fly.  The application will
-directly communicate with the controller process (or a proxy on its behalf) to
-inform the application where data should be migrated in order to improve data
-locality for subsequent operations and/or iterations (see
+application-level information, we will design and develop a simple example
+application where SDN provided network traffic statistics will be used to
+reconfigure data to improve locality on the fly.  The application will
+indirectly communicate with the controller process (described in the MMP
+section) to inform the application where data should be migrated in order to
+improve data locality for subsequent operations and/or iterations (see
 Figure~\ref{fig:toy_arch}).
 
-\subsubsection*{Application:} \label{application} The synthetic application we
-will develop for this project will do computation on multiple sets of data.
-The application will require the entirety of the set of data in order to do
-some computation.  In the beginning it will get the entire set by doing remote
-data access.  As the application progresses, it will replace the remote data
-accesses with migrations of data in response to a reorganization algorithm run
-on a remote process, which we will call the (Migration Management Process) MMP.
-Both the MMP and the application will be written in Python for simplicity.
+\subsubsection*{Application:} \label{application} 
+The synthetic application we will develop for this project will do computation
+on multiple sets of data.  The application will require the entire collection  of datasets  
+in order to do some global computation.  Because data is arbitrarily distributed
+across the network, the application hosts will initially get the portions of the
+global dataset by remote access.  As the application progresses, it will
+replace the remote data accesses with migrations of data in response to a
+reorganization algorithm run on a remote process, which we will call the
+(Migration Management Process) MMP.  Both the MMP and the application will be
+written in Python for ease of development, and compatibility with POX.
 
 We will develop this application in a series of steps, beginning with the
-simplest toy problem possible, as shown in Figure~\ref{fig:toy_arch}.  In this
+simplest toy problem possible, as shown in Figure~\ref{fig:toy1}.  In this
 version, we will use a single switch and two hosts with only two sets of data,
 $A$ and $B$, evenly distributed between the hosts.  After gathering switch
 statistics and making the necessary migrations, then the system succeeds if all
@@ -81,8 +81,8 @@ of the $A$ dataset is located on host 1 and all of the $B$ dataset is on host 2
 (as in Figure~\ref{fig:toy2}).
 
 It is clear that certain application parameters (such as
-computation/communication ratio, data migration size, etc) will play a direct
-role in the behavior of the system.  The parameters need to be specified,
+computation to communication ratio, data migration size, etc.) will play a direct
+role in the behavior of the system.  These parameters need to be specified,
 evaluated, and possibly tuned.  For now, we will keep a running list of
 parameters that we will control and monitor: 
 \begin{enumerate} 
@@ -117,7 +117,7 @@ sampling rate.
 For our simple toy example, we avoid having to apply a smoothing function to
 potentially noisy data by writing a regular application that produces a regular
 traffic pattern across a single switch with two simple flows ($A\rightarrow B$,
-$B\rightarrow A$).  We realize that this will not always be the case, and that
+$B\rightarrow A$).  We realize that this is not a general case, and that
 ignoring outlier traffic spikes and finding an appropriate sampling frequency is
 a potential problem that is application and network dependent.  Because this
 problem is not specific to SDN programming/research, we initially avoid this
