@@ -51,6 +51,14 @@ potentially be alleviated.
 
 \section*{Solution:}
 \label{solution}
+\begin{figure}[t]
+\centerline{\includegraphics[width=4.0in]{img/toy_arch.png}}
+\caption{The simple topology and software architecture diagram of our first toy application.  The Controller 
+will gather flow statistics (in units of bytes per flow per second) at a frequency $f$. Relevant data is then
+shipped to the Migration Management Process (MMP) which makes decisions about host data migration, and sends the
+decisions to the hosts.}
+\label{fig:toy_arch}
+\end{figure}
 We propose to develop a simple synthetic application which performs a global operation on data
 that is intentionally unoptimized for locality.  Because this problem can be difficult for application
 programmers to solve based only on application-level information, we will design and develop a simple
@@ -58,16 +66,91 @@ programmers to solve based only on application-level information, we will design
 example application where SDN provided network traffic statistics will be used to reconfigure data to improve locality on the
 fly.  The application will directly communicate with the controller process (or a proxy on its behalf)
 to inform the application where data should be migrated in order to improve data locality for subsequent
-operations and/or iterations.
+operations and/or iterations (see Figure~\ref{fig:toy_arch}).
+
+\subsubsection*{Application:}
+\label{application}
+The synthetic application we will develop for this project will do computation on multiple sets of data.
+The application will require the entirety of the set of data in order to do some computation.  In the 
+beginning it will get the entire set by doing remote data access.  As the application progresses,
+it will replace the remote data accesses with migrations of data in response to a reorganization algorithm
+run on a remote process, which we will call the (Migration Management Process) MMP.  Both the MMP and the 
+application will be written in Python for simplicity.
+
+We will develop this application in a series of steps, beginning with the simplest toy problem possible, 
+as shown in Figure~\ref{fig:toy_arch}.
+In this version, we will use a single switch and two hosts with only two sets of data, $A$ and $B$, evenly
+distributed between the hosts.  After gathering switch statistics and making the necessary migrations, then
+the system succeeds if all of the $A$ dataset is located on host 1 and all of the $B$ dataset is on host 2
+(as in Figure~\ref{fig:toy2}).
+
+It is clear that certain application parameters (such as computation/communication ratios, data migration size,
+etc) will play a direct role in the behavior of the system.  The parameters need to be specified, evaluated, and
+possibly tuned.  For now, we will keep a running list of parameters that we will control and monitor:
+\begin{enumerate}
+  \item Computation time and/or FLOPS per iteration (in the application)
+  \item Size of data (in bytes) which is operated on and migrated (initially, we keep data unit size uniform)
+  \item Computation/Delay between iterations (initially, zero)
+\end{enumerate}
+
+\begin{figure}[t]
+\centerline{\includegraphics[width=3.0in]{img/toy1.png}}
+\caption{Simple topology for out toy application with an initial data distribution}
+\label{fig:toy1}
+\end{figure}
+
+\begin{figure}[t]
+\centerline{\includegraphics[width=3.0in]{img/toy2.png}}
+\caption{The desired final data distribution for the above toy application}
+\label{fig:toy2}
+\end{figure}
+
+
+\subsubsection*{Controller:}
+\label{controller}
+The controller will periodically query a set of switches for flow statistics. In the toy example this will be one switch.
+These statistics will be shipped off to the MMP to make decisions about data migration.  The frequency with 
+which statistics are collected will need to be tuned.  In our toy example, the simplicity of data layout should
+lead to a regular traffic pattern until migration occurs.  This is because we will initially require the 1st host
+to remotely get $B$ data, and the second host to remotely get $A$ data in an iterative loop, without doing migration.
+Repeatedly performing the same operations should produce a regular traffic pattern. Starting with a low sampling frequency, 
+we will increase the frequency until the observed traffic pattern stabilizes at which point we will have an appropriate 
+sampling rate.%chicken
+
+
+\subsubsection*{MMP:}
+\label{mmp}
+The role of the MMP is to take as input relevant data from the OpenFlow table statistics counters,
+and output data migration decisions based on the goal of reducing network traffic by increasing data 
+locality.  We will keep this decision making algorithm as simple as possible: if the flow rate 
+(in bytes per second) is above a threshold (which initially we will have to determine empirically and 
+tune), then we will migrate data.  This algorithm we will refer to as the \textit{reaction function}.  
+
+One complication that arises in this context is how we will 
+associate a particular dataset (for example, $A$ in Figure~\ref{fig:toy1}) with a measured flow.  We have
+decided to require each unique dataset to send/receive on a particular port.  That way, we know which
+dataset corresponds to a flow counter by simply knowing the port.  If this does not work out, there may
+be other approaches such as including this information in the packet headers.
+
+\begin{figure}[t]
+\centerline{\includegraphics[width=4.0in]{img/topo_comp.png}}
+\caption{If all goes well, we will consider a slightly more complicated topology for a toy synthetic application (left) and then the  same application with multiple hosts (right). In these cases we will first limit our measurement points
+to Switch 3.  If that goes well, we will consider an approach which intelligently chooses
+measurement points in more complicated networks based on a modified max-flow min s-t cut algorithm.}
+\label{fig:topo_comp}
+\end{figure}
+
 
 \section*{Plan:}
 \label{plan}
 \begin{figure}[t]
 \centerline{\includegraphics[width=3.0in]{img/topo.png}}
-\caption{Simple topology for synthetic application}
+\caption{Final goal: a simple topology for synthetic application on the testbed}
 \label{fig:topo}
 \end{figure}
-We will begin by constructing a small \texttt{mininet} configuration that mimics the UO testbed
+First, we will implement and evaluate our solution for the simple toy problem shown in 
+Figure~\ref{fig:toy1}.  Second, we will explore a slightly more advanced network topology 
+as shown in Figure~\ref{fig:topo_comp}.  We will begin by constructing a small \texttt{mininet} configuration that mimics the UO testbed
 that will soon be available (Figure~\ref{fig:topo}).  Then, we will work to correlate
 inter-host traffic with application activity in the context of an application working in 
 a global memory space.  If the multi-switch topology proves to be too difficult, we can 
@@ -75,7 +158,7 @@ start with a single switch and build upon that.  By constraining our simulated n
 triangle switch, we hope to transition to the testbed environment as gracefully as possible.  However,
 it will suffice to run our experiments within a \texttt{mininet} network only if need be.
 
-Specifics of our approach still need to be worked out.  For instance, we are not sure if host-to-host
+Specifics of the more advanced approach still need to be worked out.  For instance, we are not sure if host-to-host
 traffic statistics will be available in the OpenFlow switch flow tables (though we are pretty sure they
 are...).  So it is yet to be determined whether our traffic matrix algorithm will be on host-to-host
 traffic:
