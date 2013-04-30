@@ -122,7 +122,7 @@ ignoring outlier traffic spikes and finding an appropriate sampling frequency is
 a potential problem that is application and network dependent.  Because this
 problem is not specific to SDN programming/research, we initially avoid this
 problem in the toy example, and will deal with it if we are able to explore more complicated
-topologies and application parameters. %chicken chicken chicken
+topologies and application parameters. %chicken chicken chicken chicken/
 
 
 \subsubsection*{MMP:} \label{mmp} The role of the MMP is to take as input
@@ -132,7 +132,7 @@ data locality.  We will keep this decision making algorithm as simple as
 possible: if the flow rate (in bytes per second) is above a threshold (which
 initially we will determine empirically and tune if necessary), then we will
 migrate data.  This algorithm we will refer to as the \textit{reaction
-function}.  
+function}. There will be two simple thresholds by which we measure the effectiveness of the MMP. If the migrations lead to less remote data access, we should see less data being sent over the network. If the amount of traffic is sufficiently reduced and the solution converges, some problems may end up sending nothing over the network. This should happen in the toy example, if all of $A$ is on one host and all of $B$ is on the other host, no data will be sent. 
 
 One complication that arises in this context is how we will associate a
 particular dataset (for example, $A$ in Figure~\ref{fig:toy1}) with a measured
