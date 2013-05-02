@@ -1,0 +1,31 @@
+=========================
+Simple L2 Learning switch
+=========================
+
+The only way I've found to run this is to put the program (simple_l2_learning.py) 
+into the pox source tree, e.g., ~/pox/pox/cis610/, then run like this:
+
+python ~/pox/pox.py log.level --DEBUG cis610.simple_l2_learning
+
+
+
+==============================
+Flow stats and the MMP Process
+==============================
+
+At the moment I have the controller receiving an "is alive" message from the 
+MMP process whenever the controller gets new flow statistics.  It then sends
+the same message back to the MMP.  This isn't that awesome, but you probably
+see where I'm going with this...
+
+To run it, put the flow_stats.py program in the pox source tree and do this:
+  $ python ~/pox/pox.py log.level --DEBUG cis610.flow_stats
+
+
+The controller then blocks until you start up the MMP process.  Like this:
+  $ python MMP.py
+
+You'll then see the MMP print the "is alive" message every five seconds or
+so - the same frequency that the synthetic timer in the controller gathers
+flow statistics.
+
