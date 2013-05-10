@@ -7,11 +7,17 @@ class DistributedGroup:
 		self.myHosts={}
 		self.myFlowGraph={}
 		self.hostIndex=0
+		self.numTransfersSinceChange=0
 	def addHost(self,host):
 		self.myHosts[host.myId]=host
 		self.hostIndex+=1
 		host.myManager=self
-		
+	def manage(self):
+		self.numTransfersSinceChange+=1
+		if (self.numTransfersSinceChange<100):
+			return
+		print(self.myFlowGraph)
+		numTransfersSinceChange=0	
 class DataSet:
 	def __init__(self,name="None Given",init=True):
 		self.myName=name
@@ -35,7 +41,8 @@ class Host:
 				name=set.myName
 				self.myDataSets[name]=set
 				self.myProbabilities[name]=0.0
-
+	def addSet(self,set):
+		self.myDataSets[set.myName]=set
 	def send(self,set,num,host):
 		host.receive(self.myDataSets[set].myElements[num])
 		del self.myDataSets[set].myElements[num]
@@ -47,6 +54,7 @@ class Host:
 					self.myManager.myFlowGraph[(self.myId,host.myId,set)]=1
 			else:
 				print "Manager action requested on unknown host"
+		self.myManager.manage()
 	def receive(self,element):
 		name,num,val=element
 		if not self.myDataSets.has_key(name):
