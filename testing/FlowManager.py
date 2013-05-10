@@ -8,8 +8,8 @@ class DistributedGroup:
 		self.myFlowGraph={}
 		self.hostIndex=0
 	def addHost(self,host):
-		myHosts[host.myId]=host
-		hostIndex+=1
+		self.myHosts[host.myId]=host
+		self.hostIndex+=1
 		host.myManager=self
 		
 class DataSet:

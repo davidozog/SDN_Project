@@ -9,8 +9,8 @@ def main():
 	set_b=DataSet("b")
 	host_a=Host([set_a])
 	host_b=Host([set_b])
-	DistributedGroup myGroup=DistributedGroup()
-        		
+	myGroup=DistributedGroup()
+   		
 	pdb.set_trace()
 	
 if __name__=="__main__":
