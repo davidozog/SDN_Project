@@ -5,7 +5,10 @@ import pdb
 def main():
 
 	hostDict={}
-        fy=DataSet()
+        set_a=DataSet("a")
+	set_b=DataSet("b")
+	host_a=Host([set_a])
+	host_b=Host()
 	pdb.set_trace()
 	
 if __name__=="__main__":
