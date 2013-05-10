@@ -2,6 +2,16 @@ import pdb
 import random
 import sys
 
+class DistributedGroup:
+	def __init__(self):
+		self.myHosts={}
+		self.myFlowGraph={}
+		self.hostIndex=0
+	def addHost(self,host):
+		myHosts[host.myId]=host
+		hostIndex+=1
+		host.myManager=self
+		
 class DataSet:
 	def __init__(self,name="None Given",init=True):
 		self.myName=name
@@ -19,6 +29,7 @@ class Host:
 	def __init__(self,dataSets=None):
 		self.myDataSets={}
 		self.myProbabilities={}
+		self.myId=random.random() #if this collides, God doesn't want this to work anyway. TODO: make less awful
 		if dataSets != None:
 			for set in dataSets:
 				name=set.myName
@@ -28,7 +39,14 @@ class Host:
 	def send(self,set,num,host):
 		host.receive(self.myDataSets[set].myElements[num])
 		del self.myDataSets[set].myElements[num]
-
+		if(self.myManager):
+			if(self.myManager.myHosts.has_key(host.myId)):
+				if(self.myManager.myFlowGraph.has_key((self.myId,host.myId,set))):
+					self.myManager.myFlowGraph[(self.myId,host.myId,set)]=self.myManager.myFlowGraph[(self.myId,host.myId,set)]+1
+				else:
+					self.myManager.myFlowGraph[(self.myId,host.myId,set)]=1
+			else:
+				print "Manager action requested on unknown host"
 	def receive(self,element):
 		name,num,val=element
 		if not self.myDataSets.has_key(name):
