@@ -18,10 +18,12 @@ class DataSet:
 class Host:
 	def __init__(self,dataSets=None):
 		self.myDataSets={}
+		self.myProbabilities={}
 		if dataSets != None:
 			for set in dataSets:
 				name=set.myName
 				self.myDataSets[name]=set
+				self.myProbabilities[name]=0.0
 
 	def send(self,set,num,host):
 		host.receive(self.myDataSets[set].myElements[num])
@@ -34,5 +36,16 @@ class Host:
 		if not self.myDataSets[name].has_key(num):
 			self.myDataSets[name][num]=val
 
-		pdb.set_trace()
+	def request(self,host,set,element):
+		if not host.myDataSets.has_key(set):
+			return None
+		if not host.myDataSets[set].has_key(element):
+			return None
+		return host.myDataSets[set][element]
 		
+	def requestDeletion(self,host,set,element):
+		if not host.myDataSets.has_key(set):
+			return None
+		if not host.myDataSets[set].has_key(element):
+			return None
+		del host.myDataSets[set][element]

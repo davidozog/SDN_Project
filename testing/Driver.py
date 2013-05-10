@@ -8,7 +8,8 @@ def main():
         set_a=DataSet("a")
 	set_b=DataSet("b")
 	host_a=Host([set_a])
-	host_b=Host()
+	host_b=Host([set_b])
+	
 	pdb.set_trace()
 	
 if __name__=="__main__":
