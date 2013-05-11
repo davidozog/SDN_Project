@@ -5,14 +5,16 @@ import pdb
 
 def main():
 
-  hostDict={}
-  set_a=DataSet("a")
-  set_b=DataSet("b")
-  host_a=Host([set_a])
-  host_b=Host([set_b])
-  myGroup=DistributedGroup()
-  host_a.addSet(set_a)
-  host_b.addSet(set_b)
+  pdb.set_trace()
+
+  hostDict = {}
+  set_a = DataSet("a")
+  set_b = DataSet("b")
+
+  host_a = Host([set_a])
+  host_b = Host([set_b])
+
+  myGroup = DistributedGroup()
 
   host_a.addSetByName("b")
   host_b.addSetByName("a")
@@ -22,10 +24,12 @@ def main():
 
   host_b.addProbability("a", .50)
   host_b.addProbability("b", .50)
+
   myGroup.addHost(host_a)
   myGroup.addHost(host_b)
   myGroup.groupInitialize()
-  iter=0 
+
+  iter = 0 
   while True:
     dataset1 = host_a.chooseDataSet(host_a.myProbabilities)
     dataset2 = host_b.chooseDataSet(host_b.myProbabilities)
