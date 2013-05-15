@@ -6,6 +6,62 @@ import struct
 
 marshall = cPickle.dumps
 unmarshall = cPickle.loads
+#mid means Message ID
+class Message(object):
+    def __init__(self, mid=-1):
+        self.myId=mid
+#Tell host about another host. hostInfo contains the socket details of another host
+class ServerSayGoMessage(Message):
+    def __init(self):
+        self.myId=0
+
+class ServerHostAlertMessage(Message):
+    def __init__(self,mid=1,hostInfo=None):
+        self.myId=mid
+        self.myHostInfo=hostInfo
+
+#This tells a host "listen on this port for messages." This is a bit iffy
+class ServerHostListenMessage(Message):
+    def __init__(self,mid=2,listenInfo=None):
+        self.myId=mid
+        self.myListenInfo=listenInfo
+
+#This tells a host to update their probability distributions
+class ServerProbabilityUpdateMessage(Message):
+    #probId is probability ID. If we have multiple distributions we might update, this is where we'll tell the host "update THIS distribution"
+    #distribution should be a dictionary of dataset ID's to probabilities which should sum to 1 for my sanity
+    def __init__(self,mid=3,probId=-1,distribution=None):
+        self.myId=mid
+        self.myProbId=probId
+        self.myDistribution=distribution
+
+class ClientRequestDataMessage(Message):
+    #dataset says which dataset to be aware of
+    #element says "give me THAT element in the dataset" 
+    def __init__(self,mid=4,dataSet=None,element=None):
+        self.myId=mid
+        self.myDataSet=dataSet
+        self.myElement=element
+
+class ClientResponseMessage(Message):
+    #element will be none if we don't have the element, the element otherwise (imagine that) 
+    def __init__(self,mid=5,element=None, allowKeep=True):
+        self.myId=mid
+        self.myDataSet=dataSet
+        self.myElement=element
+        self.myKeepable=allowKeep
+
+class ClientRequestDeletion(Message):
+    #dataset says which dataset to be aware of
+    #element says "delete THAT element in the dataset" 
+    def __init__(self,mid=6,dataSet=None,element=None):
+        self.myId=mid
+        self.myDataSet=dataSet
+        self.myElement=element
+
+class ClientSayEhlo(Message):
+    def __init__(self,mid=7):
+       self.myId=mid
 
 def send(channel, *args):
     buf = marshall(args)

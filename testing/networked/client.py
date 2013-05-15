@@ -2,7 +2,8 @@
 import socket
 import sys
 import select
-from communication import send, receive
+from communication import *
+import pdb
 
 BUFSIZ = 1024
 
@@ -22,7 +23,8 @@ class ChatClient(object):
             self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.sock.connect((host, self.port))
             print 'Connected to chat server@%d' % self.port
-            # Send my name...
+            # Send my name..
+	    send(self.sock,ClientSayEhlo())
             send(self.sock,'NAME: ' + self.name) 
             data = receive(self.sock)
             # Contains client address, set it

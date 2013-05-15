@@ -13,7 +13,8 @@ import select
 import socket
 import sys
 import signal
-from communication import send, receive
+from communication import *
+import pdb
 
 BUFSIZ = 1024
 
@@ -75,14 +76,15 @@ class ChatServer(object):
                     client, address = self.server.accept()
                     print 'chatserver: got connection %d from %s' % (client.fileno(), address)
                     # Read the login name
-                    cname = receive(client).split('NAME: ')[1]
+                    cname = receive(client)
+                    pdb.set_trace()
                     
                     # Compute client name and send back
                     self.clients += 1
                     send(client, 'CLIENT: ' + str(address[0]))
                     inputs.append(client)
-
                     self.clientmap[client] = (address, cname)
+
                     # Send joining information to other clients
                     msg = '\n(Connected: New client (%d) from %s)' % (self.clients, self.getname(client))
                     for o in self.outputs:
