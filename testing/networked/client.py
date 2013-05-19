@@ -13,6 +13,7 @@ class ChatClient(object):
     def __init__(self, name, host='127.0.0.1', port=3490):
         self.name = name
         # Quit flag
+        self.hostsmap={}
         self.flag = False
         self.port = int(port)
         self.host = host
@@ -25,11 +26,9 @@ class ChatClient(object):
             print 'Connected to chat server@%d' % self.port
             # Send my name..
 	    send(self.sock,ClientSayEhlo())
-            send(self.sock,'NAME: ' + self.name) 
-            data = receive(self.sock)
+            #send(self.sock,'NAME: ' + self.name) 
             # Contains client address, set it
-            addr = data.split('CLIENT: ')[1]
-            self.prompt = '[' + '@'.join((self.name, addr)) + ']> '
+	    self.prompt="Puppy?"
         except socket.error, e:
             print 'Could not connect to chat server @%d' % self.port
             sys.exit(1)
@@ -48,6 +47,8 @@ class ChatClient(object):
                     if i == 0:
                         data = sys.stdin.readline().strip()
                         if data: send(self.sock, data)
+			
+		
                     elif i == self.sock:
                         data = receive(self.sock)
                         if not data:
@@ -55,9 +56,23 @@ class ChatClient(object):
                             self.flag = True
                             break
                         else:
-                            sys.stdout.write(data + '\n')
-                            sys.stdout.flush()
-                            
+			    if isinstance(data,ServerHostAlertMessage):
+				data=data.myHostInfo
+				newsocket= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+				newsocket.connect(data)
+				self.hostsmap[data]=newsocket   
+			    elif isinstance(data,ServerHostListenMessage):
+				listenport=data.myListenInfo
+        			self.listensocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+			        self.listensocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+			        self.listensocket.bind(('',listenport))
+				self.listensocket.listen(16)
+				
+			    else:
+	                        pdb.set_trace()
+		    elif i ==self.listensocket:
+		    	client,address =self.listensocket.accept()
+			pdb.set_trace()
             except KeyboardInterrupt:
                 print 'Interrupted.'
                 self.sock.close()
