@@ -10,22 +10,23 @@ DATASIZE_PER_HOST=100
 REQUESTS_CACHED=10
 class DataSet:
     def __init__(self,name="None Given",init=True,size=DATASIZE_PER_HOST,elements={}):
+        print 'Creating dataset named '+str(name)
         self.myName = name
         self.myElements=elements
         self.pastRequests=[]
         if init:
             for i in range(size):
-                self.myElements[i]=((self.myName,i,random.random()))
+                self.myElements[i]=(self.myName,i,random.random())
     def checkRequests(self,element):
-      if(element in self.pastRequests):
-        return False;
-      else:
-        if len(self.pastRequests)==REQUESTS_CACHED:
-          self.pastRequests=self.pastRequests[:-1]
-        self.pastRequests.insert(0,element)
-      return True
+        if(element in self.pastRequests):
+            return False;
+        else:
+            if len(self.pastRequests)==REQUESTS_CACHED:
+                self.pastRequests=self.pastRequests[:-1]
+            self.pastRequests.insert(0,element)
+        return True
     def numElements(self):
-        #return len(self.myElements.keys())
+            #return len(self.myElements.keys())
         return DATASIZE_PER_HOST
     def numFilled(self):
         return len(self.myElements.keys())
@@ -79,10 +80,11 @@ class ClientResponseMessage(Message):
 class ClientRequestDeletion(Message):
     #dataset says which dataset to be aware of
     #element says "delete THAT element in the dataset"
-    def __init__(self,mid=6,dataSet=None,element=None):
+    def __init__(self,mid=6,dataSet=None,element=None,replacement=None):
         self.myId=mid
         self.myDataSet=dataSet
         self.myElement=element
+        self.myReplacement=replacement
 
 class ClientSayEhlo(Message):
     def __init__(self,mid=7):
@@ -114,5 +116,4 @@ def receive(channel):
 
     while len(buf) < size:
         buf = channel.recv(size - len(buf))
-
     return unmarshall(buf)[0]
