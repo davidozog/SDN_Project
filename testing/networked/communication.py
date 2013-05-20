@@ -14,7 +14,7 @@ class DataSet:
     self.myElements=elements
     self.pastRequests=[]
     if init:
-      for i in range(DATASIZE_PER_HOST):
+      for i in range(size):
         self.myElements[i]=((self.myName,i,random.random()))
 
   def numElements(self):
@@ -37,9 +37,10 @@ class ServerHostAlertMessage(Message):
 
 #This tells a host "listen on this port for messages." This is a bit iffy
 class ServerHostListenMessage(Message):
-    def __init__(self,mid=2,listenInfo=None):
+    def __init__(self,mid=2,listenInfo=None,numPorts=0):
         self.myId=mid
         self.myListenInfo=listenInfo
+	self.myNumPorts=numPorts
 
 #This tells a host to update their probability distributions
 class ServerProbabilityUpdateMessage(Message):

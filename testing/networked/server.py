@@ -91,11 +91,13 @@ class ChatServer(object):
                     inputs.append(client)
                     self.clientmap[client] = (address, cname)
 		    hostAddr,hostPort=address
-		    listenMessage=ServerHostListenMessage(listenInfo=hostPort+1)
+		    listenMessage=ServerHostListenMessage(listenInfo=hostPort+1,numPorts=NUMSETS+1)
+		    print str(NUMSETS+1)
 		    send(client,listenMessage)
 		    if(self.clients==NUMCLIENTS):
 	                    if(phase==0):
 				numFree=[]
+				#DISTRIBUTE DATASETS
 				for c in range(NUMCLIENTS):
 					numFree.append(ELEMENTSPERHOST)
 				for s in range(NUMSETS):
@@ -116,6 +118,20 @@ class ChatServer(object):
 						print "Sending off set named" +str(tempset.myName)
 						print self.clientmap[self.clientmap.keys()[set]]
 						send(self.clientmap.keys()[set],toSend)	
+				#END DISTRIBUTE DATASETS
+				#DISTRIBUTE PROBABILITY DISTRIBUTIONS
+				for c in self.clientmap.keys():
+					probDist={}
+					sum=0
+					for s in self.dataSetMap.keys():
+						weight=random.random()
+						probDist[s]=weight
+						sum+=weight
+					for s in self.dataSetMap.keys():
+						probDist[s]=probDist[s]/sum
+					toSend=ServerProbabilityUpdateMessage(probId=0,distribution=probDist)
+					send(c,toSend)			
+				#END DISTRIBUTE PROBABILITY DISTRIBUTIONS
 				phase=1
 				for fromClient in self.clientmap.keys():
 					for toClient in self.clientmap.keys():

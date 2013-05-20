@@ -1,4 +1,5 @@
 #Attribution: http://code.activestate.com/recipes/531824-chat-server-client-using-selectselect/
+
 import socket
 import sys
 import select
@@ -12,7 +13,7 @@ class ChatClient(object):
 
     def __init__(self, name, host='127.0.0.1', port=3490):
     	self.myDataSets = {}
-	self.myProbabilities = {}
+	self.myProbabilityMap = {}
         self.name = name
         # Quit flag
         self.hostsmap={}
@@ -43,6 +44,7 @@ class ChatClient(object):
 
     def cmdloop(self):
         numRcvd=0
+	phase=0
         while not self.flag:
             try:
                 sys.stdout.flush()
@@ -65,43 +67,56 @@ class ChatClient(object):
                             break
                         else:
 			    if isinstance(data,ServerHostAlertMessage):
+				self.sendSockets={}
+				data=data.myHostInfo
+				haddr,hport=data
+				self.sendSockets[(haddr,hport)]={}
 				try:
-					data=data.myHostInfo
-					newsocket= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-					haddr,hport=data
-					print "Sending on "+str(hport)
-					newsocket.connect(data)
-					self.hostsmap[data]=newsocket   
-					tmsg=ClientSayEhlo()
-					send(newsocket,tmsg)
-					self.fdmap[newsocket.fileno()]=newsocket
-					self.poller.register(newsocket,READ_ONLY)
+					for i in range(self.numSets):
+						newsocket= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+						print "Sending on "+str(hport)
+						newsocket.connect(data)
+						self.hostsmap[data]=newsocket   
+						tmsg=ClientSayEhlo()
+						send(newsocket,tmsg)
+						self.fdmap[newsocket.fileno()]=newsocket
+						self.poller.register(newsocket,READ_ONLY)
+						self.sendSockets[(haddr,hport)][i if i!=(self.numSets-1) else -1]=newsocket
         			except socket.error, e:
 			            print 'Could not connect to chat server @%d' % self.port
 			    elif isinstance(data,ServerHostListenMessage):
-
 				listenport=data.myListenInfo
-        			self.listensocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-			        self.listensocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-			        self.listensocket.bind(('',listenport))
-				print ("Listening on port "+str(listenport))
-				self.listensocket.listen(5)
-				inputs.append(self.listensocket)
-				self.poller.register(self.listensocket,READ_ONLY)
-				self.fdmap[self.listensocket.fileno()]=self.listensocket
+				
+				self.numSets=data.myNumPorts
+				self.myListeners=[]
+                                for channel in range(self.numSets):
+				        	
+	        			listensocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+				        listensocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+				        listensocket.bind(('',listenport+channel))
+					listensocket.listen(5)
+					
+					inputs.append(listensocket)
+					
+					self.poller.register(listensocket,READ_ONLY)
+					self.fdmap[listensocket.fileno()]=listensocket
+					print listensocket
+					if channel==self.numSets-1:
+						self.controlChannel=listensocket
+					else:
+						self.myListeners.append(listensocket)
 			    elif isinstance(data,ServerRegisterDataSet):
 				numRcvd+=1
 				ds=data.myElements
 			        self.dataSetMap[ds.myName]=ds	
+			    elif isinstance(data,ServerProbabilityUpdateMessage):
+				self.myProbabilityMap=data.myDistribution
 			    else:
 	                        pdb.set_trace()
-		    elif i ==self.listensocket:
-			print "IFD is of LISTENSOCKET"
-		    	client,address =self.listensocket.accept()
-			print "Received Client to Client Message"
-			print "Length of set 0: "+str(len(self.dataSetMap[0].myElements.keys()))
-			print "Length of set 1: "+str(len(self.dataSetMap[1].myElements.keys()))
+		    elif i in self.myListeners: #listensocket
 			pdb.set_trace()
+		    elif i==self.controlChannel:
+			print "Foo?"	
 		    else:
 			print "Data from unexpected source"
             except KeyboardInterrupt:
