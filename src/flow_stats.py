@@ -26,10 +26,17 @@ statistics handler contains a summary of web-only traffic.
 
 # standard includes
 from pox.core import core
+from pox.lib.addresses import EthAddr, IPAddr
+from pox.lib.revent import *
 from pox.lib.util import dpidToStr
+from pox.lib.util import str_to_bool
+import StatPacket as sp
 import pox.openflow.libopenflow_01 as of
 import socket
 import sys
+import pickle
+marshall = pickle.dumps
+unmarshall = pickle.loads
 
 # include as part of the betta branch
 from pox.openflow.of_json import *
@@ -68,12 +75,12 @@ def closeSocket(s, conn):
   conn.close()
   s.close()
 
-def sendRecvMMP(s, conn):
+def sendRecvMMP(s, conn, flow_data):
   while 1:
-    data = conn.recv(1024)
-    if not data: continue 
+    incoming_data = conn.recv(1024)
+    if not incoming_data: continue 
     else: 
-      conn.send(data)
+      conn.send(flow_data)
       break
 
 # handler for timer function that sends the requests to all the
@@ -92,26 +99,80 @@ def _handle_flowstats_received (event):
     dpidToStr(event.connection.dpid), stats)
 
   # Get number of bytes/packets in flows for web traffic only
-  web_bytes = 0
-  web_flows = 0
-  web_packet = 0
+  w_bytes = 0
+  w_flows = 0
+  w_packet = 0
   for f in event.stats:
     if f.match.tp_dst == 80 or f.match.tp_src == 80:
-      web_bytes += f.byte_count
-      web_packet += f.packet_count
-      web_flows += 1
+      w_bytes += f.byte_count
+      w_packet += f.packet_count
+      w_flows += 1
   log.info("Web traffic from %s: %s bytes (%s packets) over %s flows", 
-    dpidToStr(event.connection.dpid), web_bytes, web_packet, web_flows)
+    dpidToStr(event.connection.dpid), w_bytes, w_packet, w_flows)
 
-  sendRecvMMP(sock, conn)
-  #closeSocket(sock, conn)
+  flow_packet = sp.FlowStatPacket(w_bytes, w_packet, w_flows, stats)
+  #flow_packet.printData()
+  flow_stat_data = marshall(flow_packet)
+  sendRecvMMP(sock, conn, flow_stat_data)
 
 # handler to display port statistics received in JSON format
 def _handle_portstats_received (event):
   stats = flow_stats_to_list(event.stats)
   log.debug("PortStatsReceived from %s: %s", 
     dpidToStr(event.connection.dpid), stats)
+
+  port_packet = sp.PortStatPacket(stats)
+  #port_packet.printData()
+  port_stat_data = marshall(port_packet)
+  sendRecvMMP(sock, conn, port_stat_data)
+
+
+class TestSwitch(EventMixin):
+  def __init__(self, connection):
+    self.connection = connection
+    self.listenTo(connection)
+    self.macToPort = {}
     
+  def _handle_PacketIn(self, event):
+  
+    def flood(message = None):
+      if message is not None: log.debug(message)
+      msg = of.ofp_packet_out()
+      msg.actions.append(of.ofp_action_output(port = of.OFPP_FLOOD))
+      msg.buffer_id = event.ofp.buffer_id
+      msg.in_port = event.port
+      self.connection.send(msg)
+  
+    packet = event.parse()
+  
+    self.macToPort[packet.src] = event.port 
+    log.debug("Incoming: %s.%s, Destination: %s" % 
+               (packet.src,event.port,packet.dst))
+  
+    # Install flow table entry in the switch so this flow goes
+    # out the appropriate port
+    if packet.dst not in self.macToPort:
+      flood("Port for %s unknown -- flooding" % (packet.dst,))
+    else:
+      port = self.macToPort[packet.dst]
+  
+      log.debug("installing flow for %s.%i -> %s.%i" %
+                 (packet.src, event.port, packet.dst, port))
+      msg = of.ofp_flow_mod()
+      msg.match = of.ofp_match.from_packet(packet, event.port)
+      msg.idle_timeout = 10
+      msg.hard_timeout = 30
+      msg.actions.append(of.ofp_action_output(port = port))
+      msg.data = event.ofp
+      self.connection.send(msg)
+
+class Test(EventMixin):
+  def __init__(self):
+    self.listenTo(core.openflow)
+
+  def _handle_ConnectionUp(self, event):
+    TestSwitch(event.connection)
+
 
 (conn, add, sock) = openSocket()
 
@@ -124,6 +185,7 @@ def launch ():
     _handle_flowstats_received) 
   core.openflow.addListenerByName("PortStatsReceived", 
     _handle_portstats_received) 
+  core.registerNew(Test)
 
   # timer set to execute every five seconds
   Timer(5, _timer_func, recurring=True)
