@@ -15,10 +15,13 @@ import sys
 import signal
 from communication import *
 import pdb
-
+import random 
 BUFSIZ = 1024
 NUMCLIENTS=2
-
+NUMSETS=2
+ELEMENTSPERSET=100
+assert (NUMSETS*ELEMENTSPERSET)%NUMCLIENTS==0
+ELEMENTSPERHOST=(NUMSETS*ELEMENTSPERSET)/NUMCLIENTS
 class ChatServer(object):
     """ Simple chat server using select """
     
@@ -35,7 +38,12 @@ class ChatServer(object):
         self.server.listen(backlog)
         # Trap keyboard interrupts
         signal.signal(signal.SIGINT, self.sighandler)
-        
+        self.distributionMap={}
+        self.dataSetMap={}
+	for i in range(NUMSETS):
+		name=i
+		self.dataSetMap[name]=DataSet(name=name,init=True,size=ELEMENTSPERSET)
+
     def sighandler(self, signum, frame):
         # Close the server
         print 'Shutting down server...'
@@ -85,8 +93,29 @@ class ChatServer(object):
 		    hostAddr,hostPort=address
 		    listenMessage=ServerHostListenMessage(listenInfo=hostPort+1)
 		    send(client,listenMessage)
-                    if(phase==0):
-			if(self.clients==NUMCLIENTS):
+		    if(self.clients==NUMCLIENTS):
+	                    if(phase==0):
+				numFree=[]
+				for c in range(NUMCLIENTS):
+					numFree.append(ELEMENTSPERHOST)
+				for s in range(NUMSETS):
+					print "Splitting set "+str(s)
+					builtSets=[]
+					for c in range(NUMCLIENTS):
+						builtSets.append({})
+					for idx in range(ELEMENTSPERSET):
+						ourLuckyWinner=int(random.random()*NUMCLIENTS)
+						while(numFree[ourLuckyWinner]<=0):
+							ourLuckyWinner+=int(random.random()*NUMCLIENTS)
+							ourLuckyWinner%=NUMCLIENTS
+						builtSets[ourLuckyWinner][idx]=self.dataSetMap[s].myElements[idx]
+						numFree[ourLuckyWinner]-=1
+					for set in range(NUMCLIENTS):
+						tempset=DataSet(name=self.dataSetMap[s].myName,init=False,size=ELEMENTSPERHOST,elements=builtSets[set])
+						toSend=ServerRegisterDataSet(name=tempset.myName,elementSet=tempset)
+						print "Sending off set named" +str(tempset.myName)
+						print self.clientmap[self.clientmap.keys()[set]]
+						send(self.clientmap.keys()[set],toSend)	
 				phase=1
 				for fromClient in self.clientmap.keys():
 					for toClient in self.clientmap.keys():
@@ -97,7 +126,7 @@ class ChatServer(object):
 							details=(addr,prt)
 							sendme=ServerHostAlertMessage(hostInfo=details)
 							send(toClient,sendme)
-		    			            
+			    			            
                     self.outputs.append(client)
 
                 elif s == sys.stdin:

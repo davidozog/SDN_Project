@@ -3,9 +3,24 @@
 import cPickle
 import socket
 import struct
-
+import random
 marshall = cPickle.dumps
 unmarshall = cPickle.loads
+DATASIZE_PER_HOST=100
+REQUESTS_CACHED=10
+class DataSet:
+  def __init__(self,name="None Given",init=True,size=DATASIZE_PER_HOST,elements={}):
+    self.myName = name
+    self.myElements=elements
+    self.pastRequests=[]
+    if init:
+      for i in range(DATASIZE_PER_HOST):
+        self.myElements[i]=((self.myName,i,random.random()))
+
+  def numElements(self):
+    #return len(self.myElements.keys())
+    return DATASIZE_PER_HOST
+
 #mid means Message ID
 class Message(object):
     def __init__(self, mid=-1):
@@ -62,6 +77,12 @@ class ClientRequestDeletion(Message):
 class ClientSayEhlo(Message):
     def __init__(self,mid=7):
        self.myId=mid
+class ServerRegisterDataSet(Message):
+    def __init__(self,mid=8,name="None Given",elementSet={}):
+       self.myId=mid
+       self.myName=name
+       self.myElements=elementSet
+       
 
 def send(channel, *args):
     buf = marshall(args)
