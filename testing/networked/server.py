@@ -16,6 +16,9 @@ import signal
 from communication import *
 import pdb
 import random
+import StatPacket
+HOST='localhost'
+PORT=50008
 BUFSIZ = 1024
 NUMCLIENTS=2
 NUMSETS=2
@@ -40,6 +43,31 @@ class ChatServer(object):
         signal.signal(signal.SIGINT, self.sighandler)
         self.distributionMap={}
         self.dataSetMap={}
+        s=None
+        # CONTROLLER SOCKET
+        for res in socket.getaddrinfo(HOST, PORT, socket.AF_UNSPEC, socket.SOCK_STREAM):
+          af, socktype, proto, canonname, sa = res
+          try:
+            s = socket.socket(af, socktype, proto)
+            s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+          except socket.error as msg:
+            s = None
+            continue
+          try:
+            s.connect(sa)
+          except socket.error as msg:
+            s.close()
+            s = None
+            continue
+          print 'Made connection'
+          s.sendall('MMP is alive')
+          break
+        if s is None:
+          print 'could not open socket'
+          sys.exit(1)
+        else:
+          self.controllerSocket=s
+        #END CONTROLLER SOCKET
         for i in range(NUMSETS):
             namea=i
             print 'FLIBBERTIGIBBET '+str(namea)+','+str(i)
@@ -63,7 +91,7 @@ class ChatServer(object):
         return "foo"
     def serve(self):
 
-        inputs = [self.server,sys.stdin]
+        inputs = [self.server,sys.stdin,self.controllerSocket]
         self.outputs = []
 
         running = 1
@@ -78,8 +106,16 @@ class ChatServer(object):
                 break
 
             for s in inputready:
-
-                if s == self.server:
+                if s==self.controllerSocket:
+                  print 'Received Data From Controller1'
+                  data=self.controllerSocket.recv(8192)
+                  self.controllerSocket.sendall('MMP is alive')
+                  print 'Received Data From Controller2'
+                  if not data:
+                    continue
+                  flow_stat_data=unmarshall(data)
+                  flow_stat_data.printData()
+                elif s == self.server:
                     # handle the server socket
                     client, address = self.server.accept()
                     print 'chatserver: got connection %d from %s' % (client.fileno(), address)

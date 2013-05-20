@@ -53,6 +53,7 @@ def openSocket():
     af, socktype, proto, canonname, sa = res
     try:
       s = socket.socket(af, socktype, proto)
+      s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     except socket.error as msg:
       s = None
       continue
