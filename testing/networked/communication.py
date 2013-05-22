@@ -20,6 +20,8 @@ class DataSet:
     def numElements(self):
         #return len(self.myElements.keys())
         return DATASIZE_PER_HOST
+    def numFilled(self):
+        return len(self.myElements.keys())
 
 #mid means Message ID
 class Message(object):
