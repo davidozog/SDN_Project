@@ -9,17 +9,17 @@ unmarshall = cPickle.loads
 DATASIZE_PER_HOST=100
 REQUESTS_CACHED=10
 class DataSet:
-  def __init__(self,name="None Given",init=True,size=DATASIZE_PER_HOST,elements={}):
-    self.myName = name
-    self.myElements=elements
-    self.pastRequests=[]
-    if init:
-      for i in range(size):
-        self.myElements[i]=((self.myName,i,random.random()))
+    def __init__(self,name="None Given",init=True,size=DATASIZE_PER_HOST,elements={}):
+        self.myName = name
+        self.myElements=elements
+        self.pastRequests=[]
+        if init:
+            for i in range(size):
+                self.myElements[i]=((self.myName,i,random.random()))
 
-  def numElements(self):
-    #return len(self.myElements.keys())
-    return DATASIZE_PER_HOST
+    def numElements(self):
+        #return len(self.myElements.keys())
+        return DATASIZE_PER_HOST
 
 #mid means Message ID
 class Message(object):
@@ -40,7 +40,7 @@ class ServerHostListenMessage(Message):
     def __init__(self,mid=2,listenInfo=None,numPorts=0):
         self.myId=mid
         self.myListenInfo=listenInfo
-	self.myNumPorts=numPorts
+        self.myNumPorts=numPorts
 
 #This tells a host to update their probability distributions
 class ServerProbabilityUpdateMessage(Message):
@@ -53,14 +53,14 @@ class ServerProbabilityUpdateMessage(Message):
 
 class ClientRequestDataMessage(Message):
     #dataset says which dataset to be aware of
-    #element says "give me THAT element in the dataset" 
+    #element says "give me THAT element in the dataset"
     def __init__(self,mid=4,dataSet=None,element=None):
         self.myId=mid
         self.myDataSet=dataSet
         self.myElement=element
 
 class ClientResponseMessage(Message):
-    #element will be none if we don't have the element, the element otherwise (imagine that) 
+    #element will be none if we don't have the element, the element otherwise (imagine that)
     def __init__(self,mid=5,element=None, allowKeep=True):
         self.myId=mid
         self.myDataSet=dataSet
@@ -69,7 +69,7 @@ class ClientResponseMessage(Message):
 
 class ClientRequestDeletion(Message):
     #dataset says which dataset to be aware of
-    #element says "delete THAT element in the dataset" 
+    #element says "delete THAT element in the dataset"
     def __init__(self,mid=6,dataSet=None,element=None):
         self.myId=mid
         self.myDataSet=dataSet
@@ -77,13 +77,13 @@ class ClientRequestDeletion(Message):
 
 class ClientSayEhlo(Message):
     def __init__(self,mid=7):
-       self.myId=mid
+        self.myId=mid
 class ServerRegisterDataSet(Message):
     def __init__(self,mid=8,name="None Given",elementSet={}):
-       self.myId=mid
-       self.myName=name
-       self.myElements=elementSet
-       
+        self.myId=mid
+        self.myName=name
+        self.myElements=elementSet
+
 
 def send(channel, *args):
     buf = marshall(args)
@@ -100,7 +100,7 @@ def receive(channel):
         size = socket.ntohl(struct.unpack("L", size)[0])
     except struct.error, e:
         return ''
-    
+
     buf = ""
 
     while len(buf) < size:

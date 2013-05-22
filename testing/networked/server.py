@@ -15,7 +15,7 @@ import sys
 import signal
 from communication import *
 import pdb
-import random 
+import random
 BUFSIZ = 1024
 NUMCLIENTS=2
 NUMSETS=2
@@ -24,7 +24,7 @@ assert (NUMSETS*ELEMENTSPERSET)%NUMCLIENTS==0
 ELEMENTSPERHOST=(NUMSETS*ELEMENTSPERSET)/NUMCLIENTS
 class ChatServer(object):
     """ Simple chat server using select """
-    
+
     def __init__(self, port=3490, backlog=5):
         self.clients = 0
         # Client map
@@ -40,9 +40,9 @@ class ChatServer(object):
         signal.signal(signal.SIGINT, self.sighandler)
         self.distributionMap={}
         self.dataSetMap={}
-	for i in range(NUMSETS):
-		name=i
-		self.dataSetMap[name]=DataSet(name=name,init=True,size=ELEMENTSPERSET)
+        for i in range(NUMSETS):
+            name=i
+            self.dataSetMap[name]=DataSet(name=name,init=True,size=ELEMENTSPERSET)
 
     def sighandler(self, signum, frame):
         # Close the server
@@ -50,7 +50,7 @@ class ChatServer(object):
         # Close existing client sockets
         for o in self.outputs:
             o.close()
-            
+
         self.server.close()
 
     def getname(self, client):
@@ -59,14 +59,14 @@ class ChatServer(object):
         # client, given its socket...
         info = self.clientmap[client]
         host, name = info[0][0], info[1]
-        return "foo" 
+        return "foo"
     def serve(self):
-        
+
         inputs = [self.server,sys.stdin]
         self.outputs = []
 
         running = 1
-	phase=0
+        phase=0
         while running:
 
             try:
@@ -84,65 +84,65 @@ class ChatServer(object):
                     print 'chatserver: got connection %d from %s' % (client.fileno(), address)
                     # Read the login name
                     cname = receive(client)
-                    
+
                     # Compute client name and send back
                     self.clients += 1
                     #send(client, 'CLIENT: ' + str(address[0]))
                     inputs.append(client)
                     self.clientmap[client] = (address, cname)
-		    hostAddr,hostPort=address
-		    listenMessage=ServerHostListenMessage(listenInfo=hostPort+1,numPorts=NUMSETS+1)
-		    print str(NUMSETS+1)
-		    send(client,listenMessage)
-		    if(self.clients==NUMCLIENTS):
-	                    if(phase==0):
-				numFree=[]
-				#DISTRIBUTE DATASETS
-				for c in range(NUMCLIENTS):
-					numFree.append(ELEMENTSPERHOST)
-				for s in range(NUMSETS):
-					print "Splitting set "+str(s)
-					builtSets=[]
-					for c in range(NUMCLIENTS):
-						builtSets.append({})
-					for idx in range(ELEMENTSPERSET):
-						ourLuckyWinner=int(random.random()*NUMCLIENTS)
-						while(numFree[ourLuckyWinner]<=0):
-							ourLuckyWinner+=int(random.random()*NUMCLIENTS)
-							ourLuckyWinner%=NUMCLIENTS
-						builtSets[ourLuckyWinner][idx]=self.dataSetMap[s].myElements[idx]
-						numFree[ourLuckyWinner]-=1
-					for set in range(NUMCLIENTS):
-						tempset=DataSet(name=self.dataSetMap[s].myName,init=False,size=ELEMENTSPERHOST,elements=builtSets[set])
-						toSend=ServerRegisterDataSet(name=tempset.myName,elementSet=tempset)
-						print "Sending off set named" +str(tempset.myName)
-						print self.clientmap[self.clientmap.keys()[set]]
-						send(self.clientmap.keys()[set],toSend)	
-				#END DISTRIBUTE DATASETS
-				#DISTRIBUTE PROBABILITY DISTRIBUTIONS
-				for c in self.clientmap.keys():
-					probDist={}
-					sum=0
-					for s in self.dataSetMap.keys():
-						weight=random.random()
-						probDist[s]=weight
-						sum+=weight
-					for s in self.dataSetMap.keys():
-						probDist[s]=probDist[s]/sum
-					toSend=ServerProbabilityUpdateMessage(probId=0,distribution=probDist)
-					send(c,toSend)			
-				#END DISTRIBUTE PROBABILITY DISTRIBUTIONS
-				phase=1
-				for fromClient in self.clientmap.keys():
-					for toClient in self.clientmap.keys():
-						if fromClient!=toClient:
-							details,toss=self.clientmap[fromClient]
-							addr,prt=details
-							prt+=1
-							details=(addr,prt)
-							sendme=ServerHostAlertMessage(hostInfo=details)
-							send(toClient,sendme)
-			    			            
+                    hostAddr,hostPort=address
+                    listenMessage=ServerHostListenMessage(listenInfo=hostPort+1,numPorts=NUMSETS+1)
+                    print str(NUMSETS+1)
+                    send(client,listenMessage)
+                    if(self.clients==NUMCLIENTS):
+                        if(phase==0):
+                            numFree=[]
+                            #DISTRIBUTE DATASETS
+                            for c in range(NUMCLIENTS):
+                                numFree.append(ELEMENTSPERHOST)
+                            for s in range(NUMSETS):
+                                print "Splitting set "+str(s)
+                                builtSets=[]
+                                for c in range(NUMCLIENTS):
+                                    builtSets.append({})
+                                for idx in range(ELEMENTSPERSET):
+                                    ourLuckyWinner=int(random.random()*NUMCLIENTS)
+                                    while(numFree[ourLuckyWinner]<=0):
+                                        ourLuckyWinner+=int(random.random()*NUMCLIENTS)
+                                        ourLuckyWinner%=NUMCLIENTS
+                                    builtSets[ourLuckyWinner][idx]=self.dataSetMap[s].myElements[idx]
+                                    numFree[ourLuckyWinner]-=1
+                                for setnum in range(NUMCLIENTS):
+                                    tempset=DataSet(name=self.dataSetMap[s].myName,init=False,size=ELEMENTSPERHOST,elements=builtSets[setnum])
+                                    toSend=ServerRegisterDataSet(name=tempset.myName,elementSet=tempset)
+                                    print "Sending off set named" +str(tempset.myName)
+                                    print self.clientmap[self.clientmap.keys()[setnum]]
+                                    send(self.clientmap.keys()[setnum],toSend)
+                            #END DISTRIBUTE DATASETS
+                            #DISTRIBUTE PROBABILITY DISTRIBUTIONS
+                            for c in self.clientmap.keys():
+                                probDist={}
+                                sum=0
+                                for s in self.dataSetMap.keys():
+                                    weight=random.random()
+                                    probDist[s]=weight
+                                    sum+=weight
+                                for s in self.dataSetMap.keys():
+                                    probDist[s]=probDist[s]/sum
+                                toSend=ServerProbabilityUpdateMessage(probId=0,distribution=probDist)
+                                send(c,toSend)
+                            #END DISTRIBUTE PROBABILITY DISTRIBUTIONS
+                            phase=1
+                            for fromClient in self.clientmap.keys():
+                                for toClient in self.clientmap.keys():
+                                    if fromClient!=toClient:
+                                        details,toss=self.clientmap[fromClient]
+                                        addr,prt=details
+                                        prt+=1
+                                        details=(addr,prt)
+                                        sendme=ServerHostAlertMessage(hostInfo=details)
+                                        send(toClient,sendme)
+
                     self.outputs.append(client)
 
                 elif s == sys.stdin:
@@ -155,12 +155,12 @@ class ChatServer(object):
                         # data = s.recv(BUFSIZ)
                         data = receive(s)
                         if data:
-                            # Send as new client's message...
+                        # Send as new client's message...
                             msg = '\n#[' + self.getname(s) + ']>> ' + data
                             # Send data to all except ourselves
                             for o in self.outputs:
                                 if o != s:
-				    temp=1 #this is a pass
+                                    temp=1 #this is a pass
                                     # o.send(msg)
                                     #send(o, msg)
                         else:
@@ -173,15 +173,15 @@ class ChatServer(object):
                             # Send client leaving information to others
                             msg = '\n(Hung up: Client from %s)' % self.getname(s)
                             for o in self.outputs:
-				temp=1 #this is a pass
+                                temp=1 #this is a pass
                                 # o.send(msg)
                                 #send(o, msg)
-                                
+
                     except socket.error, e:
                         # Remove
                         inputs.remove(s)
                         self.outputs.remove(s)
-                        
+
 
 
         self.server.close()
