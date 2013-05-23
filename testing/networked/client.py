@@ -120,7 +120,7 @@ class ChatClient(object):
                                 hostName=data.myHostName
                                 data=data.myHostInfo
                                 haddr,hport=data
-				self.numToBase[hostName]=data
+				self.numToBase[haddr]=data
                                 self.sendSockets[(haddr,hport)]={}
                                 try:
                                     for i in range(self.numSets):
