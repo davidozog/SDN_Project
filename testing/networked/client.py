@@ -4,7 +4,7 @@ import socket
 import sys
 import select
 from communication import *
-import pdb
+import #pdb
 import random
 BUFSIZ = 1024
 #READ_ONLY = select.POLLIN | select.POLLPRI | select.POLLHUP | select.POLLERR
@@ -75,10 +75,6 @@ class ChatClient(object):
                 inputready= self.poller.poll(1000)
                 print "Foofoofoo???"
                 idle+=1
-                if(idle==10):
-
-                    request=ClientRequestDataMessage(dataSet=0,element=0)
-                    pdb.set_trace()
                 if(phase==1) and (self.gotMyElement):
 
                     choiceSet=self.chooseSet(self.myProbabilityMap)
@@ -93,7 +89,6 @@ class ChatClient(object):
 		            peer=tkey[-1].getpeername()
 			    tkey[-1].close()
                             tkey[-1]= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		            #pdb.set_trace()
 			    tkey[-1].connect(peer)
                             #hostmap[key][-1].close()
                             send(tkey[-1],request)
@@ -121,7 +116,7 @@ class ChatClient(object):
                                 data=data.myHostInfo
                                 haddr,hport=data
 				self.numToBase[haddr]=data
-                                self.sendSockets[(haddr,hport)]={}
+                                self.sendSockets[(haddr)]={}
                                 try:
                                     for i in range(self.numSets):
                                         newsocket= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -135,7 +130,7 @@ class ChatClient(object):
                                         send(newsocket,tmsg)
                                         self.fdmap[newsocket.fileno()]=newsocket
                                         #self.poller.register(newsocket,READ_ONLY)
-                                        self.sendSockets[(haddr,hport)][i if i!=(self.numSets-1) else -1]=newsocket
+                                        self.sendSockets[(haddr)][i if i!=(self.numSets-1) else -1]=newsocket
                                         if(not self.hostsmap.has_key(hostName)):
                                             self.hostsmap[hostName]={}
                                         self.hostsmap[hostName][i if i!=(self.numSets-1) else -1]=newsocket
@@ -144,7 +139,7 @@ class ChatClient(object):
                                     print 'problem at 2'
                                     print 'Could not connect to chat server @%d' % self.tport
                                     print '======================='
-                                    pdb.set_trace()
+                                    #pdb.set_trace()
                             elif isinstance(data,ServerHostListenMessage):
                                 listenport=data.myListenInfo
 
@@ -179,6 +174,7 @@ class ChatClient(object):
                                 time.sleep(1)
                             #elif isinstance(
                             else:
+				print "Unknown packet type from server"
                                 pdb.set_trace()
 
                     elif i==self.controlChannel:
@@ -186,7 +182,7 @@ class ChatClient(object):
                         #if not self.ephemeralSockets.has_key(i):
                         #  self.ephemeralSockets[i]=hostSock
                         hostSock,toss=i.accept()
-
+                        addr,prt=toss
                         #else:
                         #  hostSock=self.ephemeralSockets[i]
                         data = receive(hostSock)
@@ -200,19 +196,20 @@ class ChatClient(object):
 				response.myKeepable=self.dataSetMap[dataset].checkRequests(element)
 				response.myElement=self.dataSetMap[dataset].myElements[element]
 			        response.myDataSet=self.dataSetMap[dataset].myName
-			  pdb.set_trace()
+			  #pdb.set_trace()
+                          sockToSend=self.sendSocket[addr][dataset] #UNSAFE FOR SINGLE HOST
+			  
 			  send(hostSock,response)	
 			  print "Done???!?!!!"  
-#                        pdb.set_trace()
+#                        #pdb.set_trace()
 
                     elif i in self.myListeners: #listensocket
 			hostSock, toss = i.accept()
-#                       pdb.set_trace()
+#                       #pdb.set_trace()
                         print "Received packet from other host"
                         print "Received packet from other host"
                         print "Received packet from other host"
 
-                        #pdb.set_trace()
                         thing3=0
                         data = receive(hostSock)
                         print "wat"
@@ -221,7 +218,7 @@ class ChatClient(object):
                 #       print "Foo?"
                  #       data = receive(self.controlChannel)
                     else:
-                        pdb.set_trace()
+                        #pdb.set_trace()
                         print "Data from unexpected source"
             except KeyboardInterrupt:
                 print 'Interrupted.'
@@ -229,7 +226,7 @@ class ChatClient(object):
                 break
 	    except socket.error, e:
 		print "Socket error"
-		pdb.set_trace()
+		#pdb.set_trace()
 
 if __name__ == "__main__":
     import sys
