@@ -22,11 +22,12 @@ class ChatClient(object):
         self.port = int(port)
         self.host = host
         self.iterations = 0
+	
         self.gotMyElement=True;
         # Initial prompt
         self.fdmap={}
-        self.ephemeralSockets={}
-        self.prompt='[' + '@'.join((name, socket.gethostname().split('.')[0])) + ']> '
+        self.numToBase={} 
+	self.prompt='[' + '@'.join((name, socket.gethostname().split('.')[0])) + ']> '
         # Connect to server at port
         try:
             self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -71,10 +72,12 @@ class ChatClient(object):
                 # Wait for input from stdin & socket
                 #inputready, outputready,exceptrdy = select.poll(inputs, [],[])
                 inputready=[]
-                inputready= self.poller.poll(10)
-                #print "Foofoofoo???"
+                inputready= self.poller.poll(1000)
+                print "Foofoofoo???"
                 idle+=1
-                if(idle==1000):
+                if(idle==10):
+
+                    request=ClientRequestDataMessage(dataSet=0,element=0)
                     pdb.set_trace()
                 if(phase==1) and (self.gotMyElement):
 
@@ -83,13 +86,18 @@ class ChatClient(object):
                     choiceElement=self.chooseElement(mySet)
                     if(not self.dataSetMap[choiceSet].myElements.has_key(choiceElement)):
                         request=ClientRequestDataMessage(dataSet=choiceSet,element=choiceElement)
-                        self.gotMyElement=True
+                        self.gotMyElement=False
                         for key in self.hostsmap.keys():
+			    print "Sending"
                             tkey=self.hostsmap[key]
+		            peer=tkey[-1].getpeername()
+			    tkey[-1].close()
+                            tkey[-1]= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		            #pdb.set_trace()
+			    tkey[-1].connect(peer)
                             #hostmap[key][-1].close()
-                            send(self.hostsmap[self.hostsmap.keys()[0]][-1],ClientSayEhlo())
-                            #send(tkey[-1],request)
-                            #print "Sent off "+str(request)+" to "+str(tkey[-1].getpeername())
+                            send(tkey[-1],request)
+                            print "Sent off "+str(request)+" to "+str(tkey[-1].getpeername())
  
                 for ifd,evtype in inputready:
                     if not (evtype & (select.POLLIN | select.POLLPRI)):
@@ -108,11 +116,11 @@ class ChatClient(object):
                             break
                         else:
                             if isinstance(data,ServerHostAlertMessage):
-                                print "I'm connecting here. If you see this twice, there is a problem"
                                 self.sendSockets={}
                                 hostName=data.myHostName
                                 data=data.myHostInfo
                                 haddr,hport=data
+				self.numToBase[hostName]=data
                                 self.sendSockets[(haddr,hport)]={}
                                 try:
                                     for i in range(self.numSets):
@@ -131,6 +139,7 @@ class ChatClient(object):
                                         if(not self.hostsmap.has_key(hostName)):
                                             self.hostsmap[hostName]={}
                                         self.hostsmap[hostName][i if i!=(self.numSets-1) else -1]=newsocket
+					
                                 except socket.error, e:
                                     print 'problem at 2'
                                     print 'Could not connect to chat server @%d' % self.tport
@@ -174,7 +183,6 @@ class ChatClient(object):
 
                     elif i==self.controlChannel:
                         print "Foo?"
-                        hostSock="Puppies are great"
                         #if not self.ephemeralSockets.has_key(i):
                         #  self.ephemeralSockets[i]=hostSock
                         hostSock,toss=i.accept()
@@ -187,14 +195,23 @@ class ChatClient(object):
                         if isinstance(data,ClientRequestDataMessage):
                           dataset=data.myDataSet
                           element=data.myElement
+			  response=ClientResponseMessage()
+			  if(self.dataSetMap[dataset].myElements.has_key(element)):
+				response.myKeepable=self.dataSetMap[dataset].checkRequests(element)
+				response.myElement=self.dataSetMap[dataset].myElements[element]
+			        response.myDataSet=self.dataSetMap[dataset].myName
+			  pdb.set_trace()
+			  send(hostSock,response)	
+			  print "Done???!?!!!"  
 #                        pdb.set_trace()
-                        print data
-                        print "WATWAT!!"
 
                     elif i in self.myListeners: #listensocket
-                        hostSock, toss = i.accept()
+			hostSock, toss = i.accept()
 #                       pdb.set_trace()
                         print "Received packet from other host"
+                        print "Received packet from other host"
+                        print "Received packet from other host"
+
                         #pdb.set_trace()
                         thing3=0
                         data = receive(hostSock)
@@ -210,7 +227,9 @@ class ChatClient(object):
                 print 'Interrupted.'
                 self.sock.close()
                 break
-
+	    except socket.error, e:
+		print "Socket error"
+		pdb.set_trace()
 
 if __name__ == "__main__":
     import sys

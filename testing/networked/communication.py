@@ -21,11 +21,9 @@ class DataSet:
         return False;
       else:
         if len(self.pastRequests)==REQUESTS_CACHED:
-          self.pastRequests=self.pastRequests[1:]
-          self.pastRequests.append(element)
-          return True
-        else:
-          toss=2    
+          self.pastRequests=self.pastRequests[:-1]
+        self.pastRequests.insert(0,element)
+      return True
     def numElements(self):
         #return len(self.myElements.keys())
         return DATASIZE_PER_HOST
@@ -72,7 +70,7 @@ class ClientRequestDataMessage(Message):
 
 class ClientResponseMessage(Message):
     #element will be none if we don't have the element, the element otherwise (imagine that)
-    def __init__(self,mid=5,element=None, allowKeep=True):
+    def __init__(self,mid=5,element=None, allowKeep=True,dataSet=None):
         self.myId=mid
         self.myDataSet=dataSet
         self.myElement=element
