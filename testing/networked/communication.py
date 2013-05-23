@@ -33,10 +33,10 @@ class ServerSayGoMessage(Message):
         self.myId=0
 
 class ServerHostAlertMessage(Message):
-    def __init__(self,mid=1,hostInfo=None):
+    def __init__(self,mid=1,hostInfo=None,hostName=None):
         self.myId=mid
         self.myHostInfo=hostInfo
-
+	self.myHostName=hostName
 #This tells a host "listen on this port for messages." This is a bit iffy
 class ServerHostListenMessage(Message):
     def __init__(self,mid=2,listenInfo=None,numPorts=0):
