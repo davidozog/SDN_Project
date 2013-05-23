@@ -94,11 +94,11 @@ class ChatServer(object):
                     listenMessage=ServerHostListenMessage(listenInfo=hostPort+1,numPorts=NUMSETS+1)
                     print str(NUMSETS+1)
                     send(client,listenMessage)
-			
+
                     if(self.clients==NUMCLIENTS):
                         if(phase==0):
-			    import time
-			    time.sleep(0.5)
+                            import time
+                            time.sleep(0.5)
                             numFree=[]
                             #DISTRIBUTE DATASETS
                             for c in range(NUMCLIENTS):
@@ -136,7 +136,7 @@ class ChatServer(object):
                                 send(c,toSend)
                             #END DISTRIBUTE PROBABILITY DISTRIBUTIONS
                             phase=1
-			
+
                             for fromClient in self.clientmap.keys():
                                 loop=0
                                 for toClient in self.clientmap.keys():
@@ -149,6 +149,8 @@ class ChatServer(object):
                                         send(toClient,sendme)
                                     else:
                                         loop+=1
+                            for toClient in self.clientmap.keys():
+                              send(toClient,ServerSayGoMessage())
 
                     self.outputs.append(client)
 

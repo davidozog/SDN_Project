@@ -16,7 +16,16 @@ class DataSet:
         if init:
             for i in range(size):
                 self.myElements[i]=((self.myName,i,random.random()))
-
+    def checkRequests(self,element):
+      if(element in self.pastRequests):
+        return False;
+      else:
+        if len(self.pastRequests)==REQUESTS_CACHED:
+          self.pastRequests=self.pastRequests[1:]
+          self.pastRequests.append(element)
+          return True
+        else:
+          toss=2    
     def numElements(self):
         #return len(self.myElements.keys())
         return DATASIZE_PER_HOST
@@ -36,7 +45,7 @@ class ServerHostAlertMessage(Message):
     def __init__(self,mid=1,hostInfo=None,hostName=None):
         self.myId=mid
         self.myHostInfo=hostInfo
-	self.myHostName=hostName
+        self.myHostName=hostName
 #This tells a host "listen on this port for messages." This is a bit iffy
 class ServerHostListenMessage(Message):
     def __init__(self,mid=2,listenInfo=None,numPorts=0):
