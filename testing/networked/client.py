@@ -4,7 +4,7 @@ import socket
 import sys
 import select
 from communication import *
-import #pdb
+import pdb
 import random
 BUFSIZ = 1024
 #READ_ONLY = select.POLLIN | select.POLLPRI | select.POLLHUP | select.POLLERR
@@ -103,7 +103,8 @@ class ChatClient(object):
                     print "IFD= "+str(ifd)
                     if i == self.sock:
                         print "IFD IS OF SOCK"
-                        data = receive(self.sock)
+			tempsock,toss = self.sock.accept
+                        data = receive(tempsock)
                         print data
                         if not data:
                             print 'Shutting down.'
