@@ -3,6 +3,7 @@
 #!/usr/bin/env python
 
 """
+
 A basic, multiclient 'chat server' using Python's select module
 with interrupt handling.
 
@@ -25,7 +26,7 @@ NUMSETS=2
 ELEMENTSPERSET=100
 assert (NUMSETS*ELEMENTSPERSET)%NUMCLIENTS==0
 ELEMENTSPERHOST=(NUMSETS*ELEMENTSPERSET)/NUMCLIENTS
-class ChatServer(object):
+class MMP(object):
     """ Simple chat server using select """
 
     def __init__(self, port=3490, backlog=5):
@@ -45,7 +46,9 @@ class ChatServer(object):
         self.dataSetMap={}
         s=None
         # CONTROLLER SOCKET
-        for res in socket.getaddrinfo(HOST, PORT, socket.AF_UNSPEC, socket.SOCK_STREAM):
+        s = None
+        for res in socket.getaddrinfo(HOST, PORT, socket.AF_UNSPEC,
+                                    socket.SOCK_STREAM, 0, socket.AI_PASSIVE):
           af, socktype, proto, canonname, sa = res
           try:
             s = socket.socket(af, socktype, proto)
@@ -54,19 +57,20 @@ class ChatServer(object):
             s = None
             continue
           try:
-            s.connect(sa)
+            s.bind(sa)
+            s.listen(1)
           except socket.error as msg:
             s.close()
             s = None
             continue
-          print 'Made connection'
-          s.sendall('MMP is alive')
           break
         if s is None:
           print 'could not open socket'
           sys.exit(1)
-        else:
-          self.controllerSocket=s
+        #self.controllerSocket=s
+        conn, addr = s.accept()
+        print addr
+        self.controllerSocket=conn
         #END CONTROLLER SOCKET
         for i in range(NUMSETS):
             namea=i
@@ -107,14 +111,17 @@ class ChatServer(object):
 
             for s in inputready:
                 if s==self.controllerSocket:
-                  print 'Received Data From Controller1'
+                  #pdb.set_trace()
+                  #print 'Received Data From Controller1'
                   data=self.controllerSocket.recv(8192)
-                  self.controllerSocket.sendall('MMP is alive')
-                  print 'Received Data From Controller2'
-                  if not data:
-                    continue
-                  flow_stat_data=unmarshall(data)
-                  flow_stat_data.printData()
+                  #pdb.set_trace()
+                  
+                  #self.controllerSocket.sendall('MMP is alive')
+                  if(data):
+                    print 'Received Data From Controller2'
+                  if data:
+                    flow_stat_data=unmarshall(data)
+                    flow_stat_data.printData()
                 elif s == self.server:
                     # handle the server socket
                     client, address = self.server.accept()
@@ -239,4 +246,4 @@ class ChatServer(object):
         self.server.close()
 
 if __name__ == "__main__":
-    ChatServer().serve()
+    MMP().serve()

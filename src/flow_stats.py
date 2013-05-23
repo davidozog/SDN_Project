@@ -43,46 +43,80 @@ from pox.openflow.of_json import *
 
 log = core.getLogger()
 
-HOST = 'localhost'        
+HOST = 'localhost'
 PORT = 50008              
-
+hasMMP=False
 def openSocket():
   s = None
-  for res in socket.getaddrinfo(HOST, PORT, socket.AF_UNSPEC,
-                              socket.SOCK_STREAM, 0, socket.AI_PASSIVE):
+  problem=True
+  for res in socket.getaddrinfo(HOST, PORT, socket.AF_UNSPEC, socket.SOCK_STREAM):
     af, socktype, proto, canonname, sa = res
     try:
       s = socket.socket(af, socktype, proto)
       s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     except socket.error as msg:
       s = None
+      problem=False
       continue
     try:
-      s.bind(sa)
-      s.listen(1)
+      s.connect(sa)
     except socket.error as msg:
+      problem=False
       s.close()
       s = None
       continue
+    print 'Made connection'
+    #s.sendall('Controller is up')
     break
   if s is None:
     print 'could not open socket'
-    sys.exit(1)
-  conn, addr = s.accept()
-  print 'Connected by', addr
-  return (conn, addr, s)
+    problem=False
+    #sys.exit(1)
+  return (s,problem)
+  #for res in socket.getaddrinfo(HOST, PORT, socket.AF_UNSPEC,
+  #                            socket.SOCK_STREAM, 0, socket.AI_PASSIVE):
+  #  af, socktype, proto, canonname, sa = res
+  #  try:
+  #    s = socket.socket(af, socktype, proto)
+  #    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+  #  except socket.error as msg:
+  #    s = None
+  #    continue
+  #  try:
+  #    s.bind(sa)
+  #    s.listen(1)
+  #  except socket.error as msg:
+  #    s.close()
+  #    s = None
+  #    continue
+  #  break
+  #if s is None:
+  #  print 'could not open socket'
+  #  sys.exit(1)
+  #conn, addr = s.accept()
+  #print 'Connected by', addr
+  #return (conn, addr, s)
 
 def closeSocket(s, conn):
   conn.close()
   s.close()
 
-def sendRecvMMP(s, conn, flow_data):
-  while 1:
-    incoming_data = conn.recv(1024)
-    if not incoming_data: continue 
-    else: 
-      conn.send(flow_data)
-      break
+def sendRecvMMP(s, flow_data):
+  #while 1:
+    #incoming_data = s.recv(1024)
+    #if not incoming_data: continue 
+    #else: 
+  global hasMMP
+  print hasMMP
+  try:
+    if(s is not None):
+      print 'Hey I\'m sending stuff to the MMP'
+      s.send('ERROR' if not flow_data else flow_data)
+    else:
+      (s,hasMMP)=openSocket()
+  except socket.error as e:
+    print "HA FUCKING HA HA HA"
+    #break
 
 # handler for timer function that sends the requests to all the
 # switches connected to the controller.
@@ -114,7 +148,7 @@ def _handle_flowstats_received (event):
   flow_packet = sp.FlowStatPacket(w_bytes, w_packet, w_flows, stats)
   #flow_packet.printData()
   flow_stat_data = marshall(flow_packet)
-  sendRecvMMP(sock, conn, flow_stat_data)
+  sendRecvMMP(sock, flow_stat_data)
 
 # handler to display port statistics received in JSON format
 def _handle_portstats_received (event):
@@ -125,7 +159,7 @@ def _handle_portstats_received (event):
   port_packet = sp.PortStatPacket(stats)
   #port_packet.printData()
   port_stat_data = marshall(port_packet)
-  sendRecvMMP(sock, conn, port_stat_data)
+  sendRecvMMP(sock, port_stat_data)
 
 
 class TestSwitch(EventMixin):
@@ -175,12 +209,11 @@ class Test(EventMixin):
     TestSwitch(event.connection)
 
 
-(conn, add, sock) = openSocket()
+(sock,hasMMP) = openSocket()
 
 # main functiont to launch the module
 def launch ():
   from pox.lib.recoco import Timer
-
   # attach handsers to listners
   core.openflow.addListenerByName("FlowStatsReceived", 
     _handle_flowstats_received) 
