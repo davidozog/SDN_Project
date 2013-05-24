@@ -117,7 +117,7 @@ def sendRecvMMP(s, flow_data):
       (s,hasMMP)=openSocket()
       #import pdb; pdb.set_trace()
   except socket.error as e:
-    print "HA FUCKING HA HA HA"
+    print "Socket error"
     #break
   return s
 

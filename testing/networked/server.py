@@ -137,7 +137,9 @@ class MMP(object):
                     hostAddr,hostPort=address
                     listenMessage=ServerHostListenMessage(listenInfo=hostPort+1,numPorts=NUMSETS+1)
                     print str(NUMSETS+1)
+                    print "Sending listen message to client"
                     send(client,listenMessage)
+                    print "Sent listen message to client"
 
                     if(self.clients==NUMCLIENTS):
                         if(phase==0):
