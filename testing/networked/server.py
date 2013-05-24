@@ -18,8 +18,8 @@ from communication import *
 import pdb
 import random
 import StatPacket
-HOST='localhost'
-PORT=50008
+HOST = '192.168.1.124'
+PORT = 50009
 BUFSIZ = 1024
 NUMCLIENTS=2
 NUMSETS=2
@@ -44,36 +44,32 @@ class MMP(object):
         signal.signal(signal.SIGINT, self.sighandler)
         self.distributionMap={}
         self.dataSetMap={}
-        s=None
         # CONTROLLER SOCKET
-        s = None
-        for res in socket.getaddrinfo(HOST, PORT, socket.AF_UNSPEC,
-                                    socket.SOCK_STREAM, 0, socket.AI_PASSIVE):
-          af, socktype, proto, canonname, sa = res
-          try:
-            s = socket.socket(af, socktype, proto)
-            s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-          except socket.error as msg:
-            s = None
-            continue
-          try:
-            print 'bound'
-            s.bind(('',50008))
-            s.listen(1)
-          except socket.error as msg:
-            s.close()
-            s = None
-            continue
-          break
+        try:
+          s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+          s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        except socket.error as msg:
+          s = None
+          print 'you suck'
+        try:
+          s.bind((HOST,PORT))
+          s.listen(1)
+          print 'bound'
+        except socket.error as msg:
+          s.close()
+          s = None
+          print 'you really suck'
         if s is None:
           print 'could not open socket'
           sys.exit(1)
-        #self.controllerSocket=s
+        self.controllerSocket=s
         print 'accepting'
         conn, addr = s.accept()
         print 'accepted'
         print addr
         self.controllerSocket=conn
+        print self.controllerSocket
+
         #END CONTROLLER SOCKET
         for i in range(NUMSETS):
             namea=i
@@ -100,6 +96,7 @@ class MMP(object):
 
         inputs = [self.server,sys.stdin,self.controllerSocket]
         self.outputs = []
+        print self.controllerSocket
 
         running = 1
         phase=0

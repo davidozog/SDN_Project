@@ -43,32 +43,31 @@ from pox.openflow.of_json import *
 
 log = core.getLogger()
 
-HOST = '10.0.0.1'
-PORT = 50008              
+HOST = '192.168.1.124'
+PORT = 50009              
 hasMMP=False
+s = None
 def openSocket():
-  s = None
   problem=True
-  for res in socket.getaddrinfo(HOST, PORT, socket.AF_UNSPEC, socket.SOCK_STREAM):
-    af, socktype, proto, canonname, sa = res
-    try:
-      s = socket.socket(af, socktype, proto)
-      s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-      s.setblocking(0)
-    except socket.error as msg:
-      s = None
-      problem=False
-      continue
-    try:
-      s.connect(('10.0.0.1',50008))
-    except socket.error as msg:
-      problem=False
-      s.close()
-      s = None
-      continue
-    print 'Made connection'
-    #s.sendall('Controller is up')
-    break
+  try:
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    #s.setblocking(0)
+    s.settimeout(1)
+  except socket.error as msg:
+    s = None
+    problem=False
+    print 'controller sucks'
+  try:
+    print 'CONNECTING'
+    s.connect((HOST,PORT))
+    print 'connecTED'
+  except socket.error as msg:
+    problem=False
+    s.close()
+    s = None
+    print 'controller really sucks'
+  #s.sendall('Controller is up')
   if s is None:
     print 'could not open socket'
     problem=False
