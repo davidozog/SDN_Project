@@ -57,7 +57,8 @@ class MMP(object):
             s = None
             continue
           try:
-            s.bind(sa)
+            print 'bound'
+            s.bind(('',50008))
             s.listen(1)
           except socket.error as msg:
             s.close()
@@ -68,7 +69,9 @@ class MMP(object):
           print 'could not open socket'
           sys.exit(1)
         #self.controllerSocket=s
+        print 'accepting'
         conn, addr = s.accept()
+        print 'accepted'
         print addr
         self.controllerSocket=conn
         #END CONTROLLER SOCKET

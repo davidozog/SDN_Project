@@ -43,7 +43,7 @@ from pox.openflow.of_json import *
 
 log = core.getLogger()
 
-HOST = 'localhost'
+HOST = '10.0.0.1'
 PORT = 50008              
 hasMMP=False
 def openSocket():
@@ -54,12 +54,13 @@ def openSocket():
     try:
       s = socket.socket(af, socktype, proto)
       s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+      s.setblocking(0)
     except socket.error as msg:
       s = None
       problem=False
       continue
     try:
-      s.connect(sa)
+      s.connect(('10.0.0.1',50008))
     except socket.error as msg:
       problem=False
       s.close()
@@ -113,10 +114,13 @@ def sendRecvMMP(s, flow_data):
       print 'Hey I\'m sending stuff to the MMP'
       s.send('ERROR' if not flow_data else flow_data)
     else:
+      print 'reconnecting...'
       (s,hasMMP)=openSocket()
+      #import pdb; pdb.set_trace()
   except socket.error as e:
     print "HA FUCKING HA HA HA"
     #break
+  return s
 
 # handler for timer function that sends the requests to all the
 # switches connected to the controller.
@@ -148,7 +152,8 @@ def _handle_flowstats_received (event):
   flow_packet = sp.FlowStatPacket(w_bytes, w_packet, w_flows, stats)
   #flow_packet.printData()
   flow_stat_data = marshall(flow_packet)
-  sendRecvMMP(sock, flow_stat_data)
+  global sock
+  sock = sendRecvMMP(sock, flow_stat_data)
 
 # handler to display port statistics received in JSON format
 def _handle_portstats_received (event):
@@ -159,7 +164,8 @@ def _handle_portstats_received (event):
   port_packet = sp.PortStatPacket(stats)
   #port_packet.printData()
   port_stat_data = marshall(port_packet)
-  sendRecvMMP(sock, port_stat_data)
+  global sock
+  sock = sendRecvMMP(sock, port_stat_data)
 
 
 class TestSwitch(EventMixin):
@@ -193,6 +199,7 @@ class TestSwitch(EventMixin):
   
       log.debug("installing flow for %s.%i -> %s.%i" %
                  (packet.src, event.port, packet.dst, port))
+      log.debug("number of flows: " + str(len(self.macToPort))) 
       msg = of.ofp_flow_mod()
       msg.match = of.ofp_match.from_packet(packet, event.port)
       msg.idle_timeout = 10
@@ -209,6 +216,7 @@ class Test(EventMixin):
     TestSwitch(event.connection)
 
 
+#import pdb; pdb.set_trace()
 (sock,hasMMP) = openSocket()
 
 # main functiont to launch the module
