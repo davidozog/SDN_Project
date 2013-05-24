@@ -41,8 +41,9 @@ class ChatServer(object):
         self.distributionMap={}
         self.dataSetMap={}
         for i in range(NUMSETS):
-            name=i
-            self.dataSetMap[name]=DataSet(name=name,init=True,size=ELEMENTSPERSET)
+            namea=i
+            print 'FLIBBERTIGIBBET '+str(namea)+','+str(i)
+            self.dataSetMap[namea]=DataSet(name=namea,init=True,size=ELEMENTSPERSET)
 
     def sighandler(self, signum, frame):
         # Close the server
@@ -103,7 +104,12 @@ class ChatServer(object):
                             #DISTRIBUTE DATASETS
                             for c in range(NUMCLIENTS):
                                 numFree.append(ELEMENTSPERHOST)
+                            #pdb.set_trace()
                             for s in range(NUMSETS):
+                                for key in self.dataSetMap[s].myElements.keys():
+                                  t0,t1,t2=self.dataSetMap[s].myElements[key]
+                                  self.dataSetMap[s].myElements[key]=(s,t1,t2)
+                                print str(s)+': '+str(self.dataSetMap[s].myElements)
                                 print "Splitting set "+str(s)
                                 builtSets=[]
                                 for c in range(NUMCLIENTS):
@@ -116,9 +122,10 @@ class ChatServer(object):
                                     builtSets[ourLuckyWinner][idx]=self.dataSetMap[s].myElements[idx]
                                     numFree[ourLuckyWinner]-=1
                                 for setnum in range(NUMCLIENTS):
+                                    print "Sending off set " + str(self.dataSetMap[s].myName)
                                     tempset=DataSet(name=self.dataSetMap[s].myName,init=False,size=ELEMENTSPERHOST,elements=builtSets[setnum])
                                     toSend=ServerRegisterDataSet(name=tempset.myName,elementSet=tempset)
-                                    print "Sending off set named" +str(tempset.myName)
+                                    print "Sending off set w/elements named" +str(tempset.myElements[tempset.myElements.keys()[0]][0])
                                     print self.clientmap[self.clientmap.keys()[setnum]]
                                     send(self.clientmap.keys()[setnum],toSend)
                             #END DISTRIBUTE DATASETS
@@ -150,7 +157,7 @@ class ChatServer(object):
                                     else:
                                         loop+=1
                             for toClient in self.clientmap.keys():
-                              send(toClient,ServerSayGoMessage())
+                                send(toClient,ServerSayGoMessage())
 
                     self.outputs.append(client)
 
