@@ -133,8 +133,8 @@ def _timer_func ():
 # structure of event.stats is defined by ofp_flow_stats()
 def _handle_flowstats_received (event):
   stats = flow_stats_to_list(event.stats)
-  log.debug("FlowStatsReceived from %s: %s", 
-    dpidToStr(event.connection.dpid), stats)
+  #log.debug("FlowStatsReceived from %s: %s", 
+  #  dpidToStr(event.connection.dpid), stats)
 
   # Get number of bytes/packets in flows for web traffic only
   w_bytes = 0
@@ -145,10 +145,11 @@ def _handle_flowstats_received (event):
       w_bytes += f.byte_count
       w_packet += f.packet_count
       w_flows += 1
-  log.info("Web traffic from %s: %s bytes (%s packets) over %s flows", 
-    dpidToStr(event.connection.dpid), w_bytes, w_packet, w_flows)
+  #log.info("Web traffic from %s: %s bytes (%s packets) over %s flows", 
+  #  dpidToStr(event.connection.dpid), w_bytes, w_packet, w_flows)
 
-  flow_packet = sp.FlowStatPacket(w_bytes, w_packet, w_flows, stats)
+  flow_packet_whole = sp.FlowStatPacket(w_bytes, w_packet, w_flows, stats)
+  flow_packet = flow_packet_whole.getPacket();
   #flow_packet.printData()
   flow_stat_data = marshall(flow_packet)
   global sock
@@ -186,8 +187,8 @@ class TestSwitch(EventMixin):
     packet = event.parse()
   
     self.macToPort[packet.src] = event.port 
-    log.debug("Incoming: %s.%s, Destination: %s" % 
-               (packet.src,event.port,packet.dst))
+    #log.debug("Incoming: %s.%s, Destination: %s" % 
+    #           (packet.src,event.port,packet.dst))
   
     # Install flow table entry in the switch so this flow goes
     # out the appropriate port
@@ -196,9 +197,9 @@ class TestSwitch(EventMixin):
     else:
       port = self.macToPort[packet.dst]
   
-      log.debug("installing flow for %s.%i -> %s.%i" %
-                 (packet.src, event.port, packet.dst, port))
-      log.debug("number of flows: " + str(len(self.macToPort))) 
+      #log.debug("installing flow for %s.%i -> %s.%i" %
+      #           (packet.src, event.port, packet.dst, port))
+      #log.debug("number of flows: " + str(len(self.macToPort))) 
       msg = of.ofp_flow_mod()
       msg.match = of.ofp_match.from_packet(packet, event.port)
       msg.idle_timeout = 10
@@ -224,8 +225,8 @@ def launch ():
   # attach handsers to listners
   core.openflow.addListenerByName("FlowStatsReceived", 
     _handle_flowstats_received) 
-  core.openflow.addListenerByName("PortStatsReceived", 
-    _handle_portstats_received) 
+  #core.openflow.addListenerByName("PortStatsReceived", 
+  #  _handle_portstats_received) 
   core.registerNew(Test)
 
   # timer set to execute every five seconds

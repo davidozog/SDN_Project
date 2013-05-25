@@ -13,7 +13,7 @@ class StatPacket():
     for i in range( self.num_stats ):
       print "\n Statistic #" + str(i)
       for k,v in self.stats[i].iteritems():
-        print "   " + k + " : " + str(v)
+        print "   " + k + " : " + str(v)+ "\n"
   
 
 
@@ -91,3 +91,16 @@ class FlowStatPacket(StatPacket):
     measurement_id += 1
     self.ID = str(measurement_id)
 
+  def getPacket(self):
+    tpsrc = []
+    bytemap={}
+    if (self.num_stats==0):
+      return "None"
+    for p in range(0,self.num_stats):
+      if self.stats[p]['match'].has_key('tp_src'):
+        if bytemap.has_key(self.stats[p]['match']['tp_src']):
+          bytemap[self.stats[p]['match']['tp_src']]=bytemap[self.stats[p]['match']['tp_src']]+self.stats[p]['packet_count']
+        else:
+          bytemap[self.stats[p]['match']['tp_src']]=self.stats[p]['packet_count']
+    print bytemap
+    return bytemap

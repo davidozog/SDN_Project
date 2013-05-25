@@ -36,6 +36,7 @@ class MMP(object):
         # Output socket list
         self.outputs = []
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.interestingPorts=[]
         self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.server.bind(('',port))
         print 'Listening to port',port,'...'
@@ -92,16 +93,22 @@ class MMP(object):
         info = self.clientmap[client]
         host, name = info[0][0], info[1]
         return "foo"
+    def cleanDict(self,dictionary):
+        newDict={}
+        for key in dictionary.keys():
+          if key in self.interestingPorts:
+            newDict[key]=dictionary[key]
+        return newDict
     def serve(self):
 
         inputs = [self.server,sys.stdin,self.controllerSocket]
         self.outputs = []
         print self.controllerSocket
-
+        import time
         running = 1
         phase=0
         while running:
-
+            time.sleep(0.01)
             try:
                 inputready,outputready,exceptready = select.select(inputs, self.outputs, [])
             except select.error, e:
@@ -113,15 +120,20 @@ class MMP(object):
                 if s==self.controllerSocket:
                   #pdb.set_trace()
                   #print 'Received Data From Controller1'
-                  data=self.controllerSocket.recv(8192)
+                  data=self.controllerSocket.recv(65536)
                   #pdb.set_trace()
                   
                   #self.controllerSocket.sendall('MMP is alive')
                   if(data):
                     print 'Received Data From Controller2'
+                    print str(len(data))
                   if data:
                     flow_stat_data=unmarshall(data)
-                    flow_stat_data.printData()
+                  if isinstance(flow_stat_data,dict):
+                    flow_stat_data=self.cleanDict(flow_stat_data)
+                  print flow_stat_data
+                    #import pdb; pdb.set_trace()
+                    #flow_stat_data.printData()
                 elif s == self.server:
                     # handle the server socket
                     client, address = self.server.accept()
@@ -136,6 +148,10 @@ class MMP(object):
                     self.clientmap[client] = (address, cname)
                     hostAddr,hostPort=address
                     listenMessage=ServerHostListenMessage(listenInfo=hostPort+1,numPorts=NUMSETS+1)
+                    
+                    for i in range (1,NUMSETS+2):
+                      self.interestingPorts.append(hostPort+i)
+                
                     print str(NUMSETS+1)
                     print "Sending listen message to client"
                     send(client,listenMessage)
@@ -171,6 +187,7 @@ class MMP(object):
                                     tempset=DataSet(name=self.dataSetMap[s].myName,init=False,size=ELEMENTSPERHOST,elements=builtSets[setnum])
                                     toSend=ServerRegisterDataSet(name=tempset.myName,elementSet=tempset)
                                     print "Sending off set w/elements named" +str(tempset.myElements[tempset.myElements.keys()[0]][0])
+                                    time.sleep(0.5)
                                     print self.clientmap[self.clientmap.keys()[setnum]]
                                     send(self.clientmap.keys()[setnum],toSend)
                             #END DISTRIBUTE DATASETS
@@ -198,11 +215,17 @@ class MMP(object):
                                         prt+=1
                                         details=(addr,prt)
                                         sendme=ServerHostAlertMessage(hostInfo=details,hostName=loop)
+                                        print "Alerting "+str(self.clientmap[fromClient])+" to "+str(self.clientmap[toClient])
                                         send(toClient,sendme)
+                                        print "Alerted"+str(self.clientmap[fromClient])+" to "+str(self.clientmap[toClient])
+                                        time.sleep(3)
                                     else:
                                         loop+=1
                             for toClient in self.clientmap.keys():
+                                print "Sending say go"
+                                time.sleep(1)
                                 send(toClient,ServerSayGoMessage())
+                                print "Sent say go"
 
                     self.outputs.append(client)
 
