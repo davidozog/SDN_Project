@@ -18,7 +18,6 @@ class ChatClient(object):
 
     def __init__(self, name, host='127.0.0.1', port=3490):
         self.myProbabilityMap = {}
-        random.seed(105)
         self.myReturnProbabilities = {}
         self.name = name
         # Quit flag
@@ -199,7 +198,7 @@ class ChatClient(object):
                             elif isinstance(data,ServerProbabilityUpdateMessage):
                                 self.myProbabilityMap=data.myDistribution
                             elif isinstance(data,ServerSayGoMessage):
-                                phase+=1
+                                phase=1
                                 time.sleep(1)
                             #elif isinstance(
                             else:
@@ -255,7 +254,7 @@ class ChatClient(object):
                           dataset=setname
                           self.gotMyElement=True
                           numRcvd+=1
-                          #print "Receiving totally lemitigate data "+str(data.myElement)
+                          print "Receiving totally lemitigate data "+str(data.myElement)
                           if(data.myKeepable):
                             toKeep=self.chooseReturn(self.myProbabilityMap,setname)
                             if(random.random()>toKeep):
@@ -283,8 +282,10 @@ class ChatClient(object):
                               self.fdmap[self.sendSockets[addr][dataset].fileno()]=self.sendSockets[addr][dataset]
                               send(self.sendSockets[addr][dataset],request)
                               del self.dataSetMap[rset].myElements[rElement]
+                          print 'Done receiving data'
                         if isinstance(data,ClientRequestDeletion):
-                          #apeprint "Received delete request"
+                          
+                          print "Received delete request"
                           dataset=data.myDataSet
                           element=data.myElement
                           if(self.dataSetMap[dataset].myElements.has_key(element)):
@@ -299,6 +300,7 @@ class ChatClient(object):
                           else:
                               print "Warning: received request to delete nonexistent element"
                               pdb.set_trace()
+                          print 'Finished dealing with delete request'+str(dataset)+','+str(element)
                         #hostSock.close()
                     #elif i==self.controlChannel:
                 #       i.accept()

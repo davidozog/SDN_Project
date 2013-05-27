@@ -35,6 +35,8 @@ class MMP(object):
         # Client map
         random.seed(105)
         self.clientmap = {}
+        self.portToHostDataSet = {}
+        self.hostDataToPort= {}
         # Output socket list
         self.outputs = []
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -98,8 +100,15 @@ class MMP(object):
     def cleanDict(self,dictionary):
         newDict={}
         for key in dictionary.keys():
-          if key in self.interestingPorts:
-            newDict[key]=dictionary[key]
+          addr,prt=key
+          nkey=(str(addr),prt)
+          if prt in self.interestingPorts:
+            print str(key)+','+str(nkey)
+            if not newDict.has_key(nkey):
+              newDict[nkey]=dictionary[key]
+            else:
+              print 'Adding???'
+              newDict[nkey]=newDict[nkey]+dictionary[key]
         return newDict
     def serve(self):
 
@@ -133,7 +142,20 @@ class MMP(object):
                     flow_stat_data=unmarshall(data)
                   if isinstance(flow_stat_data,dict):
                     flow_stat_data=self.cleanDict(flow_stat_data)
-                  print flow_stat_data
+                    sepStr='    '
+                    for key in self.hostDataToPort.keys():
+                      sys.stdout.write(str(key)+sepStr)
+                    sys.stdout.write('\n')  
+                    for key in range(NUMCLIENTS):
+                      sys.stdout.write(str(key)+sepStr)
+                      for setName in range(NUMSETS):
+                        if(flow_stat_data.has_key( self.hostDataToPort[(key,setName)])):
+                          sys.stdout.write(str(flow_stat_data[self.hostDataToPort[(key,setName)]])+sepStr)
+                        else:
+                          sys.stdout.write('0'+sepStr)
+                      sys.stdout.write('\n')
+                    sys.stdout.write('\n')
+                    print flow_stat_data
                     #import pdb; pdb.set_trace()
                     #flow_stat_data.printData()
                 elif s == self.server:
@@ -153,7 +175,9 @@ class MMP(object):
                     
                     for i in range (1,NUMSETS+2):
                       self.interestingPorts.append(hostPort+i)
-                
+                      if(i<=NUMSETS):
+                        self.portToHostDataSet[hostPort+i]=(self.clients-1,self.dataSetMap.values()[i-1].myName)
+                        self.hostDataToPort[(self.clients-1,self.dataSetMap.values()[i-1].myName)]=(hostAddr,hostPort+i)
                     print str(NUMSETS+1)
                     print "Sending listen message to client"
                     send(client,listenMessage)
@@ -194,15 +218,30 @@ class MMP(object):
                                     send(self.clientmap.keys()[setnum],toSend)
                             #END DISTRIBUTE DATASETS
                             #DISTRIBUTE PROBABILITY DISTRIBUTIONS
+                            oi=0
+                            ii=0
                             for c in self.clientmap.keys():
+                                
                                 probDist={}
                                 sum=0
                                 for s in self.dataSetMap.keys():
                                     weight=random.random()
                                     probDist[s]=weight
                                     sum+=weight
+                                    ii+=1
                                 for s in self.dataSetMap.keys():
                                     probDist[s]=probDist[s]/sum
+                                oi+=1
+                                if(oi==1):
+                                  probDist[0]=0.97
+                                  probDist[1]=0.01
+                                  probDist[2]=0.01
+                                  probDist[3]=0.01
+                                elif(oi==2):
+                                  probDist[0]=0.01
+                                  probDist[1]=0.01
+                                  probDist[2]=0.01
+                                  probDist[3]=0.97
                                 toSend=ServerProbabilityUpdateMessage(probId=0,distribution=probDist)
                                 send(c,toSend)
                             #END DISTRIBUTE PROBABILITY DISTRIBUTIONS
