@@ -18,6 +18,7 @@ class ChatClient(object):
 
     def __init__(self, name, host='127.0.0.1', port=3490):
         self.myProbabilityMap = {}
+        random.seed(105)
         self.myReturnProbabilities = {}
         self.name = name
         # Quit flag
@@ -82,8 +83,10 @@ class ChatClient(object):
         passNum=0
         while not self.flag:
             try:
-                if(passNum%10==2):
+                if(passNum%200==2):
                   print 'At pass '+str(passNum)+' I received '+str(numRcvd)+' elements (cumulatively)'
+                  for key in self.dataSetMap.keys():
+                    print 'In dataset '+str(key)+':'+str(len(self.dataSetMap[key].myElements.keys()))
                 sys.stdout.flush()
                 inputs = [self.sock]
                 # Wait for input from stdin & socket
@@ -124,6 +127,8 @@ class ChatClient(object):
                     idle=0
                     i=self.fdmap[ifd]
                     #apeprint "IFD= "+str(ifd)
+                    if(phase%2==0) and (phase>0):
+                      pdb.set_trace()
                     if i == self.sock:
                         #apeprint "IFD IS OF SOCK"
                         #tempsock,toss = self.sock.accept()
@@ -194,7 +199,7 @@ class ChatClient(object):
                             elif isinstance(data,ServerProbabilityUpdateMessage):
                                 self.myProbabilityMap=data.myDistribution
                             elif isinstance(data,ServerSayGoMessage):
-                                phase=1
+                                phase+=1
                                 time.sleep(1)
                             #elif isinstance(
                             else:
@@ -250,42 +255,49 @@ class ChatClient(object):
                           dataset=setname
                           self.gotMyElement=True
                           numRcvd+=1
-                          print "Receiving totally lemitigate data "+str(data.myElement)
+                          #print "Receiving totally lemitigate data "+str(data.myElement)
                           if(data.myKeepable):
                             toKeep=self.chooseReturn(self.myProbabilityMap,setname)
                             if(random.random()>toKeep):
                               self.dataSetMap[dataset].myElements[element]=data.myElement
                               bestEffort=0
                               rset=dataset
+                              numSets=len(self.dataSetMap.keys())
                               mySet=""
                               while(rset==dataset) and (bestEffort<1000):
                                 rset=self.dataSetMap[choiceSet].myName
+                                temp=int(random.random()*numSets)
+                                choiceSet=self.dataSetMap.keys()[temp]
                                 bestEffort+=1
                               rElement=-1 if rset!=dataset else self.dataSetMap[rset].myElements[self.dataSetMap[rset].myElements.keys()[0] ]
                               while (bestEffort<1000) and (not self.dataSetMap[rset].myElements.has_key(rElement)):
                                 rElement=self.chooseElement(self.dataSetMap[rset].myName)
                                 bestEffort+=1 
-                                 
+                              replacementElement=self.dataSetMap[rset].myElements[rElement] 
                               #apeprint "Requesting deletion of "+str(dataset)+", element "+str(element)
-                              request=ClientRequestDeletion(dataSet=data.myDataSet,element=element,replacement=rElement)
+                              request=ClientRequestDeletion(dataSet=data.myDataSet,element=element,replacement=replacementElement)
                               self.sendSockets[addr][dataset].close()
                               self.sendSockets[addr][dataset]= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                               taddr,tprt=self.numToBase[addr]
                               self.sendSockets[addr][dataset].connect((addr,tprt+dataset))
                               self.fdmap[self.sendSockets[addr][dataset].fileno()]=self.sendSockets[addr][dataset]
                               send(self.sendSockets[addr][dataset],request)
+                              del self.dataSetMap[rset].myElements[rElement]
                         if isinstance(data,ClientRequestDeletion):
                           #apeprint "Received delete request"
                           dataset=data.myDataSet
                           element=data.myElement
-                          #apeprint "Received request to delete "+str(dataset)+", element "+str(element)
                           if(self.dataSetMap[dataset].myElements.has_key(element)):
                               del self.dataSetMap[dataset].myElements[element]
                               replacement=data.myReplacement
                               name,junk,stuff=replacement
-                              self.dataSetMap[name].myElements[junk]=replacement
+                              if(self.dataSetMap[name].myElements.has_key(junk)):
+                                print "Error in replacement, received duplicate"
+                                pdb.set_trace()
+                              else:
+                                self.dataSetMap[name].myElements[junk]=replacement
                           else:
-                              #apeprint "Warning: received request to delete nonexistent element"
+                              print "Warning: received request to delete nonexistent element"
                               pdb.set_trace()
                         #hostSock.close()
                     #elif i==self.controlChannel:

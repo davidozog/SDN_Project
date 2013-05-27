@@ -7,7 +7,7 @@ import random
 marshall = cPickle.dumps
 unmarshall = cPickle.loads
 DATASIZE_PER_HOST=100
-REQUESTS_CACHED=10
+REQUESTS_CACHED=50
 class DataSet:
     def __init__(self,name="None Given",init=True,size=DATASIZE_PER_HOST,elements={}):
         print 'Creating dataset named '+str(name)
@@ -76,7 +76,9 @@ class ClientResponseMessage(Message):
         self.myDataSet=dataSet
         self.myElement=element
         self.myKeepable=allowKeep
-
+        self.padList=[]
+        for i in range(100):
+          self.padList.append(i)
 class ClientRequestDeletion(Message):
     #dataset says which dataset to be aware of
     #element says "delete THAT element in the dataset"

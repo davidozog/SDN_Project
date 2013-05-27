@@ -17,13 +17,14 @@ import signal
 from communication import *
 import pdb
 import random
+import time
 import StatPacket
 HOST = '192.168.1.124'
 PORT = 50009
 BUFSIZ = 1024
 NUMCLIENTS=2
-NUMSETS=2
-ELEMENTSPERSET=100
+NUMSETS=4
+ELEMENTSPERSET=150
 assert (NUMSETS*ELEMENTSPERSET)%NUMCLIENTS==0
 ELEMENTSPERHOST=(NUMSETS*ELEMENTSPERSET)/NUMCLIENTS
 class MMP(object):
@@ -32,6 +33,7 @@ class MMP(object):
     def __init__(self, port=3490, backlog=5):
         self.clients = 0
         # Client map
+        random.seed(105)
         self.clientmap = {}
         # Output socket list
         self.outputs = []
@@ -223,6 +225,7 @@ class MMP(object):
                                         loop+=1
                             for toClient in self.clientmap.keys():
                                 print "Sending say go"
+                                self.startTime=time.time()
                                 time.sleep(1)
                                 send(toClient,ServerSayGoMessage())
                                 print "Sent say go"
@@ -232,7 +235,8 @@ class MMP(object):
                 elif s == sys.stdin:
                     # handle standard input
                     junk = sys.stdin.readline()
-                    running = 0
+                    for toClient in self.clientmap.keys():
+                      send(toClient,ServerSayGoMessage())
                 else:
                     # handle all other sockets
                     try:
