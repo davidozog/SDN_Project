@@ -97,11 +97,13 @@ class FlowStatPacket(StatPacket):
     if (self.num_stats==0):
       return "None"
     for p in range(0,self.num_stats):
-      filterStr='tp_src' 
-      if self.stats[p]['match'].has_key(filterStr):
-        index=(self.stats[p]['match']['nw_src'],self.stats[p]['match'][filterStr])
-        if bytemap.has_key(self.stats[p]['match'][filterStr]):
-          bytemap[index]=bytemap[index]+self.stats[p]['packet_count']
+      filterStr='dst' 
+      tp = 'tp_' + filterStr
+      nw = 'nw_' + 'src'
+      if self.stats[p]['match'].has_key(tp):
+        index=(self.stats[p]['match'][nw],self.stats[p]['match'][tp])
+        if bytemap.has_key(self.stats[p]['match'][tp]):
+          bytemap[index]=bytemap[index]+self.stats[p]['byte_count']
         else:
           bytemap[index]=self.stats[p]['byte_count']
     print bytemap

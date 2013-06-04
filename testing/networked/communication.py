@@ -7,7 +7,7 @@ import random
 marshall = cPickle.dumps
 unmarshall = cPickle.loads
 DATASIZE_PER_HOST=100
-REQUESTS_CACHED=50
+REQUESTS_CACHED=3
 class DataSet:
     def __init__(self,name="None Given",init=True,size=DATASIZE_PER_HOST,elements={}):
         print 'Creating dataset named '+str(name)
@@ -96,7 +96,9 @@ class ServerRegisterDataSet(Message):
         self.myId=mid
         self.myName=name
         self.myElements=elementSet
-
+class ClientAck(Message):
+    def __init__(self,mid=9):
+        self.myId=mid
 
 def send(channel, *args):
     buf = marshall(args)

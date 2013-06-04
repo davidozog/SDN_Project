@@ -57,7 +57,7 @@ def openSocket():
   except socket.error as msg:
     s = None
     problem=False
-    print 'controller sucks'
+    print 'controller could not set up MMP socket'
   try:
     print 'CONNECTING'
     s.connect((HOST,PORT))
@@ -66,7 +66,7 @@ def openSocket():
     problem=False
     s.close()
     s = None
-    print 'controller really sucks'
+    print 'controller could not connect to MMP'
   #s.sendall('Controller is up')
   if s is None:
     print 'could not open socket'
@@ -141,7 +141,7 @@ def _handle_flowstats_received (event):
   w_flows = 0
   w_packet = 0
   for f in event.stats:
-    if f.match.tp_dst == 80 or f.match.tp_src == 80:
+      print f.match.nw_src, f.match.tp_src, f.match.nw_dst, f.match.tp_dst, f.match.dl_dst
       w_bytes += f.byte_count
       w_packet += f.packet_count
       w_flows += 1
@@ -150,7 +150,7 @@ def _handle_flowstats_received (event):
 
   flow_packet_whole = sp.FlowStatPacket(w_bytes, w_packet, w_flows, stats)
   flow_packet = flow_packet_whole.getPacket();
-  #flow_packet.printData()
+#  flow_packet.printData()
   flow_stat_data = marshall(flow_packet)
   global sock
   sock = sendRecvMMP(sock, flow_stat_data)

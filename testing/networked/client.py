@@ -11,10 +11,11 @@ import asyncore
 import random
 import math
 BUFSIZ = 1024
+DEBUG = True
 #READ_ONLY = select.POLLIN | select.POLLPRI | select.POLLHUP | select.POLLERR
 READ_ONLY = select.POLLIN | select.POLLPRI
-class ChatClient(object):
-    """ A simple command line chat client using select """
+CONWAITTIME=0.4
+class Client(object):
 
     def __init__(self, name, host='127.0.0.1', port=3490):
         self.myProbabilityMap = {}
@@ -37,7 +38,7 @@ class ChatClient(object):
         try:
             self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.sock.connect((host,port))
-            #apeprint 'Connected to chat server@%d' % self.port
+            #apeprint 'Connected to server@%d' % self.port
             # Send my name..
             send(self.sock,ClientSayEhlo())
             #send(self.sock,'NAME: ' + self.name)
@@ -49,7 +50,7 @@ class ChatClient(object):
             #apeprint "SOCK FD "+str(self.sock.fileno())
         except socket.error, e:
             #apeprint 'problem at 1'
-            #apeprint 'Could not connect to chat server @%d' % self.port
+            #apeprint 'Could not connect to server @%d' % self.port
             sys.exit(1)
     def chooseSet(self,distribution):
         r = random.random()
@@ -83,15 +84,17 @@ class ChatClient(object):
         while not self.flag:
             try:
                 if(passNum%200==2):
+                  print self.myProbabilityMap
                   print 'At pass '+str(passNum)+' I received '+str(numRcvd)+' elements (cumulatively)'
                   for key in self.dataSetMap.keys():
-                    print 'In dataset '+str(key)+':'+str(len(self.dataSetMap[key].myElements.keys()))
+                   print 'In dataset '+str(key)+':'+str(len(self.dataSetMap[key].myElements.keys()))
                 sys.stdout.flush()
                 inputs = [self.sock]
                 # Wait for input from stdin & socket
                 #inputready, outputready,exceptrdy = select.poll(inputs, [],[])
                 inputready=[]
                 inputready= self.poller.poll(10)
+              
                 ##apeprint "Foofoofoo???"
                 idle+=1
                 if(phase==1) and (self.gotMyElement):
@@ -112,11 +115,11 @@ class ChatClient(object):
                             tkey[-1].close()
                             tkey[-1]= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                             self.fdmap[tkey[-1].fileno()]=tkey[-1]
-                            time.sleep(0.001)
                             tkey[-1].connect(peer)
                             #apeprint(tkey[-1].fileno())
                             #hostmap[key][-1].close()
                             send(self.hostsmap[key][-1],request)
+                            time.sleep(CONWAITTIME)
                             #apeprint "Sent off "+str(request)+" to "+str(tkey[-1].getpeername())
 
                 for ifd,evtype in inputready:
@@ -129,15 +132,17 @@ class ChatClient(object):
                     if(phase%2==0) and (phase>0):
                       pdb.set_trace()
                     if i == self.sock:
-                        #apeprint "IFD IS OF SOCK"
+                        if DEBUG: print 'S1'
                         #tempsock,toss = self.sock.accept()
                         data = receive(self.sock)
+                        if DEBUG: print 'S2'
                         #apeprint data
                         if not data:
                             #apeprint 'Shutting down.'
                             self.flag = True
                             break
                         else:
+                            print data
                             if isinstance(data,ServerHostAlertMessage):
                                 self.sendSockets={}
                                 hostName=data.myHostName
@@ -166,19 +171,22 @@ class ChatClient(object):
 
                                 except socket.error, e:
                                     #apeprint 'problem at 2'
-                                    #apeprint 'Could not connect to chat server @%d' % self.tport
-                                    print '======================='
-                                    #pdb.set_trace()
+                                    #apeprint 'Could not connect to server @%d' % self.tport
+                                   #apeprint '======================='
+                                    
+                                    tb=traceback.format_exc()
+                                    print tb
+                                    pdb.set_trace()
                             elif isinstance(data,ServerHostListenMessage):
                                 listenport=data.myListenInfo
 
                                 self.numSets=data.myNumPorts
                                 self.myListeners=[]
                                 for channel in range(self.numSets):
-                                    #apeprint "Listening on "+str(listenport+channel)
+                                   #apeprint "Listening on "+str(listenport+channel)
 
                                     listensocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-#                                    listensocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+                                    listensocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
                                     listensocket.setsockopt(socket.IPPROTO_TCP,socket.TCP_NODELAY,1)
                                     #apeprint listensocket
                                     listensocket.bind(('',listenport+channel))
@@ -190,6 +198,7 @@ class ChatClient(object):
                                         self.controlChannel=listensocket
                                     else:
                                         self.myListeners.append(listensocket)
+                                    send(self.sock, ClientAck())
                             elif isinstance(data,ServerRegisterDataSet):
                                 #numRcvd+=1
                                 #apeprint "modified my data map"
@@ -203,6 +212,8 @@ class ChatClient(object):
                             #elif isinstance(
                             else:
                                 #apeprint "Unknown packet type from server"
+                                tb=traceback.format_exc()
+                                print tb
                                 pdb.set_trace()
 
                     elif i==self.controlChannel:
@@ -213,7 +224,9 @@ class ChatClient(object):
                         addr,prt=toss
                         #else:
                         #  hostSock=self.ephemeralSockets[i]
+                        if DEBUG: print 'C1'
                         data = receive(hostSock)
+                        if DEBUG: print 'C2'
                         #apeprint data
                         #apeprint "Moo?"
                         if isinstance(data,ClientRequestDataMessage):
@@ -237,32 +250,59 @@ class ChatClient(object):
                             self.sendSockets[addr][dataset]= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                             taddr,tprt=self.numToBase[addr]
                             self.sendSockets[addr][dataset].connect((addr,tprt+dataset))
+                            #apeprint (tprt+dataset)
                             self.fdmap[self.sendSockets[addr][dataset].fileno()]=self.sendSockets[addr][dataset]
                             send(self.sendSockets[addr][dataset],response)
-                            
+                            time.sleep(CONWAITTIME)
+                        if isinstance(data,ClientRequestDeletion):
+                          
+                         #apeprint "Received delete request"
+                          dataset=data.myDataSet
+                          element=data.myElement
+                          if(self.dataSetMap[dataset].myElements.has_key(element)):
+                              del self.dataSetMap[dataset].myElements[element]
+                              replacement=data.myReplacement
+                              name,junk,stuff=replacement
+                              if(self.dataSetMap[name].myElements.has_key(junk)):
+                                print "Warning: Error in replacement, received duplicate"
+                                continue
+                                #pdb.set_trace()
+                              else:
+                                self.dataSetMap[name].myElements[junk]=replacement
+                          else:
+                              print "Warning: received request to delete nonexistent element"
+                              continue
+                              #pdb.set_trace()
+                         #apeprint 'Finished dealing with delete request'+str(dataset)+','+str(element)
                             #apeprint "Done???!?!!!"
                         #hostSock.close()
                     elif i in self.myListeners: #listensocket
                         hostSock, toss = i.accept()
+                       #apeprint 'FLIBBERSJKDFHSDKLHSDG' + str(hostSock.getsockname())
+                       #apeprint 'SLIBBERSHKSDLFJSDKFSD' + str(hostSock.getpeername())
                         addr,toss2=toss
                         #apeprint "Received packet from other host"
                         #pdb.set_trace()
                         thing3=0
+                        if DEBUG: print 'L1'
                         data = receive(hostSock)
+                        if DEBUG: print 'L2'
                         if isinstance(data,ClientResponseMessage) and data.myElement!=None:
                           setname,element,value=data.myElement
                           dataset=setname
                           self.gotMyElement=True
                           numRcvd+=1
-                          print "Receiving totally lemitigate data "+str(data.myElement)
+                         #apeprint "Receiving totally lemitigate data "+str(data.myElement)
                           if(data.myKeepable):
                             toKeep=self.chooseReturn(self.myProbabilityMap,setname)
-                            if(random.random()>toKeep):
+                            #print str(setname)+', TOKEEP '+str(toKeep)
+                            if(random.random()<toKeep):
                               self.dataSetMap[dataset].myElements[element]=data.myElement
                               bestEffort=0
                               rset=dataset
                               numSets=len(self.dataSetMap.keys())
                               mySet=""
+                              keep=True
                               while(rset==dataset) and (bestEffort<1000):
                                 rset=self.dataSetMap[choiceSet].myName
                                 temp=int(random.random()*numSets)
@@ -271,44 +311,31 @@ class ChatClient(object):
                               rElement=-1 if rset!=dataset else self.dataSetMap[rset].myElements[self.dataSetMap[rset].myElements.keys()[0] ]
                               while (bestEffort<1000) and (not self.dataSetMap[rset].myElements.has_key(rElement)):
                                 rElement=self.chooseElement(self.dataSetMap[rset].myName)
-                                bestEffort+=1 
-                              replacementElement=self.dataSetMap[rset].myElements[rElement] 
-                              #apeprint "Requesting deletion of "+str(dataset)+", element "+str(element)
-                              request=ClientRequestDeletion(dataSet=data.myDataSet,element=element,replacement=replacementElement)
-                              self.sendSockets[addr][dataset].close()
-                              self.sendSockets[addr][dataset]= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                              taddr,tprt=self.numToBase[addr]
-                              self.sendSockets[addr][dataset].connect((addr,tprt+dataset))
-                              self.fdmap[self.sendSockets[addr][dataset].fileno()]=self.sendSockets[addr][dataset]
-                              send(self.sendSockets[addr][dataset],request)
-                              del self.dataSetMap[rset].myElements[rElement]
-                          print 'Done receiving data'
-                        if isinstance(data,ClientRequestDeletion):
-                          
-                          print "Received delete request"
-                          dataset=data.myDataSet
-                          element=data.myElement
-                          if(self.dataSetMap[dataset].myElements.has_key(element)):
-                              del self.dataSetMap[dataset].myElements[element]
-                              replacement=data.myReplacement
-                              name,junk,stuff=replacement
-                              if(self.dataSetMap[name].myElements.has_key(junk)):
-                                print "Error in replacement, received duplicate"
-                                pdb.set_trace()
+                                bestEffort+=1
+                              if(self.dataSetMap[rset].myElements.has_key(rElement)): 
+                                replacementElement=self.dataSetMap[rset].myElements[rElement] 
                               else:
-                                self.dataSetMap[name].myElements[junk]=replacement
-                          else:
-                              print "Warning: received request to delete nonexistent element"
-                              pdb.set_trace()
-                          print 'Finished dealing with delete request'+str(dataset)+','+str(element)
-                        #hostSock.close()
-                    #elif i==self.controlChannel:
-                #       i.accept()
-                 #       data = receive(self.controlChannel)
+                                print 'Warning: failed to find suitable replacement' 
+                                keep=False
+                                del self.dataSetMap[dataset].myElements[element]
+                              print "Requesting deletion of "+str(dataset)+", element "+str(element)
+                              request=ClientRequestDeletion(dataSet=data.myDataSet,element=element,replacement=replacementElement)
+                              print passNum
+                              if(keep):
+                                self.sendSockets[addr][-1].close()
+                                self.sendSockets[addr][-1]= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                                taddr,tprt=self.numToBase[addr]
+                                self.sendSockets[addr][-1].connect((addr,tprt+self.numSets-1))
+                                self.fdmap[self.sendSockets[addr][-1].fileno()]=self.sendSockets[addr][-1]
+                                send(self.sendSockets[addr][-1],request)
+                                #time.sleep(CONWAITTIME)
+                                del self.dataSetMap[rset].myElements[rElement] #DELETE REPLACEMENT
+                              print 'Done with delete request'
+                        if DEBUG: print 'L3'  
                     else:
-                        #pdb.set_trace()
+                        tb=traceback.format_exc()
+                        print tb
                         toss=0
-                        print "Data from unexpected source"
             except KeyboardInterrupt:
                 #apeprint 'Interrupted.'
                 self.sock.close()
@@ -316,14 +343,14 @@ class ChatClient(object):
             except socket.error, e:
                 #apeprint "Socket error"
                 tb=traceback.format_exc()
-                #apeprint tb
+                print tb
                 pdb.set_trace()
 
 if __name__ == "__main__":
     import sys
 
     if len(sys.argv)<3:
-        sys.exit('Usage: %s chatid host portno' % sys.argv[0])
+        sys.exit('Usage: %s hostid host portno' % sys.argv[0])
 
-    client = ChatClient(sys.argv[1],sys.argv[2], int(sys.argv[3]))
+    client = Client(sys.argv[1],sys.argv[2], int(sys.argv[3]))
     client.cmdloop()
