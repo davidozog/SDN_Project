@@ -24,6 +24,7 @@ class MMP(object):
         self.clients = 0
         # Client map
         random.seed(105)
+        self.numMatrices=0
         self.clientmap = {}
         self.portToHostDataSet = {}
         self.hostDataToPort= {}
@@ -137,19 +138,25 @@ class MMP(object):
                   if isinstance(flow_stat_data,dict):
                     flow_stat_data=self.cleanDict(flow_stat_data)
                     print flow_stat_data
+                    print self.hostDataToPort
                     print "\n  Traffic Matrix:\n"
                     sepStr='    '
+                    self.numMatrices+=1
                     sys.stdout.write(sepStr)
                     for key in self.hostDataToPort.keys():
                       sys.stdout.write(str(key)+sepStr)
                     sys.stdout.write('\n')  
                     sys.stdout.write(sepStr)
+                    #if(self.numMatrices%5==0):
+                    #  pdb.set_trace()
                     for key in range(NUMCLIENTS):
                       sys.stdout.write(str(key)+sepStr)
                       for setName in range(NUMSETS):
-                        tkey=key#0 if key == 1 else 1
-                        if(flow_stat_data.has_key( self.hostDataToPort[(tkey,setName)])):
-                          sys.stdout.write(str(flow_stat_data[self.hostDataToPort[(tkey,setName)]])+sepStr)
+                        tkey=self.hostDataToPort[(key,setName)]
+                        ip,prt=tkey
+                        tkey=('10.0.0.1' if ip == '10.0.0.2' else '10.0.0.2',prt)
+                        if(flow_stat_data.has_key(tkey)):
+                          sys.stdout.write(str(flow_stat_data[tkey])+sepStr)
                         else:
                           sys.stdout.write('0'+sepStr)
                       sys.stdout.write('\n')
@@ -174,7 +181,7 @@ class MMP(object):
                     hostAddr,hostPort=address
                     listenMessage=ServerHostListenMessage(listenInfo=hostPort+1,numPorts=NUMSETS+1)
                     
-                    for i in range (1,NUMSETS+2):
+                    for i in range (1,NUMSETS+1):
                       self.interestingPorts.append(hostPort+i)
                       if(i<=NUMSETS):
                         self.portToHostDataSet[hostPort+i]=(self.clients-1,self.dataSetMap.values()[i-1].myName)

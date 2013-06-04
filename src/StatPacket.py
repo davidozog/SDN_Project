@@ -102,9 +102,12 @@ class FlowStatPacket(StatPacket):
       nw = 'nw_' + 'src'
       if self.stats[p]['match'].has_key(tp):
         index=(self.stats[p]['match'][nw],self.stats[p]['match'][tp])
+        index2=(self.stats[p]['match']['nw_dst' if nw =='nw_src' else 'nw_src'],self.stats[p]['match'][tp])#ExperiMental
         if bytemap.has_key(self.stats[p]['match'][tp]):
+          bytemap[index2]=bytemap[index2]+self.stats[p]['byte_count']#ExperiMental
           bytemap[index]=bytemap[index]+self.stats[p]['byte_count']
         else:
           bytemap[index]=self.stats[p]['byte_count']
+          bytemap[index2]=self.stats[p]['byte_count']#ExperiMental
     print bytemap
     return bytemap

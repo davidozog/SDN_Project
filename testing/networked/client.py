@@ -272,6 +272,7 @@ class Client(object):
                           else:
                               print "Warning: received request to delete nonexistent element"
                               continue
+                        if DEBUG: print 'C3'
                               #pdb.set_trace()
                          #apeprint 'Finished dealing with delete request'+str(dataset)+','+str(element)
                             #apeprint "Done???!?!!!"
@@ -291,6 +292,7 @@ class Client(object):
                           setname,element,value=data.myElement
                           dataset=setname
                           self.gotMyElement=True
+                          
                           numRcvd+=1
                          #apeprint "Receiving totally lemitigate data "+str(data.myElement)
                           if(data.myKeepable):
@@ -328,7 +330,7 @@ class Client(object):
                                 self.sendSockets[addr][-1].connect((addr,tprt+self.numSets-1))
                                 self.fdmap[self.sendSockets[addr][-1].fileno()]=self.sendSockets[addr][-1]
                                 send(self.sendSockets[addr][-1],request)
-                                #time.sleep(CONWAITTIME)
+                                time.sleep(CONWAITTIME)
                                 del self.dataSetMap[rset].myElements[rElement] #DELETE REPLACEMENT
                               print 'Done with delete request'
                         if DEBUG: print 'L3'  

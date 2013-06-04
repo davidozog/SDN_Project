@@ -202,8 +202,8 @@ class TestSwitch(EventMixin):
       #log.debug("number of flows: " + str(len(self.macToPort))) 
       msg = of.ofp_flow_mod()
       msg.match = of.ofp_match.from_packet(packet, event.port)
-      msg.idle_timeout = 10
-      msg.hard_timeout = 30
+      msg.idle_timeout = 5
+      msg.hard_timeout = 10
       msg.actions.append(of.ofp_action_output(port = port))
       msg.data = event.ofp
       self.connection.send(msg)
