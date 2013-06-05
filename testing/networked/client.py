@@ -113,8 +113,8 @@ class Client(object):
               
                 ##apeprint "Foofoofoo???"
                 idle+=1
-                if(phase==1) and (self.gotMyElement or (idle>50 and self.prioritizingSelfGratification)):
-                    if(idle>=50):
+                if(phase==1) and (self.gotMyElement or (idle>51 and self.prioritizingSelfGratification)):
+                    if(idle>=51):
                       idle=0
                       self.prioritizingSelfGratification=False
                       self.processingRequests=True
