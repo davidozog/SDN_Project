@@ -4,6 +4,7 @@ import cPickle
 import socket
 import struct
 import random
+import sys
 marshall = cPickle.dumps
 unmarshall = cPickle.loads
 DATASIZE_PER_HOST=100
@@ -117,7 +118,12 @@ def receive(channel):
         return ''
 
     buf = ""
-
+    totSize=0
     while len(buf) < size:
         buf = channel.recv(size - len(buf))
-    return unmarshall(buf)[0]
+        totSize+=len(buf)
+    tsize=sys.getsizeof(buf) 
+    temp=unmarshall(buf)[0]
+    if isinstance(temp, ClientResponseMessage):
+      print 'Size is : '+str(tsize)
+    return temp

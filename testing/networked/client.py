@@ -18,9 +18,10 @@ CONWAITTIME=0.2
 COMPWAITTIME=0.2
 class Client(object):
 
-    def __init__(self, name, host='127.0.0.1', port=3490):
-        self.myProbabilityMap = {}
-        self.myReturnProbabilities = {}
+    def __init__(self, name, host='127.0.0.1', port=3490,outfile='distributions.txt'):
+        self.myRequestProbMap = {}
+        self.myAcceptanceProbMap = {}
+        self.myReturnProbMap = {}
         self.name = name
         # Quit flag
         self.hostsmap={}
@@ -90,7 +91,7 @@ class Client(object):
         while not self.flag:
             try:
                 if(passNum%200==2):
-                  print self.myProbabilityMap
+                  print self.myRequestProbMap
                   print 'At pass '+str(passNum)+' I received '+str(numRcvd)+' elements (cumulatively)'
                   passNum+=1
                   for key in self.dataSetMap.keys():
@@ -112,7 +113,7 @@ class Client(object):
                 idle+=1
                 if(phase==1) and (self.gotMyElement):
 
-                    choiceSet=self.chooseSet(self.myProbabilityMap)
+                    choiceSet=self.chooseSet(self.myRequestProbMap)
                     mySet=self.dataSetMap[choiceSet].myName
                     choiceElement=self.chooseElement(mySet)
                     passNum+=1
@@ -135,7 +136,7 @@ class Client(object):
                             #apeprint "Sent off "+str(request)+" to "+str(tkey[-1].getpeername())
                     else:
                       time.sleep(COMPWAITTIME)
-                      print 'Cache hit'+str(random.random())
+                      print 'Cache hit on '+str(self.dataSetMap[choiceSet].myElements[choiceElement])
                 if(self.processingRequests):
                  for ifd,evtype in inputready:
                      if not (evtype & (select.POLLIN | select.POLLPRI)):
@@ -220,7 +221,7 @@ class Client(object):
                                  ds=data.myElements
                                  self.dataSetMap[ds.myName]=ds
                              elif isinstance(data,ServerProbabilityUpdateMessage):
-                                 self.myProbabilityMap=data.myDistribution
+                                 self.myRequestProbMap=data.myDistribution
                              elif isinstance(data,ServerSayGoMessage):
                                  phase=1
                                  self.startTime=time.time()
@@ -269,6 +270,7 @@ class Client(object):
                              #apeprint (tprt+dataset)
                              self.fdmap[self.sendSockets[addr][dataset].fileno()]=self.sendSockets[addr][dataset]
                              print self.sendSockets[addr][dataset].getpeername()
+                             
                              send(self.sendSockets[addr][dataset],response)
                              time.sleep(CONWAITTIME)
                          if isinstance(data,ClientRequestDeletion):
@@ -313,7 +315,7 @@ class Client(object):
                            numRcvd+=1
                            #print "Receiving totally lemitigate data "+str(data.myElement)
                            if(data.myKeepable):
-                             toKeep=self.chooseReturn(self.myProbabilityMap,setname)
+                             toKeep=self.chooseReturn(self.myRequestProbMap,setname)
                              #print str(setname)+', TOKEEP '+str(toKeep)
                              if(random.random()<toKeep):
                                self.dataSetMap[dataset].myElements[element]=data.myElement

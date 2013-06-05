@@ -109,5 +109,6 @@ class FlowStatPacket(StatPacket):
         else:
           bytemap[index]=self.stats[p]['byte_count']
           #bytemap[index2]=self.stats[p]['byte_count']#ExperiMental
+
     print bytemap
     return bytemap

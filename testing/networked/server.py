@@ -26,6 +26,7 @@ class MMP(object):
         random.seed(105)
         self.numMatrices=0
         self.clientmap = {}
+        self.lastStatistics=None
         self.portToHostDataSet = {}
         self.hostDataToPort= {}
         # Output socket list
@@ -100,9 +101,17 @@ class MMP(object):
               newDict[nkey]=v
             else:
               newDict[nkey]=newDict[nkey]+dictionary[key]
-          else:
-            print key,v
-        return newDict
+        print newDict
+        if self.lastStatistics is not None:
+          for key in self.lastStatistics.keys():
+            print str(key)
+            addr,prt=key
+            nkey=(str(addr),prt)
+            if(newDict.has_key(nkey)):
+              newDict[nkey]=newDict[nkey]-self.lastStatistics[key] 
+        
+        self.lastStatistics=dictionary
+        return newDict 
 
     def serve(self):
 
@@ -137,8 +146,6 @@ class MMP(object):
                     flow_stat_data=unmarshall(data)
                   if isinstance(flow_stat_data,dict):
                     flow_stat_data=self.cleanDict(flow_stat_data)
-                    print flow_stat_data
-                    print self.hostDataToPort
                     print "\n  Traffic Matrix:\n"
                     sepStr='    '
                     self.numMatrices+=1
@@ -252,7 +259,7 @@ class MMP(object):
                                   probDist[1]=low
                                   probDist[2]=low
                                   probDist[3]=high
-                                toSend=ServerProbabilityUpdateMessage(probId=0,distribution=probDist)
+                                toSend=ServerProbabilityUpdateMessage(probId=0,distribution=probDist) #0=RequestProbMap
                                 send(c,toSend)
                             #END DISTRIBUTE PROBABILITY DISTRIBUTIONS
                             phase=1

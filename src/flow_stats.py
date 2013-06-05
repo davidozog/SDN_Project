@@ -149,7 +149,9 @@ def _handle_flowstats_received (event):
   #  dpidToStr(event.connection.dpid), w_bytes, w_packet, w_flows)
 
   flow_packet_whole = sp.FlowStatPacket(w_bytes, w_packet, w_flows, stats)
+
   flow_packet = flow_packet_whole.getPacket();
+
 #  flow_packet.printData()
   flow_stat_data = marshall(flow_packet)
   global sock
@@ -173,7 +175,7 @@ class TestSwitch(EventMixin):
     self.connection = connection
     self.listenTo(connection)
     self.macToPort = {}
-    
+     
   def _handle_PacketIn(self, event):
   
     def flood(message = None):
@@ -202,8 +204,10 @@ class TestSwitch(EventMixin):
       #log.debug("number of flows: " + str(len(self.macToPort))) 
       msg = of.ofp_flow_mod()
       msg.match = of.ofp_match.from_packet(packet, event.port)
-      msg.idle_timeout = 5
-      msg.hard_timeout = 10
+      msg.match.tp_src=None
+      #del msg.match.tp_src
+      msg.idle_timeout = 6000
+      msg.hard_timeout = 6000
       msg.actions.append(of.ofp_action_output(port = port))
       msg.data = event.ofp
       self.connection.send(msg)
