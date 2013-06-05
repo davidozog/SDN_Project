@@ -4,10 +4,11 @@ import cPickle
 import socket
 import struct
 import random
+import sys
 marshall = cPickle.dumps
 unmarshall = cPickle.loads
 DATASIZE_PER_HOST=100
-REQUESTS_CACHED=10
+REQUESTS_CACHED=3
 class DataSet:
     def __init__(self,name="None Given",init=True,size=DATASIZE_PER_HOST,elements={}):
         print 'Creating dataset named '+str(name)
@@ -76,7 +77,9 @@ class ClientResponseMessage(Message):
         self.myDataSet=dataSet
         self.myElement=element
         self.myKeepable=allowKeep
-
+        self.padList=[]
+        for i in range(200):
+          self.padList.append(i)
 class ClientRequestDeletion(Message):
     #dataset says which dataset to be aware of
     #element says "delete THAT element in the dataset"
@@ -94,7 +97,9 @@ class ServerRegisterDataSet(Message):
         self.myId=mid
         self.myName=name
         self.myElements=elementSet
-
+class ClientAck(Message):
+    def __init__(self,mid=9):
+        self.myId=mid
 
 def send(channel, *args):
     buf = marshall(args)
@@ -113,7 +118,12 @@ def receive(channel):
         return ''
 
     buf = ""
-
+    totSize=0
     while len(buf) < size:
         buf = channel.recv(size - len(buf))
-    return unmarshall(buf)[0]
+        totSize+=len(buf)
+    tsize=sys.getsizeof(buf) 
+    temp=unmarshall(buf)[0]
+    if isinstance(temp, ClientResponseMessage):
+      print 'Size is : '+str(tsize)
+    return temp
