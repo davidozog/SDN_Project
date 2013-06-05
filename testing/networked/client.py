@@ -11,7 +11,7 @@ import asyncore
 import random
 import math
 BUFSIZ = 1024
-DEBUG = False
+DEBUG = True
 #READ_ONLY = select.POLLIN | select.POLLPRI | select.POLLHUP | select.POLLERR
 READ_ONLY = select.POLLIN | select.POLLPRI
 CONWAITTIME=0.2
@@ -27,7 +27,9 @@ class Client(object):
         self.hostsmap={}
         self.processingRequests=True
         self.startTime=0
+        self.prioritizingSelfGratification=False
         self.deltaTime=0
+        self.handledRequests=0
         self.timeThreshold=0.3
         self.dataSetMap={}
         self.flag = False
@@ -102,20 +104,25 @@ class Client(object):
                 #inputready, outputready,exceptrdy = select.poll(inputs, [],[])
                 inputready=[]
                 ttime=time.time()
-                if(ttime-self.startTime>self.timeThreshold):
+                if(ttime-self.startTime>self.timeThreshold) and (self.handledRequests<=3 or self.processingRequests):
                   self.processingRequests=not self.processingRequests
                   self.startTime=ttime
-                  self.timeThreshold=0.1 if not self.processingRequests else 1.0
+                  self.timeThreshold=1.0 if not self.processingRequests else 0.1
                 if(self.processingRequests):
                   inputready= self.poller.poll(0.1)
               
                 ##apeprint "Foofoofoo???"
                 idle+=1
-                if(phase==1) and (self.gotMyElement):
-
+                if(phase==1) and (self.gotMyElement or (idle>50 and self.prioritizingSelfGratification)):
+                    if(idle>=50):
+                      idle=0
+                      self.prioritizingSelfGratification=False
+                      self.processingRequests=True
+                      print 'Gave up'
                     choiceSet=self.chooseSet(self.myRequestProbMap)
                     mySet=self.dataSetMap[choiceSet].myName
                     choiceElement=self.chooseElement(mySet)
+                    self.handledRequests=0
                     passNum+=1
                     if(not self.dataSetMap[choiceSet].myElements.has_key(choiceElement)):
                         request=ClientRequestDataMessage(dataSet=choiceSet,element=choiceElement)
@@ -133,12 +140,13 @@ class Client(object):
                             #hostmap[key][-1].close()
                             send(self.hostsmap[key][-1],request)
                             time.sleep(CONWAITTIME)
-                            #apeprint "Sent off "+str(request)+" to "+str(tkey[-1].getpeername())
+                            print "Sent off "+str(request)+" to "+str(tkey[-1].getpeername())
                     else:
                       time.sleep(COMPWAITTIME)
                       print 'Cache hit on '+str(self.dataSetMap[choiceSet].myElements[choiceElement])
                 if(self.processingRequests):
                  for ifd,evtype in inputready:
+                     print 'Processing input stream'
                      if not (evtype & (select.POLLIN | select.POLLPRI)):
                          continue
                      #apeprint "I received any data"
@@ -237,6 +245,13 @@ class Client(object):
                          #apeprint "Foo?"
                          #if not self.ephemeralSockets.has_key(i):
                          #  self.ephemeralSockets[i]=hostSock
+                         if isinstance(data,ClientRequestDataMessage):
+                             self.handledRequests+=1
+                             if(self.handledRequests>3):
+                                self.processingRequests=False
+                                self.prioritizingSelfGratification=True
+                                print 'We don\'t need no education'
+                                break
                          hostSock,toss=i.accept()
                          addr,prt=toss
                          #else:
@@ -244,7 +259,7 @@ class Client(object):
                          if DEBUG: print 'C1'
                          data = receive(hostSock)
                          if DEBUG: print 'C2'
-                         #apeprint data
+                         print data
                          #apeprint "Moo?"
                          if isinstance(data,ClientRequestDataMessage):
                              dataset=data.myDataSet
@@ -272,7 +287,8 @@ class Client(object):
                              print self.sendSockets[addr][dataset].getpeername()
                              
                              send(self.sendSockets[addr][dataset],response)
-                             time.sleep(CONWAITTIME)
+                             print 'Done with handling received data request'
+                             #time.sleep(CONWAITTIME)
                          if isinstance(data,ClientRequestDeletion):
                            
                           #apeprint "Received delete request"
@@ -349,9 +365,10 @@ class Client(object):
                                  self.sendSockets[addr][-1].connect((addr,tprt+self.numSets-1))
                                  self.fdmap[self.sendSockets[addr][-1].fileno()]=self.sendSockets[addr][-1]
                                  send(self.sendSockets[addr][-1],request)
-                                 time.sleep(CONWAITTIME)
                                  del self.dataSetMap[rset].myElements[rElement] #DELETE REPLACEMENT
                                print 'Done with delete request'
+                           print 'Long sleep here' 
+                           time.sleep(CONWAITTIME)
                          if DEBUG: print 'L3'  
                      else:
                          tb=traceback.format_exc()

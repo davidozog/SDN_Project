@@ -13,7 +13,7 @@ import StatPacket
 HOST = '192.168.1.124'
 PORT = 50009
 BUFSIZ = 1024
-NUMCLIENTS=2
+NUMCLIENTS=3
 NUMSETS=4
 ELEMENTSPERSET=150
 assert (NUMSETS*ELEMENTSPERSET)%NUMCLIENTS==0
@@ -96,15 +96,12 @@ class MMP(object):
           addr,prt=key
           nkey=(str(addr),prt)
           if prt in self.interestingPorts:
-            #print str(key)+','+str(nkey)
             if not newDict.has_key(nkey):
               newDict[nkey]=v
             else:
               newDict[nkey]=newDict[nkey]+dictionary[key]
-        print newDict
         if self.lastStatistics is not None:
           for key in self.lastStatistics.keys():
-            print str(key)
             addr,prt=key
             nkey=(str(addr),prt)
             if(newDict.has_key(nkey)):
@@ -134,7 +131,7 @@ class MMP(object):
                 if s==self.controllerSocket:
                   #pdb.set_trace()
                   #print 'Received Data From Controller1'
-                  data=self.controllerSocket.recv(131172)
+                  data=self.controllerSocket.recv(1048576)
                   #pdb.set_trace()
                   
                   #self.controllerSocket.sendall('MMP is alive')
@@ -146,6 +143,7 @@ class MMP(object):
                     flow_stat_data=unmarshall(data)
                   if isinstance(flow_stat_data,dict):
                     flow_stat_data=self.cleanDict(flow_stat_data)
+                    print flow_stat_data
                     print "\n  Traffic Matrix:\n"
                     sepStr='    '
                     self.numMatrices+=1
