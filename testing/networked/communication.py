@@ -77,7 +77,7 @@ class ClientResponseMessage(Message):
         self.myElement=element
         self.myKeepable=allowKeep
         self.padList=[]
-        for i in range(100):
+        for i in range(200):
           self.padList.append(i)
 class ClientRequestDeletion(Message):
     #dataset says which dataset to be aware of

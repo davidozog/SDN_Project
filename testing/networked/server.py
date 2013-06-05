@@ -154,7 +154,7 @@ class MMP(object):
                       for setName in range(NUMSETS):
                         tkey=self.hostDataToPort[(key,setName)]
                         ip,prt=tkey
-                        tkey=('10.0.0.1' if ip == '10.0.0.2' else '10.0.0.2',prt)
+                        tkey=('10.0.0.1' if ip == '10.0.0.1' else '10.0.0.2',prt)
                         if(flow_stat_data.has_key(tkey)):
                           sys.stdout.write(str(flow_stat_data[tkey])+sepStr)
                         else:
@@ -240,8 +240,8 @@ class MMP(object):
                                 for s in self.dataSetMap.keys():
                                     probDist[s]=probDist[s]/sum
                                 oi+=1
-                                high=0.7
-                                low=0.1
+                                high=0.97
+                                low=0.01
                                 if(oi==1):
                                   probDist[0]=high
                                   probDist[1]=low
@@ -274,6 +274,7 @@ class MMP(object):
                                         loop+=1
                             for toClient in self.clientmap.keys():
                                 print "Sending say go"
+                              
                                 self.startTime=time.time()
                                 time.sleep(1)
                                 send(toClient,ServerSayGoMessage())
