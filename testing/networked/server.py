@@ -158,7 +158,9 @@ class MMP(object):
                     #  pdb.set_trace()
                     for key in range(NUMCLIENTS):
                       sys.stdout.write(str(key)+sepStr)
-                      for setName in range(NUMSETS):
+                      trange=range(NUMSETS)
+                      trange.append(-1)
+                      for setName in trange:
                         tkey=self.hostDataToPort[(key,setName)]
                         ip,prt=tkey
                         tkey=('10.0.0.1' if ip == '10.0.0.1' else '10.0.0.2',prt)
@@ -188,11 +190,14 @@ class MMP(object):
                     hostAddr,hostPort=address
                     listenMessage=ServerHostListenMessage(listenInfo=hostPort+1,numPorts=NUMSETS+1)
                     
-                    for i in range (1,NUMSETS+1):
+                    for i in range (1,NUMSETS+2):
                       self.interestingPorts.append(hostPort+i)
                       if(i<=NUMSETS):
                         self.portToHostDataSet[hostPort+i]=(self.clients-1,self.dataSetMap.values()[i-1].myName)
                         self.hostDataToPort[(self.clients-1,self.dataSetMap.values()[i-1].myName)]=(hostAddr,hostPort+i)
+                    self.portToHostDataSet[hostPort+NUMSETS+1]=(self.clients-1,-1)
+                    self.hostDataToPort[(self.clients-1,-1)]=(hostAddr,hostPort+NUMSETS+1)
+                    print self.hostDataToPort
                     print str(NUMSETS+1)
                     print "Sending listen message to client"
                     send(client,listenMessage)
@@ -247,8 +252,8 @@ class MMP(object):
                                 for s in self.dataSetMap.keys():
                                     probDist[s]=probDist[s]/sum
                                 oi+=1
-                                high=0.97
-                                low=0.01
+                                high=0.25
+                                low=0.25
                                 if(oi==1):
                                   probDist[0]=high
                                   probDist[1]=low

@@ -164,7 +164,6 @@ class Client(object):
                                  data=data.myHostInfo
                                  haddr,hport=data
                                  self.numToBase[haddr]=data
-                                 print haddr
                                  self.sendSockets[(haddr)]={}
                                  try:
                                      for i in range(self.numSets):
@@ -269,7 +268,6 @@ class Client(object):
                              self.sendSockets[addr][dataset].connect((addr,tprt+dataset))
                              #apeprint (tprt+dataset)
                              self.fdmap[self.sendSockets[addr][dataset].fileno()]=self.sendSockets[addr][dataset]
-                             print self.sendSockets[addr][dataset].getpeername()
                              
                              send(self.sendSockets[addr][dataset],response)
                              time.sleep(CONWAITTIME)
@@ -317,7 +315,7 @@ class Client(object):
                            if(data.myKeepable):
                              toKeep=self.chooseReturn(self.myRequestProbMap,setname)
                              #print str(setname)+', TOKEEP '+str(toKeep)
-                             if(random.random()<toKeep):
+                             if(random.random()<1):
                                self.dataSetMap[dataset].myElements[element]=data.myElement
                                bestEffort=0
                                rset=dataset
@@ -339,7 +337,7 @@ class Client(object):
                                  print 'Warning: failed to find suitable replacement' 
                                  keep=False
                                  del self.dataSetMap[dataset].myElements[element]
-                               print "Requesting deletion of "+str(dataset)+", element "+str(element)
+                               #print "Requesting deletion of "+str(dataset)+", element "+str(element)
                                request=ClientRequestDeletion(dataSet=data.myDataSet,element=element,replacement=replacementElement)
                                print passNum
                                if(keep):

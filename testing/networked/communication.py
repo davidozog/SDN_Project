@@ -9,6 +9,7 @@ marshall = cPickle.dumps
 unmarshall = cPickle.loads
 DATASIZE_PER_HOST=100
 REQUESTS_CACHED=3
+PADLENGTH=1200
 class DataSet:
     def __init__(self,name="None Given",init=True,size=DATASIZE_PER_HOST,elements={}):
         print 'Creating dataset named '+str(name)
@@ -78,7 +79,7 @@ class ClientResponseMessage(Message):
         self.myElement=element
         self.myKeepable=allowKeep
         self.padList=[]
-        for i in range(200):
+        for i in range(PADLENGTH):
           self.padList.append(i)
 class ClientRequestDeletion(Message):
     #dataset says which dataset to be aware of
@@ -88,7 +89,10 @@ class ClientRequestDeletion(Message):
         self.myDataSet=dataSet
         self.myElement=element
         self.myReplacement=replacement
-
+        self.padList=[]
+        for i in range(PADLENGTH):
+          self.padList.append(i)
+        
 class ClientSayEhlo(Message):
     def __init__(self,mid=7):
         self.myId=mid
