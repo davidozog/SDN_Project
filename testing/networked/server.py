@@ -10,14 +10,17 @@ import pdb
 import random
 import time
 import StatPacket
-HOST = '192.168.1.124'
+HOST = '128.223.202.213'
 PORT = 50009
 MSGSIZE=7568
 BUFSIZ = 1024
 NUMCLIENTS=2
 NUMSETS=4
 BETA=0.0
+UPDATEPROBS=True
 ELEMENTSPERSET=150
+OFFSET1=0
+OFFSET2=0
 assert (NUMSETS*ELEMENTSPERSET)%NUMCLIENTS==0
 ELEMENTSPERHOST=(NUMSETS*ELEMENTSPERSET)/NUMCLIENTS
 class MMP(object):
@@ -104,10 +107,8 @@ class MMP(object):
               newDict[nkey]=v
             else:
               newDict[nkey]=newDict[nkey]+dictionary[key]
-        print newDict
         if self.lastStatistics is not None:
           for key in self.lastStatistics.keys():
-            print str(key)
             addr,prt=key
             nkey=(str(addr),prt)
             if(newDict.has_key(nkey)):
@@ -159,6 +160,8 @@ class MMP(object):
                     sys.stdout.write(sepStr)
                     #if(self.numMatrices%5==0):
                     #  pdb.set_trace()
+                    totalBytes = 0
+		    controlBytes = 0
                     for key in range(NUMCLIENTS):
                       sys.stdout.write(str(key)+sepStr)
                       trange=range(NUMSETS)
@@ -166,13 +169,20 @@ class MMP(object):
                       for setName in trange:
                         tkey=self.hostDataToPort[(key,setName)]
                         ip,prt=tkey
-                        tkey=('10.0.0.1' if ip == '10.0.0.1' else '10.0.0.2',prt)
+                        tkey=('10.0.0.1/32' if ip == '10.0.0.1' else '10.0.0.2/32',prt)
                         if(flow_stat_data.has_key(tkey)):
                           sys.stdout.write(str(flow_stat_data[tkey])+sepStr)
                         else:
                           sys.stdout.write('0'+sepStr)
+			totalBytes+=flow_stat_data[tkey] if flow_stat_data.has_key(tkey) else 0
+			if setName==-1:
+			  controlBytes+=flow_stat_data[tkey] if flow_stat_data.has_key(tkey) else 0
                       sys.stdout.write('\n')
                       sys.stdout.write(sepStr)
+		    print 'TOTALFLOWAMOUNT:' + str(time.time()-self.startTime)+":"+ str(totalBytes-controlBytes)#TODO: change to DATA FLOW
+		    print 'CONTROLCHANNELFLOWAMOUNT:'+str(time.time()-self.startTime)+":"+ str(controlBytes)
+		    if(time.time()-self.startTime >120):
+			sys.exit(1)
                     sys.stdout.write('\n\n')
                     #return probabilities (horizontal reasoning)
                     returnDistribution={}
@@ -182,22 +192,21 @@ class MMP(object):
                       for setName in range(NUMSETS):
                          tkey=self.hostDataToPort[(0 if key==1 else 1,setName)]
                          ip,prt=tkey
-                         tkey=('10.0.0.1' if ip == '10.0.0.1' else '10.0.0.2',prt)
+                         tkey=('10.0.0.1/32' if ip == '10.0.0.1' else '10.0.0.2/32',prt)
                          total+=0 if not flow_stat_data.has_key(tkey) else int(flow_stat_data[tkey])
                          total+=BETA*MSGSIZE
                       for setName in range(NUMSETS):
                          tkey=self.hostDataToPort[(0 if key==1 else 1,setName)]
                          ip,prt=tkey
-                         tkey=('10.0.0.1' if ip == '10.0.0.1' else '10.0.0.2',prt)
+                         tkey=('10.0.0.1/32' if ip == '10.0.0.1' else '10.0.0.2/32',prt)
                          if(total==0):
                             returnDistribution[key][setName]=1.0/NUMSETS
                          else:
                             returnDistribution[key][setName]= BETA*MSGSIZE/total if not flow_stat_data.has_key(tkey)else (BETA*MSGSIZE+1.0*flow_stat_data[tkey])/total
-                      
                     for i in range(NUMCLIENTS):
-                      toSend=ServerProbabilityUpdateMessage(probId=1,distribution=returnDistribution[i])
-                      #send(,toSend)#TODO: Fill in   
-                               
+                      toSend=ServerProbabilityUpdateMessage(probId=2,distribution=returnDistribution[i])
+                      if UPDATEPROBS: send(self.numToClient[(i+OFFSET2)%2],toSend)
+                      print "Return: "+str(returnDistribution[i])      
                     #end return probabilities
                     #accept probabilities (vertical reasoning) ratio
                     #acceptDistribution={}
@@ -223,21 +232,22 @@ class MMP(object):
                       for key in range(NUMCLIENTS):
                          tkey=self.hostDataToPort[(key,setName)]
                          ip,prt=tkey
-                         tkey=('10.0.0.1' if ip == '10.0.0.1' else '10.0.0.2',prt)
+                         tkey=('10.0.0.1/32' if ip == '10.0.0.1' else '10.0.0.2/32',prt)
                          total+=0 if not flow_stat_data.has_key(tkey) else int(flow_stat_data[tkey])
                          total+=BETA*MSGSIZE
                       for key in range(NUMCLIENTS):
                          tkey=self.hostDataToPort[(key,setName)]
                          ip,prt=tkey
+			 tkey=(ip+'/32',prt)
                          mySendAmount=total-flow_stat_data[tkey]+BETA*MSGSIZE if flow_stat_data.has_key(tkey) else BETA*MSGSIZE
-                         tkey=('10.0.0.1' if ip == '10.0.0.1' else '10.0.0.2',prt)
-                         print '======DEBUG======'
-                         print 'Key: '+str(key)
-                         print "mySendAmount: "+str(mySendAmount)
-                         print "Total: "+str(total) 
-                         print '======DEBUG======'
+                         tkey=('10.0.0.1/32' if ip == '10.0.0.1' else '10.0.0.2/32',prt)
+                         #print '======DEBUG======'
+                         #print 'Key: '+str(key)
+                         #print "mySendAmount: "+str(mySendAmount)
+                         #print "Total: "+str(total) 
+                         #print '======DEBUG======'
                          if(total==0):
-                           acceptDistribution[setName][key]=0.5
+                           acceptDistribution[setName][key]=0.0
                          else:
                            acceptDistribution[setName][key]= BETA*MSGSIZE/total if not flow_stat_data.has_key(tkey) or mySendAmount>flow_stat_data[tkey] or total==0 else 1.0*(BETA*MSGSIZE+flow_stat_data[tkey]-mySendAmount)/total  
                         
@@ -245,7 +255,8 @@ class MMP(object):
                       formattedDist={}
                       for s in range (NUMSETS):
                         formattedDist[s]=acceptDistribution[s][c]
-                      print formattedDist 
+                      if UPDATEPROBS: send(self.numToClient[(i+OFFSET1)%2],ServerProbabilityUpdateMessage(probId=1,distribution=formattedDist))
+                      print "Accept: "+str(formattedDist)      
                     #end accept probabilities
                     #print flow_stat_data
                     #import pdb; pdb.set_trace()
@@ -273,8 +284,6 @@ class MMP(object):
                         self.hostDataToPort[(self.clients-1,self.dataSetMap.values()[i-1].myName)]=(hostAddr,hostPort+i)
                     self.portToHostDataSet[hostPort+NUMSETS+1]=(self.clients-1,-1)
                     self.hostDataToPort[(self.clients-1,-1)]=(hostAddr,hostPort+NUMSETS+1)
-                    print self.hostDataToPort
-                    print str(NUMSETS+1)
                     print "Sending listen message to client"
                     send(client,listenMessage)
                     print "Sent listen message to client"
@@ -316,6 +325,9 @@ class MMP(object):
                           #DISTRIBUTE PROBABILITY DISTRIBUTION
                           oi=0
                           ii=0
+		          self.probUniform={0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+		          self.probEven={0: 0.5, 1: 0.5, 2: 0.5, 3: 0.5}
+
                           for c in self.clientmap.keys():
                               
                               probDist={}
@@ -340,8 +352,12 @@ class MMP(object):
                                 probDist[1]=low
                                 probDist[2]=low
                                 probDist[3]=high
+			      
                               toSend=ServerProbabilityUpdateMessage(probId=0,distribution=probDist) #0=RequestProbMap
                               send(c,toSend)
+				
+			      send(c, ServerProbabilityUpdateMessage(probId=1,distribution=self.probEven)) #0=RequestProbMap
+			      send(c, ServerProbabilityUpdateMessage(probId=2,distribution=self.probUniform)) #0=RequestProbMap
                           #END DISTRIBUTE PROBABILITY DISTRIBUTIONS
                           phase=1
 

@@ -43,7 +43,7 @@ from pox.openflow.of_json import *
 
 log = core.getLogger()
 
-HOST = '192.168.1.124'
+HOST = '128.223.202.213'
 PORT = 50009              
 hasMMP=False
 s = None

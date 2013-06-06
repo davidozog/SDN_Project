@@ -12,7 +12,7 @@ import random
 import math
 BUFSIZ = 1024
 MSGSIZE=7568
-DEBUG = False
+DEBUG = True
 #READ_ONLY = select.POLLIN | select.POLLPRI | select.POLLHUP | select.POLLERR
 READ_ONLY = select.POLLIN | select.POLLPRI
 CONWAITTIME=0.2
@@ -32,6 +32,7 @@ class Client(object):
         self.deltaTime=0
         self.timeThreshold=0.3
         self.dataSetMap={}
+	self.startTime=0
         self.flag = False
         self.port = int(port)
         self.host = host
@@ -72,17 +73,11 @@ class Client(object):
         return distribution.keys()[i]
     def chooseReturn(self,element):
         others=0
+	print self.myRequestProbMap
+	print self.myReturnProbMap
         numothers=0
-        val=distribution[element]
-        newDist={}
-        for key in distribution.keys():
-          if(key!=element[0]):
-            others+=distribution[key]
-            newDist[key]=distribution[key]
-            numothers+=1
-        for key in newDist.keys():
-          newDist[key]=newDist[key]/others
-        return chooseSet(newDist)
+        distribution=self.myReturnProbMap
+	return self.chooseSet(distribution)
 
     def chooseElement(self, setName):
         r = random.random()
@@ -93,11 +88,16 @@ class Client(object):
         phase=0
         idle=0
         passNum=0
+	parity=0
         while not self.flag:
             try:
-                if(passNum%100==0):
+                if(passNum%100==0) and (phase==1) and (numRcvd%2==parity):
+	          parity+=1
+		  parity=parity%2		 
                   #print self.myRequestProbMap
                   #print 'At pass '+str(passNum)+' I received '+str(numRcvd)+' elements (cumulatively)'
+		  if len(self.dataSetMap.keys()) == 4:
+		    print "TIME:"+str(time.time()-self.initTime)
                   for key in self.dataSetMap.keys():
 		    if len(self.dataSetMap.keys()) == 4:
                       print 'In dataset '+str(key)+':'+str(len(self.dataSetMap[key].myElements.keys()))
@@ -239,6 +239,7 @@ class Client(object):
                              elif isinstance(data,ServerSayGoMessage):
                                  phase=1
                                  self.startTime=time.time()
+				 self.initTime=self.startTime
                                  time.sleep(1)
                              #elif isinstance(
                              else:
@@ -261,6 +262,7 @@ class Client(object):
                          #apeprint data
                          #apeprint "Moo?"
                          if isinstance(data,ClientRequestDataMessage):
+			     passNum+=1
                              dataset=data.myDataSet
                              element=data.myElement
                              response=ClientResponseMessage()
@@ -326,7 +328,7 @@ class Client(object):
                            self.gotMyElement=True
                            
                            numRcvd+=1
-                           #print "Receiving totally lemitigate data "+str(data.myElement)
+                           print "Receiving totally lemitigate data "+str(data.myElement)
                            if(data.myKeepable):
                              toKeep=self.myAcceptanceProbMap[setname]
                              #print str(setname)+', TOKEEP '+str(toKeep)
@@ -339,7 +341,7 @@ class Client(object):
                                keep=True
                                while(rset==dataset) and (bestEffort<1000):
                                  rset=self.dataSetMap[choiceSet].myName
-                                 choiceSet=chooseReturn(data.myElement)
+                                 choiceSet=self.chooseReturn(data.myElement)
                                  bestEffort+=1
                                rElement=-1 if rset!=dataset else self.dataSetMap[rset].myElements[self.dataSetMap[rset].myElements.keys()[0] ]
                                while (bestEffort<1000) and (not self.dataSetMap[rset].myElements.has_key(rElement)):
@@ -351,7 +353,7 @@ class Client(object):
                                  print 'Warning: failed to find suitable replacement' 
                                  keep=False
                                  del self.dataSetMap[dataset].myElements[element]
-                               #print "Requesting deletion of "+str(dataset)+", element "+str(element)
+                               print "Replacing with "+str(dataset)+", element "+str(replacementElement)
                                request=ClientRequestDeletion(dataSet=data.myDataSet,element=element,replacement=replacementElement)
                                print passNum
                                if(keep):
