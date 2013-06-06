@@ -92,12 +92,15 @@ class Client(object):
         passNum=0
         while not self.flag:
             try:
-                if(passNum%200==2):
-                  print self.myRequestProbMap
-                  print 'At pass '+str(passNum)+' I received '+str(numRcvd)+' elements (cumulatively)'
-                  passNum+=1
+                if(passNum%100==0):
+                  #print self.myRequestProbMap
+                  #print 'At pass '+str(passNum)+' I received '+str(numRcvd)+' elements (cumulatively)'
                   for key in self.dataSetMap.keys():
-                   print 'In dataset '+str(key)+':'+str(len(self.dataSetMap[key].myElements.keys()))
+		    if len(self.dataSetMap.keys()) == 4:
+                      print 'In dataset '+str(key)+':'+str(len(self.dataSetMap[key].myElements.keys()))
+		  if len(self.dataSetMap.keys()) == 4:
+		    print '=========================================='
+                passNum+=1
                 sys.stdout.flush()
                 inputs = [self.sock]
                 # Wait for input from stdin & socket
