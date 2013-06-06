@@ -12,9 +12,11 @@ import time
 import StatPacket
 HOST = '192.168.1.124'
 PORT = 50009
+MSGSIZE=7568
 BUFSIZ = 1024
 NUMCLIENTS=2
 NUMSETS=4
+BETA=0.0
 ELEMENTSPERSET=150
 assert (NUMSETS*ELEMENTSPERSET)%NUMCLIENTS==0
 ELEMENTSPERHOST=(NUMSETS*ELEMENTSPERSET)/NUMCLIENTS
@@ -30,6 +32,7 @@ class MMP(object):
         self.portToHostDataSet = {}
         self.hostDataToPort= {}
         # Output socket list
+        self.numToClient={}
         self.outputs = []
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.interestingPorts=[]
@@ -134,7 +137,7 @@ class MMP(object):
                 if s==self.controllerSocket:
                   #pdb.set_trace()
                   #print 'Received Data From Controller1'
-                  data=self.controllerSocket.recv(131172)
+                  data=self.controllerSocket.recv(1048576)
                   #pdb.set_trace()
                   
                   #self.controllerSocket.sendall('MMP is alive')
@@ -171,6 +174,79 @@ class MMP(object):
                       sys.stdout.write('\n')
                       sys.stdout.write(sepStr)
                     sys.stdout.write('\n\n')
+                    #return probabilities (horizontal reasoning)
+                    returnDistribution={}
+                    for key in range(NUMCLIENTS):
+                      total=BETA*MSGSIZE
+                      returnDistribution[key]={}
+                      for setName in range(NUMSETS):
+                         tkey=self.hostDataToPort[(0 if key==1 else 1,setName)]
+                         ip,prt=tkey
+                         tkey=('10.0.0.1' if ip == '10.0.0.1' else '10.0.0.2',prt)
+                         total+=0 if not flow_stat_data.has_key(tkey) else int(flow_stat_data[tkey])
+                         total+=BETA*MSGSIZE
+                      for setName in range(NUMSETS):
+                         tkey=self.hostDataToPort[(0 if key==1 else 1,setName)]
+                         ip,prt=tkey
+                         tkey=('10.0.0.1' if ip == '10.0.0.1' else '10.0.0.2',prt)
+                         if(total==0):
+                            returnDistribution[key][setName]=1.0/NUMSETS
+                         else:
+                            returnDistribution[key][setName]= BETA*MSGSIZE/total if not flow_stat_data.has_key(tkey)else (BETA*MSGSIZE+1.0*flow_stat_data[tkey])/total
+                      
+                    for i in range(NUMCLIENTS):
+                      toSend=ServerProbabilityUpdateMessage(probId=1,distribution=returnDistribution[i])
+                      #send(,toSend)#TODO: Fill in   
+                               
+                    #end return probabilities
+                    #accept probabilities (vertical reasoning) ratio
+                    #acceptDistribution={}
+                    #for setName in range(NUMSETS):
+                    #  total=0
+                    #  acceptDistribution[setName]={}
+                    #  for key in range(NUMCLIENTS):
+                    #     tkey=self.hostDataToPort[(0 if key==1 else 1,setName)]
+                    #     ip,prt=tkey
+                    #     tkey=('10.0.0.1' if ip == '10.0.0.1' else '10.0.0.2',prt)
+                    #     total+=0 if not flow_stat_data.has_key(tkey) else int(flow_stat_data[tkey])
+                    #  for key in range(NUMCLIENTS):
+                    #     tkey=self.hostDataToPort[(key,setName)]
+                    #     ip,prt=tkey
+                    #     tkey=('10.0.0.1' if ip == '10.0.0.1' else '10.0.0.2',prt)
+                    #     acceptDistribution[setName][key]= 0 if not flow_stat_data.has_key(tkey) or total==0 else (1.0*flow_stat_data[tkey])/total
+                    #accept probabilities (vertical reasoning) difference
+                    acceptDistribution={}
+                    for setName in range(NUMSETS):
+                      total=BETA*MSGSIZE
+                      
+                      acceptDistribution[setName]={}
+                      for key in range(NUMCLIENTS):
+                         tkey=self.hostDataToPort[(key,setName)]
+                         ip,prt=tkey
+                         tkey=('10.0.0.1' if ip == '10.0.0.1' else '10.0.0.2',prt)
+                         total+=0 if not flow_stat_data.has_key(tkey) else int(flow_stat_data[tkey])
+                         total+=BETA*MSGSIZE
+                      for key in range(NUMCLIENTS):
+                         tkey=self.hostDataToPort[(key,setName)]
+                         ip,prt=tkey
+                         mySendAmount=total-flow_stat_data[tkey]+BETA*MSGSIZE if flow_stat_data.has_key(tkey) else BETA*MSGSIZE
+                         tkey=('10.0.0.1' if ip == '10.0.0.1' else '10.0.0.2',prt)
+                         print '======DEBUG======'
+                         print 'Key: '+str(key)
+                         print "mySendAmount: "+str(mySendAmount)
+                         print "Total: "+str(total) 
+                         print '======DEBUG======'
+                         if(total==0):
+                           acceptDistribution[setName][key]=0.5
+                         else:
+                           acceptDistribution[setName][key]= BETA*MSGSIZE/total if not flow_stat_data.has_key(tkey) or mySendAmount>flow_stat_data[tkey] or total==0 else 1.0*(BETA*MSGSIZE+flow_stat_data[tkey]-mySendAmount)/total  
+                        
+                    for c in range (NUMCLIENTS):
+                      formattedDist={}
+                      for s in range (NUMSETS):
+                        formattedDist[s]=acceptDistribution[s][c]
+                      print formattedDist 
+                    #end accept probabilities
                     #print flow_stat_data
                     #import pdb; pdb.set_trace()
                     #flow_stat_data.printData()
@@ -189,7 +265,7 @@ class MMP(object):
                     self.clientmap[client] = (address, cname)
                     hostAddr,hostPort=address
                     listenMessage=ServerHostListenMessage(listenInfo=hostPort+1,numPorts=NUMSETS+1)
-                    
+                    self.numToClient[self.clients-1]=client 
                     for i in range (1,NUMSETS+2):
                       self.interestingPorts.append(hostPort+i)
                       if(i<=NUMSETS):
@@ -205,92 +281,92 @@ class MMP(object):
                     ackMsg=receive(client)
                     if(self.clients==NUMCLIENTS):
                         if(phase==0):
-                            import time
-                            time.sleep(0.5)
-                            numFree=[]
-                            #DISTRIBUTE DATASETS
-                            for c in range(NUMCLIENTS):
-                                numFree.append(ELEMENTSPERHOST)
-                            #pdb.set_trace()
-                            for s in range(NUMSETS):
-                                for key in self.dataSetMap[s].myElements.keys():
-                                  t0,t1,t2=self.dataSetMap[s].myElements[key]
-                                  self.dataSetMap[s].myElements[key]=(s,t1,t2)
-                                print str(s)+': '+str(self.dataSetMap[s].myElements)
-                                print "Splitting set "+str(s)
-                                builtSets=[]
-                                for c in range(NUMCLIENTS):
-                                    builtSets.append({})
-                                for idx in range(ELEMENTSPERSET):
-                                    ourLuckyWinner=int(random.random()*NUMCLIENTS)
-                                    while(numFree[ourLuckyWinner]<=0):
-                                        ourLuckyWinner+=int(random.random()*NUMCLIENTS)
-                                        ourLuckyWinner%=NUMCLIENTS
-                                    builtSets[ourLuckyWinner][idx]=self.dataSetMap[s].myElements[idx]
-                                    numFree[ourLuckyWinner]-=1
-                                for setnum in range(NUMCLIENTS):
-                                    print "Sending off set " + str(self.dataSetMap[s].myName)
-                                    tempset=DataSet(name=self.dataSetMap[s].myName,init=False,size=ELEMENTSPERHOST,elements=builtSets[setnum])
-                                    toSend=ServerRegisterDataSet(name=tempset.myName,elementSet=tempset)
-                                    print "Sending off set w/elements named" +str(tempset.myElements[tempset.myElements.keys()[0]][0])
-                                    time.sleep(0.5)
-                                    print self.clientmap[self.clientmap.keys()[setnum]]
-                                    send(self.clientmap.keys()[setnum],toSend)
-                            #END DISTRIBUTE DATASETS
-                            #DISTRIBUTE PROBABILITY DISTRIBUTION
-                            oi=0
-                            ii=0
-                            for c in self.clientmap.keys():
-                                
-                                probDist={}
-                                sum=0
-                                for s in self.dataSetMap.keys():
-                                    weight=random.random()
-                                    probDist[s]=weight
-                                    sum+=weight
-                                    ii+=1
-                                for s in self.dataSetMap.keys():
-                                    probDist[s]=probDist[s]/sum
-                                oi+=1
-                                high=0.25
-                                low=0.25
-                                if(oi==1):
-                                  probDist[0]=high
-                                  probDist[1]=low
-                                  probDist[2]=low
-                                  probDist[3]=low
-                                elif(oi==2):
-                                  probDist[0]=low
-                                  probDist[1]=low
-                                  probDist[2]=low
-                                  probDist[3]=high
-                                toSend=ServerProbabilityUpdateMessage(probId=0,distribution=probDist) #0=RequestProbMap
-                                send(c,toSend)
-                            #END DISTRIBUTE PROBABILITY DISTRIBUTIONS
-                            phase=1
-
-                            for fromClient in self.clientmap.keys():
-                                loop=0
-                                for toClient in self.clientmap.keys():
-                                    if fromClient!=toClient:
-                                        details,toss=self.clientmap[fromClient]
-                                        addr,prt=details
-                                        prt+=1
-                                        details=(addr,prt)
-                                        sendme=ServerHostAlertMessage(hostInfo=details,hostName=loop)
-                                        print "Alerting "+str(self.clientmap[fromClient])+" to "+str(self.clientmap[toClient])
-                                        send(toClient,sendme)
-                                        print "Alerted"+str(self.clientmap[fromClient])+" to "+str(self.clientmap[toClient])
-                                        time.sleep(3)
-                                    else:
-                                        loop+=1
-                            for toClient in self.clientmap.keys():
-                                print "Sending say go"
+                          import time
+                          time.sleep(0.5)
+                          numFree=[]
+                          #DISTRIBUTE DATASETS
+                          for c in range(NUMCLIENTS):
+                              numFree.append(ELEMENTSPERHOST)
+                          #pdb.set_trace()
+                          for s in range(NUMSETS):
+                              for key in self.dataSetMap[s].myElements.keys():
+                                t0,t1,t2=self.dataSetMap[s].myElements[key]
+                                self.dataSetMap[s].myElements[key]=(s,t1,t2)
+                              print str(s)+': '+str(self.dataSetMap[s].myElements)
+                              print "Splitting set "+str(s)
+                              builtSets=[]
+                              for c in range(NUMCLIENTS):
+                                  builtSets.append({})
+                              for idx in range(ELEMENTSPERSET):
+                                  ourLuckyWinner=int(random.random()*NUMCLIENTS)
+                                  while(numFree[ourLuckyWinner]<=0):
+                                      ourLuckyWinner+=int(random.random()*NUMCLIENTS)
+                                      ourLuckyWinner%=NUMCLIENTS
+                                  builtSets[ourLuckyWinner][idx]=self.dataSetMap[s].myElements[idx]
+                                  numFree[ourLuckyWinner]-=1
+                              for setnum in range(NUMCLIENTS):
+                                  print "Sending off set " + str(self.dataSetMap[s].myName)
+                                  tempset=DataSet(name=self.dataSetMap[s].myName,init=False,size=ELEMENTSPERHOST,elements=builtSets[setnum])
+                                  toSend=ServerRegisterDataSet(name=tempset.myName,elementSet=tempset)
+                                  print "Sending off set w/elements named" +str(tempset.myElements[tempset.myElements.keys()[0]][0])
+                                  time.sleep(0.5)
+                                  print self.clientmap[self.clientmap.keys()[setnum]]
+                                  send(self.clientmap.keys()[setnum],toSend)
+                          #END DISTRIBUTE DATASETS
+                          #DISTRIBUTE PROBABILITY DISTRIBUTION
+                          oi=0
+                          ii=0
+                          for c in self.clientmap.keys():
                               
-                                self.startTime=time.time()
-                                time.sleep(1)
-                                send(toClient,ServerSayGoMessage())
-                                print "Sent say go"
+                              probDist={}
+                              sum=0
+                              for s in self.dataSetMap.keys():
+                                  weight=random.random()
+                                  probDist[s]=weight
+                                  sum+=weight
+                                  ii+=1
+                              for s in self.dataSetMap.keys():
+                                  probDist[s]=probDist[s]/sum
+                              oi+=1
+                              high=0.97
+                              low=0.01
+                              if(oi==1):
+                                probDist[0]=high
+                                probDist[1]=low
+                                probDist[2]=low
+                                probDist[3]=low
+                              elif(oi==2):
+                                probDist[0]=low
+                                probDist[1]=low
+                                probDist[2]=low
+                                probDist[3]=high
+                              toSend=ServerProbabilityUpdateMessage(probId=0,distribution=probDist) #0=RequestProbMap
+                              send(c,toSend)
+                          #END DISTRIBUTE PROBABILITY DISTRIBUTIONS
+                          phase=1
+
+                          for fromClient in self.clientmap.keys():
+                              loop=0
+                              for toClient in self.clientmap.keys():
+                                  if fromClient!=toClient:
+                                      details,toss=self.clientmap[fromClient]
+                                      addr,prt=details
+                                      prt+=1
+                                      details=(addr,prt)
+                                      sendme=ServerHostAlertMessage(hostInfo=details,hostName=loop)
+                                      print "Alerting "+str(self.clientmap[fromClient])+" to "+str(self.clientmap[toClient])
+                                      send(toClient,sendme)
+                                      print "Alerted"+str(self.clientmap[fromClient])+" to "+str(self.clientmap[toClient])
+                                      time.sleep(3)
+                                  else:
+                                      loop+=1
+                          for toClient in self.clientmap.keys():
+                              print "Sending say go"
+                            
+                              self.startTime=time.time()
+                              time.sleep(1)
+                              send(toClient,ServerSayGoMessage())
+                              print "Sent say go"
 
                     self.outputs.append(client)
 

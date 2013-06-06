@@ -11,6 +11,7 @@ import asyncore
 import random
 import math
 BUFSIZ = 1024
+MSGSIZE=7568
 DEBUG = False
 #READ_ONLY = select.POLLIN | select.POLLPRI | select.POLLHUP | select.POLLERR
 READ_ONLY = select.POLLIN | select.POLLPRI
@@ -25,6 +26,7 @@ class Client(object):
         self.name = name
         # Quit flag
         self.hostsmap={}
+        self.haveRequests=True
         self.processingRequests=True
         self.startTime=0
         self.deltaTime=0
@@ -111,7 +113,7 @@ class Client(object):
               
                 ##apeprint "Foofoofoo???"
                 idle+=1
-                if(phase==1) and (self.gotMyElement):
+                if((phase==1) and (self.gotMyElement)) or not self.haveRequests:
 
                     choiceSet=self.chooseSet(self.myRequestProbMap)
                     mySet=self.dataSetMap[choiceSet].myName
@@ -138,9 +140,11 @@ class Client(object):
                       time.sleep(COMPWAITTIME)
                       print 'Cache hit on '+str(self.dataSetMap[choiceSet].myElements[choiceElement])
                 if(self.processingRequests):
+                 self.haveRequets=False
                  for ifd,evtype in inputready:
                      if not (evtype & (select.POLLIN | select.POLLPRI)):
                          continue
+                     self.haveRequests=True
                      #apeprint "I received any data"
                      idle=0
                      i=self.fdmap[ifd]
@@ -315,7 +319,7 @@ class Client(object):
                            if(data.myKeepable):
                              toKeep=self.chooseReturn(self.myRequestProbMap,setname)
                              #print str(setname)+', TOKEEP '+str(toKeep)
-                             if(random.random()<1):
+                             if(random.random()<toKeep):
                                self.dataSetMap[dataset].myElements[element]=data.myElement
                                bestEffort=0
                                rset=dataset
