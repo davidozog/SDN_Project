@@ -70,16 +70,19 @@ class Client(object):
             i+=1
         i-=1
         return distribution.keys()[i]
-    def chooseReturn(self,distribution,element):
+    def chooseReturn(self,element):
         others=0
         numothers=0
         val=distribution[element]
+        newDist={}
         for key in distribution.keys():
-          if(key!=element):
+          if(key!=element[0]):
             others+=distribution[key]
+            newDist[key]=distribution[key]
             numothers+=1
-        temp=val/(others/numothers) if others!= 0 else 0
-        return (1-math.pow(2,-temp))
+        for key in newDist.keys():
+          newDist[key]=newDist[key]/others
+        return chooseSet(newDist)
 
     def chooseElement(self, setName):
         r = random.random()
@@ -227,7 +230,12 @@ class Client(object):
                                  ds=data.myElements
                                  self.dataSetMap[ds.myName]=ds
                              elif isinstance(data,ServerProbabilityUpdateMessage):
-                                 self.myRequestProbMap=data.myDistribution
+                                 if(data.myProbId==0):
+                                  self.myRequestProbMap=data.myDistribution
+                                 elif(data.myProbId==1):
+                                  self.myAcceptanceProbMap=data.myDistribution
+                                 elif(data.myProbId==2):
+                                  self.myReturnProbMap=data.myDistribution
                              elif isinstance(data,ServerSayGoMessage):
                                  phase=1
                                  self.startTime=time.time()
@@ -320,9 +328,9 @@ class Client(object):
                            numRcvd+=1
                            #print "Receiving totally lemitigate data "+str(data.myElement)
                            if(data.myKeepable):
-                             toKeep=self.chooseReturn(self.myRequestProbMap,setname)
+                             toKeep=self.myAcceptanceProbMap[setname]
                              #print str(setname)+', TOKEEP '+str(toKeep)
-                             if(random.random()<toKeep):
+                             if(random.random()>toKeep):
                                self.dataSetMap[dataset].myElements[element]=data.myElement
                                bestEffort=0
                                rset=dataset
@@ -331,8 +339,7 @@ class Client(object):
                                keep=True
                                while(rset==dataset) and (bestEffort<1000):
                                  rset=self.dataSetMap[choiceSet].myName
-                                 temp=int(random.random()*numSets)
-                                 choiceSet=self.dataSetMap.keys()[temp]
+                                 choiceSet=chooseReturn(data.myElement)
                                  bestEffort+=1
                                rElement=-1 if rset!=dataset else self.dataSetMap[rset].myElements[self.dataSetMap[rset].myElements.keys()[0] ]
                                while (bestEffort<1000) and (not self.dataSetMap[rset].myElements.has_key(rElement)):
