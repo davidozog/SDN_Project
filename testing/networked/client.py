@@ -12,7 +12,8 @@ import random
 import math
 BUFSIZ = 1024
 MSGSIZE=7568
-DEBUG = True
+SLIDINGWINDOW=10
+DEBUG = False
 #READ_ONLY = select.POLLIN | select.POLLPRI | select.POLLHUP | select.POLLERR
 READ_ONLY = select.POLLIN | select.POLLPRI
 CONWAITTIME=0.2
@@ -31,7 +32,8 @@ class Client(object):
         self.startTime=0
         self.deltaTime=0
         self.timeThreshold=0.3
-        self.dataSetMap={}
+        self.slidingWindow=0
+	self.dataSetMap={}
 	self.startTime=0
         self.flag = False
         self.port = int(port)
@@ -65,8 +67,9 @@ class Client(object):
     def chooseSet(self,distribution):
         r = random.random()
         sum = distribution[distribution.keys()[0]]
+        print distribution    
         i = 1
-        while(r>sum):
+        while(r>(sum-0.0000000001)):
             sum+=distribution[distribution.keys()[i]]
             i+=1
         i-=1
@@ -74,10 +77,18 @@ class Client(object):
     def chooseReturn(self,element):
         others=0
 	print self.myRequestProbMap
-	print self.myReturnProbMap
+	newDist=self.myReturnProbMap.copy()
+	
+	name=element[0]
+	del newDist[name]
+	sum=0
+	for key in newDist.keys():
+	   sum+=newDist[key]
+	for key in newDist.keys():
+	   newDist[key]=(newDist[key]/sum) if sum >0 else (1.0/len(newDist.keys())) 
+        print newDist	
         numothers=0
-        distribution=self.myReturnProbMap
-	return self.chooseSet(distribution)
+	return self.chooseSet(newDist)
 
     def chooseElement(self, setName):
         r = random.random()
@@ -91,7 +102,7 @@ class Client(object):
 	parity=0
         while not self.flag:
             try:
-                if(passNum%100==0) and (phase==1) and (numRcvd%2==parity):
+                if (phase==1) and ((time.time()%1.0)<0.1): 
 	          parity+=1
 		  parity=parity%2		 
                   #print self.myRequestProbMap
@@ -119,13 +130,15 @@ class Client(object):
               
                 ##apeprint "Foofoofoo???"
                 idle+=1
-                if((phase==1) and (self.gotMyElement)) or not self.haveRequests:
-
+                if ((phase==1) and (self.slidingWindow>=-SLIDINGWINDOW)): #and (self.gotMyElement or not self.haveRequests):
+		    
                     choiceSet=self.chooseSet(self.myRequestProbMap)
                     mySet=self.dataSetMap[choiceSet].myName
                     choiceElement=self.chooseElement(mySet)
                     passNum+=1
                     if(not self.dataSetMap[choiceSet].myElements.has_key(choiceElement)):
+			self.slidingWindow-=1
+			print str(self.slidingWindow) +'!!!!!' 
                         request=ClientRequestDataMessage(dataSet=choiceSet,element=choiceElement)
                         self.gotMyElement=False
                         for key in self.hostsmap.keys():
@@ -141,12 +154,15 @@ class Client(object):
                             #hostmap[key][-1].close()
                             send(self.hostsmap[key][-1],request)
                             time.sleep(CONWAITTIME)
+                            #time.sleep(CONWAITTIME)
                             #apeprint "Sent off "+str(request)+" to "+str(tkey[-1].getpeername())
                     else:
                       time.sleep(COMPWAITTIME)
                       print 'Cache hit on '+str(self.dataSetMap[choiceSet].myElements[choiceElement])
-                if(self.processingRequests):
-                 self.haveRequets=False
+		      numRcvd+=1
+		      passNum+=1
+                #if(self.processingRequests) and self.slidingWindow<=5:
+                if True:#self.slidingWindow<=SLIDINGWINDOW+5:
                  for ifd,evtype in inputready:
                      if not (evtype & (select.POLLIN | select.POLLPRI)):
                          continue
@@ -230,12 +246,14 @@ class Client(object):
                                  ds=data.myElements
                                  self.dataSetMap[ds.myName]=ds
                              elif isinstance(data,ServerProbabilityUpdateMessage):
+				 at=time.time()
                                  if(data.myProbId==0):
                                   self.myRequestProbMap=data.myDistribution
                                  elif(data.myProbId==1):
                                   self.myAcceptanceProbMap=data.myDistribution
                                  elif(data.myProbId==2):
                                   self.myReturnProbMap=data.myDistribution
+				 print "Unpack duration: "+str(time.time()-at)
                              elif isinstance(data,ServerSayGoMessage):
                                  phase=1
                                  self.startTime=time.time()
@@ -266,6 +284,7 @@ class Client(object):
                              dataset=data.myDataSet
                              element=data.myElement
                              response=ClientResponseMessage()
+			     self.slidingWindow+=1
                              if(self.dataSetMap[dataset].myElements.has_key(element)):
                                  response.myKeepable=self.dataSetMap[dataset].checkRequests(element)
                                  response.myElement=self.dataSetMap[dataset].myElements[element]
@@ -326,13 +345,17 @@ class Client(object):
                            setname,element,value=data.myElement
                            dataset=setname
                            self.gotMyElement=True
-                           
-                           numRcvd+=1
+                           self.processingRequests=True 
+                           #self.slidingWindow+=1
+			   #print str(self.slidingWindow) +'!!!!!' 
+		           numRcvd+=1
                            print "Receiving totally lemitigate data "+str(data.myElement)
                            if(data.myKeepable):
+			     print 'Acc: '+str(self.myAcceptanceProbMap)
                              toKeep=self.myAcceptanceProbMap[setname]
                              #print str(setname)+', TOKEEP '+str(toKeep)
-                             if(random.random()>toKeep):
+                             if(random.random()<toKeep):
+			       print 'Keeping'
                                self.dataSetMap[dataset].myElements[element]=data.myElement
                                bestEffort=0
                                rset=dataset

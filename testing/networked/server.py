@@ -17,7 +17,7 @@ BUFSIZ = 1024
 NUMCLIENTS=2
 NUMSETS=4
 BETA=0.0
-UPDATEPROBS=True
+UPDATEPROBS=False
 ELEMENTSPERSET=150
 OFFSET1=0
 OFFSET2=0
@@ -138,6 +138,7 @@ class MMP(object):
                 if s==self.controllerSocket:
                   #pdb.set_trace()
                   #print 'Received Data From Controller1'
+		  print "Controller Data"
                   data=self.controllerSocket.recv(1048576)
                   #pdb.set_trace()
                   
@@ -247,15 +248,15 @@ class MMP(object):
                          #print "Total: "+str(total) 
                          #print '======DEBUG======'
                          if(total==0):
-                           acceptDistribution[setName][key]=0.0
+                           acceptDistribution[setName][key]=1.0
                          else:
-                           acceptDistribution[setName][key]= BETA*MSGSIZE/total if not flow_stat_data.has_key(tkey) or mySendAmount>flow_stat_data[tkey] or total==0 else 1.0*(BETA*MSGSIZE+flow_stat_data[tkey]-mySendAmount)/total  
+                           acceptDistribution[setName][key]= BETA*MSGSIZE/total if not flow_stat_data.has_key(tkey) or mySendAmount>flow_stat_data[tkey] else 1.0*(BETA*MSGSIZE+flow_stat_data[tkey]-mySendAmount)/total  
                         
                     for c in range (NUMCLIENTS):
                       formattedDist={}
                       for s in range (NUMSETS):
                         formattedDist[s]=acceptDistribution[s][c]
-                      if UPDATEPROBS: send(self.numToClient[(i+OFFSET1)%2],ServerProbabilityUpdateMessage(probId=1,distribution=formattedDist))
+                      if UPDATEPROBS: send(self.numToClient[(c+OFFSET1)%2],ServerProbabilityUpdateMessage(probId=1,distribution=formattedDist))
                       print "Accept: "+str(formattedDist)      
                     #end accept probabilities
                     #print flow_stat_data
@@ -301,8 +302,6 @@ class MMP(object):
                               for key in self.dataSetMap[s].myElements.keys():
                                 t0,t1,t2=self.dataSetMap[s].myElements[key]
                                 self.dataSetMap[s].myElements[key]=(s,t1,t2)
-                              print str(s)+': '+str(self.dataSetMap[s].myElements)
-                              print "Splitting set "+str(s)
                               builtSets=[]
                               for c in range(NUMCLIENTS):
                                   builtSets.append({})
@@ -314,12 +313,9 @@ class MMP(object):
                                   builtSets[ourLuckyWinner][idx]=self.dataSetMap[s].myElements[idx]
                                   numFree[ourLuckyWinner]-=1
                               for setnum in range(NUMCLIENTS):
-                                  print "Sending off set " + str(self.dataSetMap[s].myName)
                                   tempset=DataSet(name=self.dataSetMap[s].myName,init=False,size=ELEMENTSPERHOST,elements=builtSets[setnum])
                                   toSend=ServerRegisterDataSet(name=tempset.myName,elementSet=tempset)
-                                  print "Sending off set w/elements named" +str(tempset.myElements[tempset.myElements.keys()[0]][0])
                                   time.sleep(0.5)
-                                  print self.clientmap[self.clientmap.keys()[setnum]]
                                   send(self.clientmap.keys()[setnum],toSend)
                           #END DISTRIBUTE DATASETS
                           #DISTRIBUTE PROBABILITY DISTRIBUTION
@@ -380,7 +376,7 @@ class MMP(object):
                               print "Sending say go"
                             
                               self.startTime=time.time()
-                              time.sleep(1)
+                              time.sleep(0.001)
                               send(toClient,ServerSayGoMessage())
                               print "Sent say go"
 
