@@ -1,0 +1,125 @@
+<communication.ServerHostListenMessage object at 0x1c77110>
+<communication.ServerRegisterDataSet object at 0x1c77190>
+<communication.ServerRegisterDataSet object at 0x1c77150>
+<communication.ServerRegisterDataSet object at 0x1c77110>
+<communication.ServerRegisterDataSet object at 0x1c77190>
+<communication.ServerProbabilityUpdateMessage object at 0x1c77110>
+<communication.ServerProbabilityUpdateMessage object at 0x1c77190>
+<communication.ServerProbabilityUpdateMessage object at 0x1c77110>
+<communication.ServerHostAlertMessage object at 0x1c771d0>
+<communication.ServerSayGoMessage object at 0x1c771d0>
+<communication.ServerProbabilityUpdateMessage object at 0x1c77250>
+TIME:1.24898004532
+In dataset 0:84
+In dataset 1:80
+In dataset 2:74
+In dataset 3:62
+==========================================
+Size is : 7568
+Receiving totally lemitigate data (0, 16, 0.9490662972198751)
+{0: 0.97, 1: 0.01, 2: 0.01, 3: 0.01}
+{1: 0.3333333333333333, 2: 0.3333333333333333, 3: 0.3333333333333333}
+{0: 0.97, 1: 0.01, 2: 0.01, 3: 0.01}
+{1: 0.3333333333333333, 2: 0.3333333333333333, 3: 0.3333333333333333}
+Replacing with 0, element (1, 53, 0.9857981697877979)
+4294570
+Done with delete request
+Cache hit on (0, 12, 0.6445815054666872)
+Size is : 7568
+Receiving totally lemitigate data (0, 42, 0.12593881029080534)
+{0: 0.97, 1: 0.01, 2: 0.01, 3: 0.01}
+{1: 0.3333333333333333, 2: 0.3333333333333333, 3: 0.3333333333333333}
+{0: 0.97, 1: 0.01, 2: 0.01, 3: 0.01}
+{1: 0.3333333333333333, 2: 0.3333333333333333, 3: 0.3333333333333333}
+Replacing with 0, element (2, 75, 0.5777862386634631)
+4294577
+Done with delete request
+<communication.ServerProbabilityUpdateMessage object at 0x1c771d0>
+Size is : 7568
+Receiving totally lemitigate data (0, 90, 0.6288348972216677)
+Cache hit on (0, 19, 0.6986921887796373)
+Size is : 7568
+Receiving totally lemitigate data (0, 24, 0.515933446563671)
+{0: 0.97, 1: 0.01, 2: 0.01, 3: 0.01}
+{1: 0.04755546425636811, 2: 0.04755546425636811, 3: 0.9048890714872637}
+{0: 0.97, 1: 0.01, 2: 0.01, 3: 0.01}
+{1: 0.04755546425636811, 2: 0.04755546425636811, 3: 0.9048890714872637}
+Replacing with 0, element (3, 64, 0.49125820209791415)
+4294588
+Done with delete request
+Cache hit on (0, 35, 0.1385799631447041)
+Cache hit on (0, 78, 0.848771481192241)
+Cache hit on (3, 38, 0.826077378251708)
+Size is : 7567
+Receiving totally lemitigate data (0, 8, 0.5775022303199868)
+Cache hit on (0, 56, 0.5268299996921078)
+Cache hit on (0, 77, 0.037655619868319)
+Cache hit on (0, 40, 0.18942779444082136)
+TIME:7.29074811935
+In dataset 0:91
+In dataset 1:79
+In dataset 2:74
+In dataset 3:56
+==========================================
+Size is : 7568
+Receiving totally lemitigate data (0, 88, 0.9601766995444375)
+{0: 0.97, 1: 0.01, 2: 0.01, 3: 0.01}
+{1: 0.04755546425636811, 2: 0.04755546425636811, 3: 0.9048890714872637}
+{0: 0.97, 1: 0.01, 2: 0.01, 3: 0.01}
+{1: 0.04755546425636811, 2: 0.04755546425636811, 3: 0.9048890714872637}
+Replacing with 0, element (3, 55, 0.46384620428533796)
+4470181
+Done with delete request
+Size is : 7567
+Receiving totally lemitigate data (0, 67, 0.8883094303800938)
+Cache hit on (0, 16, 0.9490662972198751)
+Cache hit on (0, 52, 0.9487878208843213)
+<communication.ServerProbabilityUpdateMessage object at 0x1c77250>
+Size is : 7568
+Receiving totally lemitigate data (0, 70, 0.5988496329993206)
+Cache hit on (0, 33, 0.3476903801033626)
+TIME:9.77980494499
+In dataset 0:95
+In dataset 1:79
+In dataset 2:74
+In dataset 3:52
+==========================================
+Size is : 7568
+Receiving totally lemitigate data (0, 26, 0.17249781623732474)
+{0: 0.97, 1: 0.01, 2: 0.01, 3: 0.01}
+{1: 0.0, 2: 0.0, 3: 1.0}
+{0: 0.97, 1: 0.01, 2: 0.01, 3: 0.01}
+{1: 0.0, 2: 0.0, 3: 1.0}
+Replacing with 0, element (3, 5, 0.7701842780377941)
+4550643
+Done with delete request
+Warning: received request to delete nonexistent element
+Size is : 7533
+TIME:10.5611460209
+In dataset 0:97
+In dataset 1:79
+In dataset 2:74
+In dataset 3:50
+==========================================
+<communication.ServerProbabilityUpdateMessage object at 0x1c771d0>
+<communication.ServerProbabilityUpdateMessage object at 0x1c77310>
+<communication.ServerProbabilityUpdateMessage object at 0x1c772d0>
+<communication.ServerProbabilityUpdateMessage object at 0x1c77250>
+<communication.ServerProbabilityUpdateMessage object at 0x1c77310>
+<communication.ServerProbabilityUpdateMessage object at 0x1c772d0>
+<communication.ServerProbabilityUpdateMessage object at 0x1c772d0>
+<communication.ServerProbabilityUpdateMessage object at 0x1c772d0>
+<communication.ServerProbabilityUpdateMessage object at 0x1c772d0>
+<communication.ServerProbabilityUpdateMessage object at 0x1c771d0>
+<communication.ServerProbabilityUpdateMessage object at 0x1c77290>
+<communication.ServerProbabilityUpdateMessage object at 0x1c771d0>
+<communication.ServerProbabilityUpdateMessage object at 0x1c772d0>
+<communication.ServerProbabilityUpdateMessage object at 0x1c77310>
+<communication.ServerProbabilityUpdateMessage object at 0x1c771d0>
+<communication.ServerProbabilityUpdateMessage object at 0x1c77250>
+<communication.ServerProbabilityUpdateMessage object at 0x1c77290>
+<communication.ServerProbabilityUpdateMessage object at 0x1c77290>
+<communication.ServerProbabilityUpdateMessage object at 0x1c77290>
+<communication.ServerProbabilityUpdateMessage object at 0x1c77290>
+<communication.ServerProbabilityUpdateMessage object at 0x1c77310>
+<communication.ServerProbabilityUpdateMessage object at 0x1c77290>

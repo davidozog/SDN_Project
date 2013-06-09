@@ -1,0 +1,379 @@
+<communication.ServerHostListenMessage object at 0x26300d0>
+<communication.ServerRegisterDataSet object at 0x2630150>
+<communication.ServerRegisterDataSet object at 0x2630110>
+<communication.ServerRegisterDataSet object at 0x26300d0>
+<communication.ServerRegisterDataSet object at 0x2630150>
+<communication.ServerProbabilityUpdateMessage object at 0x26300d0>
+<communication.ServerProbabilityUpdateMessage object at 0x2630150>
+<communication.ServerProbabilityUpdateMessage object at 0x26300d0>
+<communication.ServerHostAlertMessage object at 0x2630190>
+<communication.ServerSayGoMessage object at 0x26301d0>
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (1, 25, 0.8901831355108138)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+<communication.ServerProbabilityUpdateMessage object at 0x2630210>
+TIME:5.23134803772
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+<communication.ServerProbabilityUpdateMessage object at 0x26301d0>
+Size is : 7567
+Receiving totally lemitigate data (2, 8, 0.5775022303199868)
+Acc: 0.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (2, 87, 0.2738859804343934)
+<communication.ServerProbabilityUpdateMessage object at 0x26301d0>
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+<communication.ServerProbabilityUpdateMessage object at 0x2630250>
+<communication.ServerProbabilityUpdateMessage object at 0x26301d0>
+<communication.ServerProbabilityUpdateMessage object at 0x2630250>
+TIME:9.57652997971
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+<communication.ServerProbabilityUpdateMessage object at 0x2630210>
+<communication.ServerProbabilityUpdateMessage object at 0x2630290>
+Size is : 7568
+Receiving totally lemitigate data (2, 84, 0.7602737552467611)
+Acc: 1.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 1.0, 1: 0.0, 3: 0.0}
+{0: 1.0, 1: 0.0, 3: 0.0}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 1.0, 1: 0.0, 3: 0.0}
+{0: 1.0, 1: 0.0, 3: 0.0}
+Replacing with 2, element (0, 48, 0.08932880895066508)
+4345992
+Done with delete request
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (2, 62, 0.3414425819011161)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (2, 14, 0.8611910665091667)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+<communication.ServerProbabilityUpdateMessage object at 0x26301d0>
+TIME:20.2241270542
+In dataset 0:65
+In dataset 1:70
+In dataset 2:77
+In dataset 3:88
+==========================================
+<communication.ServerProbabilityUpdateMessage object at 0x2630210>
+Size is : 7568
+Receiving totally lemitigate data (3, 73, 0.5565926037682182)
+Acc: 0.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+TIME:22.7607471943
+In dataset 0:65
+In dataset 1:70
+In dataset 2:77
+In dataset 3:88
+==========================================
+<communication.ServerProbabilityUpdateMessage object at 0x2630210>
+Size is : 7569
+Receiving totally lemitigate data (3, 77, 0.037655619868319)
+Acc: 0.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+<communication.ServerProbabilityUpdateMessage object at 0x2630210>
+TIME:25.3116791248
+In dataset 0:65
+In dataset 1:70
+In dataset 2:77
+In dataset 3:88
+==========================================
+Size is : 7568
+Receiving totally lemitigate data (1, 87, 0.2738859804343934)
+Acc: 0.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (2, 43, 0.6349081176076409)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+<communication.ServerProbabilityUpdateMessage object at 0x2630210>
+Size is : 7566
+Receiving totally lemitigate data (3, 78, 0.848771481192241)
+Acc: 1.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.0, 1: 0.007852468768590125, 2: 0.9921475312314099}
+{0: 0.0, 1: 0.007852468768590125, 2: 0.9921475312314099}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.0, 1: 0.007852468768590125, 2: 0.9921475312314099}
+{0: 0.0, 1: 0.007852468768590125, 2: 0.9921475312314099}
+Replacing with 3, element (2, 67, 0.8883094303800938)
+4573033
+Done with delete request
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+<communication.ServerProbabilityUpdateMessage object at 0x2630290>
+<communication.ServerProbabilityUpdateMessage object at 0x2630210>
+Size is : 7568
+Receiving totally lemitigate data (2, 82, 0.37213874350087717)
+Acc: 0.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (2, 16, 0.9490662972198751)
+<communication.ServerProbabilityUpdateMessage object at 0x2630290>
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+TIME:36.8072481155
+In dataset 0:65
+In dataset 1:68
+In dataset 2:75
+In dataset 3:92
+==========================================
+<communication.ServerProbabilityUpdateMessage object at 0x26301d0>
+<communication.ServerProbabilityUpdateMessage object at 0x2630250>
+Size is : 7567
+Receiving totally lemitigate data (1, 7, 0.2954814755007503)
+Acc: 0.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+TIME:41.0044281483
+In dataset 0:65
+In dataset 1:68
+In dataset 2:75
+In dataset 3:92
+==========================================
+Size is : 7568
+Receiving totally lemitigate data (0, 22, 0.17441392928050758)
+Acc: 0.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (2, 17, 0.165933560174796)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (3, 91, 0.6336885892147315)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+<communication.ServerProbabilityUpdateMessage object at 0x2630250>
+TIME:47.8359160423
+In dataset 0:65
+In dataset 1:68
+In dataset 2:75
+In dataset 3:92
+==========================================
+<communication.ServerProbabilityUpdateMessage object at 0x26301d0>
+Size is : 7568
+Receiving totally lemitigate data (2, 26, 0.17249781623732474)
+Acc: 0.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (3, 79, 0.5960469281347621)
+<communication.ServerProbabilityUpdateMessage object at 0x2630290>
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+<communication.ServerProbabilityUpdateMessage object at 0x26301d0>
+Size is : 7568
+Receiving totally lemitigate data (0, 55, 0.46384620428533796)
+Acc: 0.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+<communication.ServerProbabilityUpdateMessage object at 0x26301d0>
+<communication.ServerProbabilityUpdateMessage object at 0x2630250>
+<communication.ServerProbabilityUpdateMessage object at 0x26301d0>
+<communication.ServerProbabilityUpdateMessage object at 0x2630250>
+Size is : 7568
+Receiving totally lemitigate data (2, 26, 0.17249781623732474)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (1, 93, 0.6769376620541547)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (1, 52, 0.9487878208843213)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (0, 27, 0.40932923901694374)
+<communication.ServerProbabilityUpdateMessage object at 0x2630250>
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (2, 89, 0.9307242813083016)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (2, 78, 0.848771481192241)
+<communication.ServerProbabilityUpdateMessage object at 0x2630290>
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+<communication.ServerProbabilityUpdateMessage object at 0x2630250>
+<communication.ServerProbabilityUpdateMessage object at 0x2630210>
+TIME:70.9607892036
+In dataset 0:65
+In dataset 1:68
+In dataset 2:75
+In dataset 3:92
+==========================================
+<communication.ServerProbabilityUpdateMessage object at 0x2630250>
+<communication.ServerProbabilityUpdateMessage object at 0x2630210>
+Size is : 7568
+Receiving totally lemitigate data (0, 22, 0.17441392928050758)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+TIME:76.7811009884
+In dataset 0:65
+In dataset 1:68
+In dataset 2:75
+In dataset 3:92
+==========================================
+Size is : 7568
+Receiving totally lemitigate data (3, 98, 0.4138226158411057)
+Acc: 0.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+TIME:79.457624197
+In dataset 0:66
+In dataset 1:68
+In dataset 2:74
+In dataset 3:92
+==========================================
+<communication.ServerProbabilityUpdateMessage object at 0x2630210>
+Size is : 7568
+Receiving totally lemitigate data (0, 25, 0.8901831355108138)
+Acc: 0.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+<communication.ServerProbabilityUpdateMessage object at 0x2630210>
+TIME:81.8058311939
+In dataset 0:66
+In dataset 1:68
+In dataset 2:74
+In dataset 3:92
+==========================================
+<communication.ServerProbabilityUpdateMessage object at 0x2630250>
+<communication.ServerProbabilityUpdateMessage object at 0x2630210>
+Size is : 7568
+Receiving totally lemitigate data (3, 92, 0.3062438861360489)
+Acc: 1.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.0, 1: 0.0, 2: 1.0}
+{0: 0.0, 1: 0.0, 2: 1.0}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.0, 1: 0.0, 2: 1.0}
+{0: 0.0, 1: 0.0, 2: 1.0}
+Replacing with 3, element (2, 2, 0.8602469894076687)
+9916522
+Done with delete request
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+TIME:86.1388010979
+In dataset 0:66
+In dataset 1:68
+In dataset 2:73
+In dataset 3:93
+==========================================
+Size is : 7568
+Receiving totally lemitigate data (1, 26, 0.17249781623732474)
+Acc: 0.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+TIME:88.6853871346
+In dataset 0:66
+In dataset 1:68
+In dataset 2:73
+In dataset 3:93
+==========================================
+<communication.ServerProbabilityUpdateMessage object at 0x26302d0>
+<communication.ServerProbabilityUpdateMessage object at 0x2630210>
+<communication.ServerProbabilityUpdateMessage object at 0x2630250>
+Size is : 7567
+Receiving totally lemitigate data (3, 3, 0.9841316874007556)
+Acc: 1.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (2, 69, 0.692374536404731)
+11651092
+Done with delete request
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+<communication.ServerProbabilityUpdateMessage object at 0x26302d0>
+TIME:95.0991711617
+In dataset 0:66
+In dataset 1:68
+In dataset 2:72
+In dataset 3:94
+==========================================
+Size is : 7568
+Receiving totally lemitigate data (2, 68, 0.5637817757896867)
+Acc: 0.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (0, 27, 0.40932923901694374)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (3, 57, 0.6513561869435361)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (2, 77, 0.037655619868319)
+<communication.ServerProbabilityUpdateMessage object at 0x26302d0>
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (1, 68, 0.5637817757896867)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+<communication.ServerProbabilityUpdateMessage object at 0x2630190>
+TIME:105.648111105
+In dataset 0:66
+In dataset 1:68
+In dataset 2:72
+In dataset 3:94
+==========================================
+<communication.ServerProbabilityUpdateMessage object at 0x2630290>
+<communication.ServerProbabilityUpdateMessage object at 0x26302d0>
+Size is : 7568
+Receiving totally lemitigate data (1, 62, 0.3414425819011161)
+Acc: 0.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+TIME:109.706940174
+In dataset 0:66
+In dataset 1:68
+In dataset 2:72
+In dataset 3:94
+==========================================
+<communication.ServerProbabilityUpdateMessage object at 0x2630190>
+Size is : 7568
+Receiving totally lemitigate data (2, 30, 0.9933235943563021)
+Acc: 1.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.0, 1: 0.0, 3: 1.0}
+{0: 0.0, 1: 0.0, 3: 1.0}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.0, 1: 0.0, 3: 1.0}
+{0: 0.0, 1: 0.0, 3: 1.0}
+Replacing with 2, element (3, 19, 0.6986921887796373)
+12582472
+Done with delete request
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+<communication.ServerProbabilityUpdateMessage object at 0x2627f50>
+TIME:112.244258165
+In dataset 0:66
+In dataset 1:68
+In dataset 2:74
+In dataset 3:92
+==========================================
+<communication.ServerProbabilityUpdateMessage object at 0x2630210>
+<communication.ServerProbabilityUpdateMessage object at 0x26301d0>
+Size is : 7568
+Receiving totally lemitigate data (0, 98, 0.4138226158411057)
+Acc: 0.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+TIME:116.856585979
+In dataset 0:66
+In dataset 1:68
+In dataset 2:74
+In dataset 3:92
+==========================================
+Size is : 7568
+Receiving totally lemitigate data (1, 27, 0.40932923901694374)
+Acc: 1.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.5147058823529411, 2: 0.0, 3: 0.4852941176470588}
+{0: 0.5147058823529411, 2: 0.0, 3: 0.4852941176470588}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.5147058823529411, 2: 0.0, 3: 0.4852941176470588}
+{0: 0.5147058823529411, 2: 0.0, 3: 0.4852941176470588}
+Replacing with 1, element (3, 89, 0.9307242813083016)
+13623502
+Done with delete request
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+TIME:119.637061119
+In dataset 0:66
+In dataset 1:69
+In dataset 2:74
+In dataset 3:91
+==========================================
+<communication.ServerProbabilityUpdateMessage object at 0x2630190>
+<communication.ServerProbabilityUpdateMessage object at 0x2630310>
+Size is : 7568
+Receiving totally lemitigate data (1, 46, 0.45152634356893373)
+Acc: 1.0
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.9830774809621661, 2: 0.016922519037833917, 3: 0.0}
+{0: 0.9830774809621661, 2: 0.016922519037833917, 3: 0.0}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.9830774809621661, 2: 0.016922519037833917, 3: 0.0}
+{0: 0.9830774809621661, 2: 0.016922519037833917, 3: 0.0}
+Replacing with 1, element (0, 99, 0.33330805848569356)
+13664319
+Done with delete request
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (0, 75, 0.5777862386634631)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (3, 57, 0.6513561869435361)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Cache hit on (2, 42, 0.12593881029080534)

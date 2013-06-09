@@ -1,0 +1,2266 @@
+S1
+S2
+<communication.ServerHostListenMessage object at 0x1a6b0d0>
+S1
+S2
+<communication.ServerRegisterDataSet object at 0x1a6b150>
+S1
+S2
+<communication.ServerRegisterDataSet object at 0x1a6b110>
+S1
+S2
+<communication.ServerRegisterDataSet object at 0x1a6b0d0>
+S1
+S2
+<communication.ServerRegisterDataSet object at 0x1a6b150>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b0d0>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b150>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b0d0>
+S1
+S2
+<communication.ServerHostAlertMessage object at 0x1a6b190>
+L1
+L2
+L3
+L1
+L2
+L3
+L1
+L2
+L3
+L1
+L2
+L3
+C1
+C2
+C3
+S1
+S2
+<communication.ServerSayGoMessage object at 0x1a6b1d0>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b210>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 54, 0.5443508849874495)
+L3
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b210>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 86, 0.1617800798013429)
+L3
+Cache hit on (2, 80, 0.9790193772769754)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+TIME:2.270165205
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b1d0>
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 1, 0.3330455036175394)
+L3
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b1d0>
+TIME:2.82622814178
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 22, 0.17441392928050758)
+L3
+Cache hit on (3, 24, 0.515933446563671)
+Cache hit on (2, 13, 0.25664677239358114)
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 86, 0.1617800798013429)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (2, 1, 0.3330455036175394)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 63, 0.5003250637951888)
+L3
+Cache hit on (3, 17, 0.165933560174796)
+Cache hit on (1, 90, 0.6288348972216677)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 53, 0.9857981697877979)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+TIME:6.05612015724
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 98, 0.4138226158411057)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 73, 0.5565926037682182)
+L3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b2d0>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 88, 0.9601766995444375)
+L3
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b2d0>
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 61, 0.5610337771595438)
+L3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 0, 0.6529246362321403)
+L3
+TIME:8.47762513161
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (2, 83, 0.1945629525281013)
+L3
+TIME:8.85934019089
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 49, 0.7362087849349757)
+L3
+TIME:9.49078011513
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 88, 0.9601766995444375)
+L3
+Cache hit on (0, 51, 0.4236584091302169)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 81, 0.3691645733942466)
+L3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 97, 0.21545991590139613)
+L3
+TIME:11.2577559948
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 47, 0.6230560488198761)
+L3
+TIME:11.6774010658
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b2d0>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b1d0>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b2d0>
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (2, 8, 0.5775022303199868)
+L3
+TIME:12.3405950069
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 41, 0.3099881028794409)
+L3
+Cache hit on (0, 39, 0.424169074926957)
+Cache hit on (3, 30, 0.9933235943563021)
+Cache hit on (2, 13, 0.25664677239358114)
+Cache hit on (3, 12, 0.6445815054666872)
+TIME:13.5222821236
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 46, 0.45152634356893373)
+L3
+TIME:13.9763321877
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 32, 0.39577266587907334)
+L3
+Cache hit on (2, 58, 0.9654041126313677)
+Cache hit on (2, 38, 0.826077378251708)
+Cache hit on (2, 47, 0.6230560488198761)
+L1
+Size is : 7569
+L2
+Receiving totally lemitigate data (3, 34, 0.0769779797379686)
+L3
+C1
+C2
+C3
+Cache hit on (0, 70, 0.5988496329993206)
+Cache hit on (2, 58, 0.9654041126313677)
+C1
+C2
+C3
+Cache hit on (3, 35, 0.1385799631447041)
+Cache hit on (2, 89, 0.9307242813083016)
+Cache hit on (0, 32, 0.39577266587907334)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 37, 0.10784152074913667)
+L3
+Cache hit on (3, 62, 0.3414425819011161)
+Cache hit on (0, 39, 0.424169074926957)
+Cache hit on (3, 41, 0.3099881028794409)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b250>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b1d0>
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 90, 0.6288348972216677)
+L3
+Cache hit on (2, 56, 0.5268299996921078)
+Cache hit on (0, 82, 0.37213874350087717)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 30, 0.9933235943563021)
+L3
+C1
+C2
+C3
+TIME:19.5303711891
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (1, 3, 0.9841316874007556)
+L3
+Cache hit on (3, 50, 0.19467278153347678)
+Cache hit on (0, 8, 0.5775022303199868)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 40, 0.18942779444082136)
+L3
+C1
+C2
+C3
+Cache hit on (2, 72, 0.11957068478090738)
+Cache hit on (0, 49, 0.7362087849349757)
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 72, 0.11957068478090738)
+L3
+C1
+C2
+C3
+TIME:21.80195117
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 10, 0.8615102677174804)
+L3
+Cache hit on (1, 2, 0.8602469894076687)
+Cache hit on (1, 76, 0.9107292303878726)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b2d0>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 79, 0.5960469281347621)
+L3
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b2d0>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 21, 0.7854774132715057)
+L3
+TIME:23.4338979721
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7569
+L2
+Receiving totally lemitigate data (0, 77, 0.037655619868319)
+L3
+TIME:23.8539791107
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 76, 0.9107292303878726)
+L3
+TIME:24.4125311375
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 84, 0.7602737552467611)
+L3
+Cache hit on (2, 42, 0.12593881029080534)
+TIME:24.9433031082
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7570
+L2
+Receiving totally lemitigate data (0, 60, 0.006339022129503991)
+L3
+Cache hit on (1, 89, 0.9307242813083016)
+Cache hit on (2, 46, 0.45152634356893373)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 71, 0.28208530929606435)
+L3
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 86, 0.1617800798013429)
+L3
+TIME:26.7926340103
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 46, 0.45152634356893373)
+L3
+TIME:27.0147941113
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b250>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 52, 0.9487878208843213)
+L3
+Cache hit on (2, 93, 0.6769376620541547)
+Cache hit on (3, 61, 0.5610337771595438)
+Cache hit on (0, 38, 0.826077378251708)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 26, 0.17249781623732474)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 6, 0.7391753518903819)
+L3
+Cache hit on (1, 39, 0.424169074926957)
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 10, 0.8615102677174804)
+L3
+C1
+C2
+C3
+Cache hit on (2, 5, 0.7701842780377941)
+Cache hit on (2, 66, 0.34756785026880743)
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 1, 0.3330455036175394)
+L3
+C1
+C2
+C3
+Cache hit on (1, 36, 0.7616883197672897)
+TIME:31.6893670559
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 52, 0.9487878208843213)
+L3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 19, 0.6986921887796373)
+L3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b210>
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 3, 0.9841316874007556)
+L3
+TIME:33.1790690422
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 73, 0.5565926037682182)
+L3
+Cache hit on (3, 1, 0.3330455036175394)
+TIME:33.6080360413
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7570
+L2
+Receiving totally lemitigate data (3, 60, 0.006339022129503991)
+L3
+Cache hit on (0, 4, 0.03563836269212928)
+TIME:34.2384669781
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 55, 0.46384620428533796)
+L3
+Cache hit on (1, 99, 0.33330805848569356)
+Cache hit on (2, 28, 0.5021268081963328)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 26, 0.17249781623732474)
+L3
+Cache hit on (0, 70, 0.5988496329993206)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 66, 0.34756785026880743)
+L3
+TIME:36.1605980396
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 55, 0.46384620428533796)
+L3
+Cache hit on (0, 13, 0.25664677239358114)
+Cache hit on (0, 71, 0.28208530929606435)
+TIME:36.8932521343
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (1, 7, 0.2954814755007503)
+L3
+TIME:37.4578101635
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b2d0>
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b1d0>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 69, 0.692374536404731)
+L3
+Cache hit on (1, 75, 0.5777862386634631)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b1d0>
+TIME:38.2181410789
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 92, 0.3062438861360489)
+L3
+TIME:38.6366641521
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 22, 0.17441392928050758)
+L3
+TIME:39.0674200058
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 81, 0.3691645733942466)
+L3
+TIME:39.507874012
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 71, 0.28208530929606435)
+L3
+Cache hit on (0, 15, 0.22156467556606585)
+Cache hit on (3, 35, 0.1385799631447041)
+Cache hit on (1, 89, 0.9307242813083016)
+C1
+C2
+C3
+TIME:40.9034771919
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 37, 0.10784152074913667)
+L3
+C1
+C2
+C3
+Cache hit on (1, 41, 0.3099881028794409)
+Cache hit on (2, 44, 0.2610558516859486)
+C1
+C2
+C3
+Cache hit on (0, 39, 0.424169074926957)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b1d0>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 29, 0.9439441805990244)
+L3
+C1
+C2
+C3
+Cache hit on (1, 51, 0.4236584091302169)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b210>
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 52, 0.9487878208843213)
+L3
+TIME:43.778165102
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 33, 0.3476903801033626)
+L3
+Cache hit on (0, 38, 0.826077378251708)
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 39, 0.424169074926957)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 35, 0.1385799631447041)
+L3
+TIME:44.9922261238
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 61, 0.5610337771595438)
+L3
+TIME:45.4449620247
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 31, 0.3976189582967603)
+L3
+Cache hit on (2, 43, 0.6349081176076409)
+Cache hit on (3, 63, 0.5003250637951888)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 29, 0.9439441805990244)
+L3
+Cache hit on (3, 63, 0.5003250637951888)
+Cache hit on (2, 13, 0.25664677239358114)
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b1d0>
+L1
+Size is : 7569
+L2
+Receiving totally lemitigate data (3, 34, 0.0769779797379686)
+L3
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b1d0>
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b210>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 20, 0.39782045168514313)
+L3
+Cache hit on (2, 4, 0.03563836269212928)
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 59, 0.28765343958752077)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 95, 0.3594333503316718)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 56, 0.5268299996921078)
+L3
+Cache hit on (2, 31, 0.3976189582967603)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 50, 0.19467278153347678)
+L3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 51, 0.4236584091302169)
+L3
+TIME:50.7491140366
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 41, 0.3099881028794409)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 52, 0.9487878208843213)
+L3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 86, 0.1617800798013429)
+L3
+Cache hit on (2, 90, 0.6288348972216677)
+C1
+C2
+C3
+TIME:52.4849860668
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b190>
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 6, 0.7391753518903819)
+L3
+C1
+C2
+C3
+Cache hit on (2, 36, 0.7616883197672897)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b2d0>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b190>
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 88, 0.9601766995444375)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 59, 0.28765343958752077)
+L3
+Cache hit on (1, 15, 0.22156467556606585)
+Cache hit on (3, 17, 0.165933560174796)
+C1
+C2
+C3
+L1
+Size is : 7569
+L2
+Receiving totally lemitigate data (1, 34, 0.0769779797379686)
+L3
+Cache hit on (0, 90, 0.6288348972216677)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 27, 0.40932923901694374)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 46, 0.45152634356893373)
+L3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 65, 0.12397674302652517)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 28, 0.5021268081963328)
+L3
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (2, 10, 0.8615102677174804)
+L3
+Cache hit on (2, 93, 0.6769376620541547)
+Cache hit on (1, 81, 0.3691645733942466)
+Cache hit on (2, 46, 0.45152634356893373)
+Cache hit on (1, 52, 0.9487878208843213)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+C1
+C2
+C3
+Cache hit on (0, 24, 0.515933446563671)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b250>
+Cache hit on (2, 4, 0.03563836269212928)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b190>
+C1
+C2
+C3
+Cache hit on (3, 68, 0.5637817757896867)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 44, 0.2610558516859486)
+L3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 53, 0.9857981697877979)
+L3
+Cache hit on (1, 10, 0.8615102677174804)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 82, 0.37213874350087717)
+L3
+Cache hit on (3, 63, 0.5003250637951888)
+Cache hit on (1, 75, 0.5777862386634631)
+C1
+C2
+C3
+Cache hit on (0, 8, 0.5775022303199868)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 59, 0.28765343958752077)
+L3
+C1
+C2
+C3
+Cache hit on (3, 96, 0.14102027127554273)
+C1
+C2
+C3
+TIME:62.5901441574
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b190>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 59, 0.28765343958752077)
+L3
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b190>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b250>
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 66, 0.34756785026880743)
+L3
+Cache hit on (2, 45, 0.6106496510579194)
+Cache hit on (3, 72, 0.11957068478090738)
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 29, 0.9439441805990244)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 32, 0.39577266587907334)
+L3
+Cache hit on (0, 53, 0.9857981697877979)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 53, 0.9857981697877979)
+L3
+TIME:65.6197571754
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 81, 0.3691645733942466)
+L3
+Cache hit on (1, 36, 0.7616883197672897)
+Cache hit on (1, 16, 0.9490662972198751)
+TIME:66.6514191628
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 31, 0.3976189582967603)
+L3
+TIME:67.0714039803
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 61, 0.5610337771595438)
+L3
+Cache hit on (2, 4, 0.03563836269212928)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b2d0>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b2d0>
+TIME:68.0026490688
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (1, 7, 0.2954814755007503)
+L3
+TIME:68.423374176
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 32, 0.39577266587907334)
+L3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 13, 0.25664677239358114)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 59, 0.28765343958752077)
+L3
+Cache hit on (0, 59, 0.28765343958752077)
+C1
+C2
+C3
+TIME:70.0919370651
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 19, 0.6986921887796373)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 73, 0.5565926037682182)
+L3
+Cache hit on (1, 58, 0.9654041126313677)
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 2, 0.8602469894076687)
+L3
+C1
+C2
+C3
+Cache hit on (3, 87, 0.2738859804343934)
+Cache hit on (2, 28, 0.5021268081963328)
+C1
+C2
+C3
+TIME:72.7574419975
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b190>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 56, 0.5268299996921078)
+L3
+C1
+C2
+C3
+Cache hit on (3, 29, 0.9439441805990244)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b190>
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (1, 18, 0.4094350294501341)
+L3
+Cache hit on (3, 85, 0.07091507416771725)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 51, 0.4236584091302169)
+L3
+Cache hit on (2, 94, 0.9349485654027445)
+Cache hit on (2, 96, 0.14102027127554273)
+C1
+C2
+C3
+TIME:75.0172560215
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+Cache hit on (3, 96, 0.14102027127554273)
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 82, 0.37213874350087717)
+L3
+C1
+C2
+C3
+Cache hit on (3, 63, 0.5003250637951888)
+TIME:76.0845060349
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 11, 0.33665192679214584)
+L3
+TIME:76.5235431194
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 81, 0.3691645733942466)
+L3
+Cache hit on (0, 39, 0.424169074926957)
+TIME:77.0533561707
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 56, 0.5268299996921078)
+L3
+TIME:77.7764940262
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b250>
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b190>
+L1
+Size is : 7570
+L2
+Receiving totally lemitigate data (1, 60, 0.006339022129503991)
+L3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 95, 0.3594333503316718)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 73, 0.5565926037682182)
+L3
+Cache hit on (2, 17, 0.165933560174796)
+Cache hit on (0, 51, 0.4236584091302169)
+TIME:79.3036150932
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 38, 0.826077378251708)
+L3
+TIME:79.7413949966
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 32, 0.39577266587907334)
+L3
+Cache hit on (1, 78, 0.848771481192241)
+TIME:80.1727991104
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 37, 0.10784152074913667)
+L3
+TIME:80.7317221165
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 86, 0.1617800798013429)
+L3
+TIME:81.0551230907
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 41, 0.3099881028794409)
+L3
+TIME:81.4734389782
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7569
+L2
+Receiving totally lemitigate data (3, 77, 0.037655619868319)
+L3
+Cache hit on (1, 24, 0.515933446563671)
+Cache hit on (0, 67, 0.8883094303800938)
+TIME:82.831785202
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b250>
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b1d0>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 30, 0.9933235943563021)
+L3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b2d0>
+TIME:83.3999459743
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 55, 0.46384620428533796)
+L3
+TIME:83.8225090504
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 31, 0.3976189582967603)
+L3
+Cache hit on (1, 75, 0.5777862386634631)
+TIME:84.4539921284
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 44, 0.2610558516859486)
+L3
+Cache hit on (2, 74, 0.16924878416377942)
+TIME:85.0844609737
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 28, 0.5021268081963328)
+L3
+Cache hit on (0, 72, 0.11957068478090738)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 46, 0.45152634356893373)
+L3
+Cache hit on (3, 57, 0.6513561869435361)
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 11, 0.33665192679214584)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 86, 0.1617800798013429)
+L3
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b2d0>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 49, 0.7362087849349757)
+L3
+Cache hit on (2, 5, 0.7701842780377941)
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 47, 0.6230560488198761)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 79, 0.5960469281347621)
+L3
+TIME:88.8791081905
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 55, 0.46384620428533796)
+L3
+TIME:89.321762085
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 94, 0.9349485654027445)
+L3
+Cache hit on (2, 5, 0.7701842780377941)
+TIME:89.8535439968
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (1, 9, 0.2932825309101079)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 44, 0.2610558516859486)
+L3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 8, 0.5775022303199868)
+L3
+Cache hit on (1, 17, 0.165933560174796)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 22, 0.17441392928050758)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 51, 0.4236584091302169)
+L3
+Cache hit on (3, 84, 0.7602737552467611)
+Cache hit on (1, 2, 0.8602469894076687)
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b250>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 11, 0.33665192679214584)
+L3
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b250>
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (2, 8, 0.5775022303199868)
+L3
+C1
+C2
+C3
+Cache hit on (1, 85, 0.07091507416771725)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+C1
+C2
+C3
+Cache hit on (0, 45, 0.6106496510579194)
+TIME:94.8056371212
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 11, 0.33665192679214584)
+L3
+TIME:95.2241201401
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 29, 0.9439441805990244)
+L3
+TIME:95.6611561775
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 50, 0.19467278153347678)
+L3
+TIME:96.1140429974
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 46, 0.45152634356893373)
+L3
+Cache hit on (1, 15, 0.22156467556606585)
+Cache hit on (2, 60, 0.006339022129503991)
+C1
+C2
+C3
+Cache hit on (2, 87, 0.2738859804343934)
+TIME:97.2727680206
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b1d0>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 94, 0.9349485654027445)
+L3
+Cache hit on (1, 35, 0.1385799631447041)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b1d0>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b210>
+C1
+C2
+C3
+TIME:98.6553170681
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 26, 0.17249781623732474)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 39, 0.424169074926957)
+L3
+Cache hit on (2, 94, 0.9349485654027445)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 52, 0.9487878208843213)
+L3
+Cache hit on (0, 53, 0.9857981697877979)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 56, 0.5268299996921078)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 38, 0.826077378251708)
+L3
+TIME:101.463889122
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 0, 0.6529246362321403)
+L3
+Cache hit on (2, 46, 0.45152634356893373)
+Cache hit on (3, 30, 0.9933235943563021)
+Cache hit on (2, 17, 0.165933560174796)
+Cache hit on (0, 84, 0.7602737552467611)
+Cache hit on (1, 68, 0.5637817757896867)
+C1
+C2
+C3
+Cache hit on (1, 39, 0.424169074926957)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b210>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b2d0>
+TIME:103.571490049
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b210>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 61, 0.5610337771595438)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 13, 0.25664677239358114)
+L3
+L1
+Size is : 7569
+L2
+Receiving totally lemitigate data (1, 34, 0.0769779797379686)
+L3
+Cache hit on (3, 24, 0.515933446563671)
+TIME:105.007536173
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 43, 0.6349081176076409)
+L3
+Cache hit on (2, 66, 0.34756785026880743)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 30, 0.9933235943563021)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 76, 0.9107292303878726)
+L3
+TIME:106.409907103
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 30, 0.9933235943563021)
+L3
+TIME:106.840259075
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 54, 0.5443508849874495)
+L3
+Cache hit on (0, 42, 0.12593881029080534)
+TIME:107.486313105
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 35, 0.1385799631447041)
+L3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b210>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b1d0>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b210>
+TIME:108.136142015
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 54, 0.5443508849874495)
+L3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 10, 0.8615102677174804)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 47, 0.6230560488198761)
+L3
+Cache hit on (0, 26, 0.17249781623732474)
+TIME:109.640575171
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 33, 0.3476903801033626)
+L3
+Cache hit on (3, 63, 0.5003250637951888)
+Cache hit on (1, 51, 0.4236584091302169)
+Cache hit on (2, 24, 0.515933446563671)
+C1
+C2
+C3
+TIME:110.910429001
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 81, 0.3691645733942466)
+L3
+Cache hit on (3, 43, 0.6349081176076409)
+Cache hit on (0, 96, 0.14102027127554273)
+C1
+C2
+C3
+C1
+C2
+C3
+TIME:112.074230194
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 68, 0.5637817757896867)
+L3
+Cache hit on (2, 27, 0.40932923901694374)
+Cache hit on (1, 67, 0.8883094303800938)
+C1
+C2
+C3
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b290>
+C1
+C2
+C3
+TIME:113.602821112
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b250>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 37, 0.10784152074913667)
+L3
+Cache hit on (3, 53, 0.9857981697877979)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b250>
+C1
+C2
+C3
+TIME:114.363950968
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 84, 0.7602737552467611)
+L3
+C1
+C2
+C3
+TIME:114.795023203
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 71, 0.28208530929606435)
+L3
+C1
+C2
+C3
+Cache hit on (3, 63, 0.5003250637951888)
+Cache hit on (2, 31, 0.3976189582967603)
+C1
+C2
+C3
+TIME:115.969501972
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 33, 0.3476903801033626)
+L3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 66, 0.34756785026880743)
+L3
+Cache hit on (3, 53, 0.9857981697877979)
+Cache hit on (2, 42, 0.12593881029080534)
+C1
+C2
+C3
+Cache hit on (1, 91, 0.6336885892147315)
+Cache hit on (1, 75, 0.5777862386634631)
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b210>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b1d0>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1a6b210>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 52, 0.9487878208843213)
+L3
+Cache hit on (2, 66, 0.34756785026880743)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 84, 0.7602737552467611)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 40, 0.18942779444082136)
+L3
+Cache hit on (2, 36, 0.7616883197672897)
+TIME:119.792131186
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (1, 7, 0.2954814755007503)
+L3
+TIME:120.224442005
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 76, 0.9107292303878726)
+L3
+TIME:120.647184134
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 97, 0.21545991590139613)
+L3
+Cache hit on (1, 0, 0.6529246362321403)
+TIME:121.477667093
+In dataset 0:66
+In dataset 1:70
+In dataset 2:76
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 59, 0.28765343958752077)
+L3
+Cache hit on (2, 46, 0.45152634356893373)
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (1, 3, 0.9841316874007556)
+L3
+S1
+S2

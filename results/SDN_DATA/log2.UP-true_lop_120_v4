@@ -1,0 +1,1126 @@
+<communication.ServerHostListenMessage object at 0x23b70d0>
+<communication.ServerRegisterDataSet object at 0x23b7150>
+<communication.ServerRegisterDataSet object at 0x23b7110>
+<communication.ServerRegisterDataSet object at 0x23b70d0>
+<communication.ServerRegisterDataSet object at 0x23b7150>
+<communication.ServerProbabilityUpdateMessage object at 0x23b70d0>
+<communication.ServerProbabilityUpdateMessage object at 0x23b7150>
+<communication.ServerProbabilityUpdateMessage object at 0x23b70d0>
+<communication.ServerHostAlertMessage object at 0x23b7190>
+<communication.ServerSayGoMessage object at 0x23b71d0>
+<communication.ServerProbabilityUpdateMessage object at 0x23b7210>
+Size is : 7568
+Receiving totally lemitigate data (3, 20, 0.39782045168514313)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (2, 47, 0.6230560488198761)
+3851364
+Done with delete request
+Cache hit on (3, 17, 0.165933560174796)
+<communication.ServerProbabilityUpdateMessage object at 0x23b71d0>
+<communication.ServerProbabilityUpdateMessage object at 0x23b7210>
+Size is : 7568
+Receiving totally lemitigate data (3, 66, 0.34756785026880743)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7290>
+<communication.ServerProbabilityUpdateMessage object at 0x23b7250>
+Size is : 7568
+Receiving totally lemitigate data (3, 38, 0.826077378251708)
+Cache hit on (3, 41, 0.3099881028794409)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7250>
+Cache hit on (3, 17, 0.165933560174796)
+Size is : 7568
+Receiving totally lemitigate data (3, 25, 0.8901831355108138)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.9301621621621621, 1: 0.03491891891891891, 2: 0.03491891891891891}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.9301621621621621, 1: 0.03491891891891891, 2: 0.03491891891891891}
+Replacing with 3, element (0, 49, 0.7362087849349757)
+4000094
+Done with delete request
+TIME:4.25463199615
+In dataset 0:62
+In dataset 1:71
+In dataset 2:76
+In dataset 3:91
+==========================================
+Size is : 7568
+Receiving totally lemitigate data (3, 44, 0.2610558516859486)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.9301621621621621, 1: 0.03491891891891891, 2: 0.03491891891891891}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.9301621621621621, 1: 0.03491891891891891, 2: 0.03491891891891891}
+Replacing with 3, element (0, 84, 0.7602737552467611)
+4098032
+Done with delete request
+TIME:4.89263796806
+In dataset 0:61
+In dataset 1:71
+In dataset 2:76
+In dataset 3:92
+==========================================
+Size is : 7567
+Receiving totally lemitigate data (3, 18, 0.4094350294501341)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.9301621621621621, 1: 0.03491891891891891, 2: 0.03491891891891891}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.9301621621621621, 1: 0.03491891891891891, 2: 0.03491891891891891}
+Replacing with 3, element (0, 73, 0.5565926037682182)
+4179465
+Done with delete request
+TIME:5.65355396271
+In dataset 0:60
+In dataset 1:71
+In dataset 2:76
+In dataset 3:93
+==========================================
+Size is : 7568
+Receiving totally lemitigate data (3, 97, 0.21545991590139613)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.9301621621621621, 1: 0.03491891891891891, 2: 0.03491891891891891}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.9301621621621621, 1: 0.03491891891891891, 2: 0.03491891891891891}
+Replacing with 3, element (0, 54, 0.5443508849874495)
+4274583
+Done with delete request
+TIME:6.50659990311
+In dataset 0:58
+In dataset 1:71
+In dataset 2:76
+In dataset 3:95
+==========================================
+Size is : 7568
+Receiving totally lemitigate data (3, 56, 0.5268299996921078)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.9301621621621621, 1: 0.03491891891891891, 2: 0.03491891891891891}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.9301621621621621, 1: 0.03491891891891891, 2: 0.03491891891891891}
+Replacing with 3, element (0, 99, 0.33330805848569356)
+4320431
+Done with delete request
+Size is : 7568
+Receiving totally lemitigate data (3, 65, 0.12397674302652517)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.9301621621621621, 1: 0.03491891891891891, 2: 0.03491891891891891}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.9301621621621621, 1: 0.03491891891891891, 2: 0.03491891891891891}
+Replacing with 3, element (0, 2, 0.8602469894076687)
+4320436
+Done with delete request
+<communication.ServerProbabilityUpdateMessage object at 0x23b7310>
+<communication.ServerProbabilityUpdateMessage object at 0x23b7210>
+<communication.ServerProbabilityUpdateMessage object at 0x23b7190>
+Size is : 7568
+Receiving totally lemitigate data (3, 66, 0.34756785026880743)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+Replacing with 3, element (0, 27, 0.40932923901694374)
+4325012
+Done with delete request
+TIME:8.34434294701
+In dataset 0:55
+In dataset 1:71
+In dataset 2:76
+In dataset 3:98
+==========================================
+Size is : 7566
+Receiving totally lemitigate data (3, 5, 0.7701842780377941)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+Replacing with 3, element (0, 45, 0.6106496510579194)
+4332249
+Done with delete request
+Cache hit on (3, 96, 0.14102027127554273)
+Warning: Error in replacement, received duplicate
+Size is : 7568
+Receiving totally lemitigate data (3, 73, 0.5565926037682182)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+Replacing with 3, element (0, 70, 0.5988496329993206)
+4332256
+Done with delete request
+Size is : 7568
+Receiving totally lemitigate data (3, 47, 0.6230560488198761)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+Replacing with 3, element (0, 71, 0.28208530929606435)
+4332259
+Done with delete request
+Size is : 7568
+Receiving totally lemitigate data (3, 38, 0.826077378251708)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+Replacing with 3, element (0, 64, 0.49125820209791415)
+4332262
+Done with delete request
+Cache hit on (3, 97, 0.21545991590139613)
+Cache hit on (3, 74, 0.16924878416377942)
+Size is : 7570
+Receiving totally lemitigate data (3, 60, 0.006339022129503991)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+Replacing with 3, element (0, 50, 0.19467278153347678)
+4332269
+Done with delete request
+Size is : 7567
+Receiving totally lemitigate data (3, 8, 0.5775022303199868)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+Replacing with 3, element (0, 79, 0.5960469281347621)
+4332272
+Done with delete request
+Cache hit on (3, 12, 0.6445815054666872)
+Size is : 7567
+Receiving totally lemitigate data (3, 6, 0.7391753518903819)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+Replacing with 3, element (0, 39, 0.424169074926957)
+4332277
+Done with delete request
+Cache hit on (3, 55, 0.46384620428533796)
+<communication.ServerProbabilityUpdateMessage object at 0x23b71d0>
+Size is : 7568
+Receiving totally lemitigate data (3, 52, 0.9487878208843213)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+Replacing with 3, element (0, 4, 0.03563836269212928)
+4332282
+Done with delete request
+Cache hit on (3, 35, 0.1385799631447041)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7290>
+Cache hit on (3, 96, 0.14102027127554273)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7250>
+Cache hit on (3, 44, 0.2610558516859486)
+Cache hit on (3, 76, 0.9107292303878726)
+Cache hit on (3, 27, 0.40932923901694374)
+Size is : 7567
+Receiving totally lemitigate data (3, 86, 0.1617800798013429)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+Replacing with 3, element (0, 6, 0.7391753518903819)
+4332295
+Done with delete request
+Cache hit on (3, 20, 0.39782045168514313)
+Size is : 7568
+Receiving totally lemitigate data (3, 11, 0.33665192679214584)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+Replacing with 3, element (0, 28, 0.5021268081963328)
+4332300
+Done with delete request
+Cache hit on (3, 12, 0.6445815054666872)
+Cache hit on (3, 1, 0.3330455036175394)
+Size is : 7568
+Receiving totally lemitigate data (3, 94, 0.9349485654027445)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+Replacing with 3, element (0, 92, 0.3062438861360489)
+4332307
+Done with delete request
+Cache hit on (3, 63, 0.5003250637951888)
+Cache hit on (3, 57, 0.6513561869435361)
+Size is : 7568
+Receiving totally lemitigate data (3, 75, 0.5777862386634631)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+Replacing with 3, element (0, 13, 0.25664677239358114)
+4332314
+Done with delete request
+Cache hit on (3, 55, 0.46384620428533796)
+Size is : 7568
+Receiving totally lemitigate data (3, 42, 0.12593881029080534)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 1.0, 1: 0.0, 2: 0.0}
+Replacing with 3, element (0, 67, 0.8883094303800938)
+4332319
+Done with delete request
+Cache hit on (3, 87, 0.2738859804343934)
+Cache hit on (3, 18, 0.4094350294501341)
+Cache hit on (3, 50, 0.19467278153347678)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7310>
+Cache hit on (3, 97, 0.21545991590139613)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7250>
+Cache hit on (3, 4, 0.03563836269212928)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7310>
+Cache hit on (3, 4, 0.03563836269212928)
+Cache hit on (3, 1, 0.3330455036175394)
+Cache hit on (3, 66, 0.34756785026880743)
+Size is : 7568
+Receiving totally lemitigate data (3, 40, 0.18942779444082136)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (1, 85, 0.07091507416771725)
+4332338
+Done with delete request
+Size is : 7567
+Receiving totally lemitigate data (3, 67, 0.8883094303800938)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (0, 72, 0.11957068478090738)
+4332341
+Done with delete request
+Cache hit on (3, 6, 0.7391753518903819)
+Cache hit on (3, 16, 0.9490662972198751)
+Cache hit on (3, 37, 0.10784152074913667)
+Cache hit on (3, 97, 0.21545991590139613)
+Cache hit on (3, 17, 0.165933560174796)
+Cache hit on (3, 38, 0.826077378251708)
+TIME:21.3915519714
+In dataset 0:40
+In dataset 1:70
+In dataset 2:76
+In dataset 3:113
+==========================================
+Size is : 7567
+Receiving totally lemitigate data (3, 7, 0.2954814755007503)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (1, 58, 0.9654041126313677)
+4375322
+Done with delete request
+Size is : 7568
+Receiving totally lemitigate data (3, 23, 0.991486849515598)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (2, 43, 0.6349081176076409)
+4375325
+Done with delete request
+Size is : 7569
+Receiving totally lemitigate data (3, 77, 0.037655619868319)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (1, 21, 0.7854774132715057)
+4375328
+Done with delete request
+Cache hit on (3, 27, 0.40932923901694374)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7250>
+<communication.ServerProbabilityUpdateMessage object at 0x23b7210>
+Size is : 7568
+Receiving totally lemitigate data (3, 82, 0.37213874350087717)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7210>
+Size is : 7568
+Receiving totally lemitigate data (3, 70, 0.5988496329993206)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (1, 93, 0.6769376620541547)
+4375336
+Done with delete request
+Size is : 7568
+Receiving totally lemitigate data (3, 49, 0.7362087849349757)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (0, 75, 0.5777862386634631)
+4375339
+Done with delete request
+Cache hit on (3, 77, 0.037655619868319)
+Cache hit on (3, 70, 0.5988496329993206)
+Cache hit on (3, 77, 0.037655619868319)
+Cache hit on (3, 17, 0.165933560174796)
+Cache hit on (3, 61, 0.5610337771595438)
+Size is : 7568
+Receiving totally lemitigate data (3, 79, 0.5960469281347621)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (2, 45, 0.6106496510579194)
+4417385
+Done with delete request
+Cache hit on (3, 20, 0.39782045168514313)
+Size is : 7568
+Receiving totally lemitigate data (3, 58, 0.9654041126313677)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (1, 16, 0.9490662972198751)
+4417390
+Done with delete request
+Cache hit on (3, 17, 0.165933560174796)
+Cache hit on (3, 54, 0.5443508849874495)
+Size is : 7567
+Receiving totally lemitigate data (3, 3, 0.9841316874007556)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (2, 16, 0.9490662972198751)
+4417397
+Done with delete request
+Size is : 7568
+Receiving totally lemitigate data (3, 89, 0.9307242813083016)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (1, 23, 0.991486849515598)
+4417400
+Done with delete request
+Cache hit on (3, 66, 0.34756785026880743)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7290>
+Size is : 7568
+Receiving totally lemitigate data (3, 26, 0.17249781623732474)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (0, 82, 0.37213874350087717)
+4417405
+Done with delete request
+Cache hit on (3, 49, 0.7362087849349757)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7310>
+<communication.ServerProbabilityUpdateMessage object at 0x23b71d0>
+Size is : 7569
+Receiving totally lemitigate data (3, 34, 0.0769779797379686)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (2, 28, 0.5021268081963328)
+4417410
+Done with delete request
+Cache hit on (3, 88, 0.9601766995444375)
+Cache hit on (3, 94, 0.9349485654027445)
+Cache hit on (3, 88, 0.9601766995444375)
+Cache hit on (3, 20, 0.39782045168514313)
+Cache hit on (3, 57, 0.6513561869435361)
+Cache hit on (3, 74, 0.16924878416377942)
+Size is : 7568
+Receiving totally lemitigate data (3, 32, 0.39577266587907334)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (1, 67, 0.8883094303800938)
+4451224
+Done with delete request
+Size is : 7568
+Receiving totally lemitigate data (3, 59, 0.28765343958752077)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (1, 24, 0.515933446563671)
+4451227
+Done with delete request
+Size is : 7568
+Receiving totally lemitigate data (0, 42, 0.12593881029080534)
+Cache hit on (3, 34, 0.0769779797379686)
+Cache hit on (3, 11, 0.33665192679214584)
+Cache hit on (3, 67, 0.8883094303800938)
+Cache hit on (3, 44, 0.2610558516859486)
+Size is : 7567
+Receiving totally lemitigate data (3, 2, 0.8602469894076687)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (2, 78, 0.848771481192241)
+4451241
+Done with delete request
+Size is : 7568
+Receiving totally lemitigate data (3, 46, 0.45152634356893373)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (0, 59, 0.28765343958752077)
+4492049
+Done with delete request
+Cache hit on (3, 84, 0.7602737552467611)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7310>
+Cache hit on (3, 52, 0.9487878208843213)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7290>
+<communication.ServerProbabilityUpdateMessage object at 0x23b7310>
+Size is : 7568
+Receiving totally lemitigate data (0, 17, 0.165933560174796)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{1: 0.3333333333333333, 2: 0.3333333333333333, 3: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{1: 0.3333333333333333, 2: 0.3333333333333333, 3: 0.3333333333333333}
+Replacing with 0, element (1, 64, 0.49125820209791415)
+4492056
+Done with delete request
+Cache hit on (3, 56, 0.5268299996921078)
+Cache hit on (3, 74, 0.16924878416377942)
+Cache hit on (3, 65, 0.12397674302652517)
+Cache hit on (3, 32, 0.39577266587907334)
+Cache hit on (3, 41, 0.3099881028794409)
+Cache hit on (3, 23, 0.991486849515598)
+Cache hit on (3, 61, 0.5610337771595438)
+Cache hit on (3, 60, 0.006339022129503991)
+Cache hit on (3, 96, 0.14102027127554273)
+Cache hit on (3, 49, 0.7362087849349757)
+Cache hit on (3, 27, 0.40932923901694374)
+Cache hit on (3, 44, 0.2610558516859486)
+Size is : 7568
+Receiving totally lemitigate data (3, 93, 0.6769376620541547)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (1, 45, 0.6106496510579194)
+4492083
+Done with delete request
+Cache hit on (3, 29, 0.9439441805990244)
+Cache hit on (3, 59, 0.28765343958752077)
+Cache hit on (3, 80, 0.9790193772769754)
+Cache hit on (3, 85, 0.07091507416771725)
+Cache hit on (3, 72, 0.11957068478090738)
+Size is : 7568
+Receiving totally lemitigate data (3, 71, 0.28208530929606435)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (0, 51, 0.4236584091302169)
+4492096
+Done with delete request
+Cache hit on (3, 9, 0.2932825309101079)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7210>
+Cache hit on (2, 0, 0.6529246362321403)
+<communication.ServerProbabilityUpdateMessage object at 0x23b71d0>
+Cache hit on (3, 24, 0.515933446563671)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7210>
+Cache hit on (3, 21, 0.7854774132715057)
+Cache hit on (3, 2, 0.8602469894076687)
+Cache hit on (3, 55, 0.46384620428533796)
+Cache hit on (3, 7, 0.2954814755007503)
+Cache hit on (3, 11, 0.33665192679214584)
+Cache hit on (3, 44, 0.2610558516859486)
+Size is : 7569
+Receiving totally lemitigate data (3, 48, 0.08932880895066508)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (0, 15, 0.22156467556606585)
+4492117
+Done with delete request
+Cache hit on (3, 47, 0.6230560488198761)
+Cache hit on (3, 43, 0.6349081176076409)
+Cache hit on (3, 62, 0.3414425819011161)
+Cache hit on (3, 74, 0.16924878416377942)
+Cache hit on (3, 12, 0.6445815054666872)
+Cache hit on (3, 43, 0.6349081176076409)
+Size is : 7567
+Receiving totally lemitigate data (3, 0, 0.6529246362321403)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (2, 72, 0.11957068478090738)
+4492132
+Done with delete request
+Cache hit on (3, 48, 0.08932880895066508)
+Cache hit on (3, 53, 0.9857981697877979)
+Cache hit on (3, 23, 0.991486849515598)
+Cache hit on (3, 99, 0.33330805848569356)
+Cache hit on (3, 43, 0.6349081176076409)
+Cache hit on (3, 42, 0.12593881029080534)
+Cache hit on (3, 86, 0.1617800798013429)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7210>
+Cache hit on (3, 2, 0.8602469894076687)
+<communication.ServerProbabilityUpdateMessage object at 0x23b71d0>
+Cache hit on (3, 30, 0.9933235943563021)
+Cache hit on (3, 8, 0.5775022303199868)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7210>
+Cache hit on (3, 29, 0.9439441805990244)
+Cache hit on (3, 73, 0.5565926037682182)
+Size is : 7568
+Receiving totally lemitigate data (3, 81, 0.3691645733942466)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (2, 89, 0.9307242813083016)
+4492159
+Done with delete request
+Cache hit on (3, 65, 0.12397674302652517)
+Cache hit on (3, 62, 0.3414425819011161)
+Cache hit on (3, 59, 0.28765343958752077)
+Cache hit on (3, 24, 0.515933446563671)
+Cache hit on (3, 94, 0.9349485654027445)
+Cache hit on (3, 67, 0.8883094303800938)
+Cache hit on (3, 85, 0.07091507416771725)
+Cache hit on (3, 1, 0.3330455036175394)
+Size is : 7568
+Receiving totally lemitigate data (3, 92, 0.3062438861360489)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (1, 41, 0.3099881028794409)
+4492178
+Done with delete request
+Cache hit on (3, 40, 0.18942779444082136)
+Cache hit on (3, 79, 0.5960469281347621)
+Cache hit on (3, 68, 0.5637817757896867)
+Cache hit on (3, 24, 0.515933446563671)
+Cache hit on (3, 2, 0.8602469894076687)
+Cache hit on (3, 9, 0.2932825309101079)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7290>
+Size is : 7568
+Receiving totally lemitigate data (3, 36, 0.7616883197672897)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (2, 49, 0.7362087849349757)
+4492193
+Done with delete request
+Cache hit on (3, 81, 0.3691645733942466)
+Cache hit on (3, 23, 0.991486849515598)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7210>
+Cache hit on (3, 72, 0.11957068478090738)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7310>
+Cache hit on (3, 94, 0.9349485654027445)
+Cache hit on (3, 53, 0.9857981697877979)
+Cache hit on (3, 85, 0.07091507416771725)
+Cache hit on (3, 56, 0.5268299996921078)
+Cache hit on (3, 15, 0.22156467556606585)
+Cache hit on (3, 72, 0.11957068478090738)
+Cache hit on (3, 94, 0.9349485654027445)
+Cache hit on (3, 81, 0.3691645733942466)
+Cache hit on (3, 60, 0.006339022129503991)
+Cache hit on (3, 77, 0.037655619868319)
+Cache hit on (3, 35, 0.1385799631447041)
+Cache hit on (3, 53, 0.9857981697877979)
+Cache hit on (3, 94, 0.9349485654027445)
+Cache hit on (3, 95, 0.3594333503316718)
+Cache hit on (3, 23, 0.991486849515598)
+Cache hit on (3, 15, 0.22156467556606585)
+Cache hit on (3, 44, 0.2610558516859486)
+Cache hit on (3, 79, 0.5960469281347621)
+Size is : 7568
+Receiving totally lemitigate data (3, 39, 0.424169074926957)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (2, 7, 0.2954814755007503)
+4492238
+Done with delete request
+Cache hit on (3, 88, 0.9601766995444375)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7250>
+<communication.ServerProbabilityUpdateMessage object at 0x23b71d0>
+Size is : 7568
+Receiving totally lemitigate data (3, 90, 0.6288348972216677)
+Cache hit on (3, 16, 0.9490662972198751)
+<communication.ServerProbabilityUpdateMessage object at 0x23b71d0>
+Cache hit on (3, 64, 0.49125820209791415)
+Cache hit on (3, 50, 0.19467278153347678)
+Cache hit on (3, 27, 0.40932923901694374)
+Cache hit on (3, 74, 0.16924878416377942)
+Cache hit on (3, 62, 0.3414425819011161)
+Cache hit on (3, 99, 0.33330805848569356)
+Cache hit on (3, 95, 0.3594333503316718)
+Size is : 7567
+Receiving totally lemitigate data (3, 10, 0.8615102677174804)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (0, 91, 0.6336885892147315)
+4492262
+Done with delete request
+Cache hit on (3, 28, 0.5021268081963328)
+Cache hit on (3, 23, 0.991486849515598)
+Cache hit on (3, 96, 0.14102027127554273)
+Size is : 7568
+Receiving totally lemitigate data (3, 22, 0.17441392928050758)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (2, 60, 0.006339022129503991)
+4492271
+Done with delete request
+Cache hit on (3, 76, 0.9107292303878726)
+Cache hit on (3, 75, 0.5777862386634631)
+Cache hit on (3, 99, 0.33330805848569356)
+Cache hit on (3, 6, 0.7391753518903819)
+Cache hit on (3, 72, 0.11957068478090738)
+Size is : 7568
+Receiving totally lemitigate data (0, 26, 0.17249781623732474)
+Cache hit on (3, 61, 0.5610337771595438)
+Cache hit on (3, 86, 0.1617800798013429)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7210>
+Cache hit on (3, 91, 0.6336885892147315)
+Cache hit on (3, 64, 0.49125820209791415)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7290>
+Cache hit on (3, 37, 0.10784152074913667)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7210>
+Cache hit on (3, 58, 0.9654041126313677)
+Cache hit on (3, 99, 0.33330805848569356)
+Cache hit on (3, 21, 0.7854774132715057)
+Size is : 7568
+Receiving totally lemitigate data (3, 31, 0.3976189582967603)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (0, 48, 0.08932880895066508)
+4492303
+Done with delete request
+Cache hit on (3, 26, 0.17249781623732474)
+Cache hit on (3, 54, 0.5443508849874495)
+Cache hit on (3, 34, 0.0769779797379686)
+Cache hit on (3, 62, 0.3414425819011161)
+Cache hit on (3, 88, 0.9601766995444375)
+Cache hit on (3, 91, 0.6336885892147315)
+Cache hit on (3, 20, 0.39782045168514313)
+Cache hit on (3, 55, 0.46384620428533796)
+Cache hit on (3, 35, 0.1385799631447041)
+Cache hit on (3, 97, 0.21545991590139613)
+Cache hit on (3, 17, 0.165933560174796)
+Cache hit on (3, 59, 0.28765343958752077)
+Cache hit on (3, 12, 0.6445815054666872)
+Cache hit on (3, 94, 0.9349485654027445)
+Cache hit on (3, 2, 0.8602469894076687)
+Cache hit on (3, 58, 0.9654041126313677)
+Cache hit on (3, 92, 0.3062438861360489)
+Cache hit on (3, 56, 0.5268299996921078)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7250>
+Cache hit on (3, 36, 0.7616883197672897)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7310>
+Cache hit on (3, 40, 0.18942779444082136)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7250>
+Cache hit on (3, 7, 0.2954814755007503)
+Cache hit on (3, 17, 0.165933560174796)
+Cache hit on (3, 71, 0.28208530929606435)
+Cache hit on (3, 94, 0.9349485654027445)
+Cache hit on (3, 41, 0.3099881028794409)
+Cache hit on (3, 52, 0.9487878208843213)
+Cache hit on (3, 7, 0.2954814755007503)
+TIME:65.480383873
+In dataset 0:34
+In dataset 1:60
+In dataset 2:66
+In dataset 3:139
+==========================================
+Size is : 7568
+Receiving totally lemitigate data (0, 15, 0.22156467556606585)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{1: 0.3333333333333333, 2: 0.3333333333333333, 3: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{1: 0.3333333333333333, 2: 0.3333333333333333, 3: 0.3333333333333333}
+Replacing with 0, element (2, 61, 0.5610337771595438)
+4535054
+Done with delete request
+Cache hit on (3, 68, 0.5637817757896867)
+Cache hit on (3, 3, 0.9841316874007556)
+Cache hit on (3, 85, 0.07091507416771725)
+Cache hit on (3, 18, 0.4094350294501341)
+Cache hit on (3, 55, 0.46384620428533796)
+Cache hit on (3, 1, 0.3330455036175394)
+Cache hit on (3, 76, 0.9107292303878726)
+Cache hit on (3, 42, 0.12593881029080534)
+Cache hit on (3, 79, 0.5960469281347621)
+Cache hit on (3, 2, 0.8602469894076687)
+Cache hit on (0, 38, 0.826077378251708)
+Cache hit on (3, 6, 0.7391753518903819)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7210>
+Cache hit on (3, 2, 0.8602469894076687)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7290>
+Cache hit on (3, 13, 0.25664677239358114)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7210>
+Cache hit on (3, 56, 0.5268299996921078)
+Cache hit on (3, 81, 0.3691645733942466)
+Size is : 7568
+Receiving totally lemitigate data (3, 90, 0.6288348972216677)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (1, 91, 0.6336885892147315)
+4535089
+Done with delete request
+Cache hit on (3, 66, 0.34756785026880743)
+Cache hit on (3, 3, 0.9841316874007556)
+Cache hit on (3, 88, 0.9601766995444375)
+Cache hit on (3, 34, 0.0769779797379686)
+Cache hit on (3, 20, 0.39782045168514313)
+Cache hit on (3, 80, 0.9790193772769754)
+Size is : 7568
+Receiving totally lemitigate data (3, 82, 0.37213874350087717)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (1, 17, 0.165933560174796)
+4535104
+Done with delete request
+Cache hit on (3, 29, 0.9439441805990244)
+Cache hit on (3, 50, 0.19467278153347678)
+Cache hit on (3, 31, 0.3976189582967603)
+Cache hit on (3, 8, 0.5775022303199868)
+Cache hit on (3, 97, 0.21545991590139613)
+Cache hit on (3, 69, 0.692374536404731)
+Cache hit on (3, 65, 0.12397674302652517)
+Cache hit on (3, 61, 0.5610337771595438)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7250>
+Size is : 7568
+Receiving totally lemitigate data (3, 14, 0.8611910665091667)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (0, 15, 0.22156467556606585)
+4535123
+Done with delete request
+Cache hit on (3, 60, 0.006339022129503991)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7210>
+Cache hit on (3, 80, 0.9790193772769754)
+<communication.ServerProbabilityUpdateMessage object at 0x23b72d0>
+Cache hit on (3, 17, 0.165933560174796)
+Cache hit on (3, 18, 0.4094350294501341)
+Cache hit on (3, 18, 0.4094350294501341)
+Cache hit on (3, 54, 0.5443508849874495)
+Cache hit on (3, 23, 0.991486849515598)
+Cache hit on (3, 1, 0.3330455036175394)
+Cache hit on (3, 70, 0.5988496329993206)
+Cache hit on (3, 94, 0.9349485654027445)
+Cache hit on (3, 74, 0.16924878416377942)
+Cache hit on (3, 30, 0.9933235943563021)
+Cache hit on (3, 52, 0.9487878208843213)
+Cache hit on (3, 80, 0.9790193772769754)
+Cache hit on (3, 13, 0.25664677239358114)
+Cache hit on (3, 7, 0.2954814755007503)
+Cache hit on (3, 83, 0.1945629525281013)
+Cache hit on (3, 85, 0.07091507416771725)
+Cache hit on (3, 12, 0.6445815054666872)
+Cache hit on (3, 42, 0.12593881029080534)
+Cache hit on (3, 55, 0.46384620428533796)
+Cache hit on (3, 5, 0.7701842780377941)
+Cache hit on (3, 85, 0.07091507416771725)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7210>
+Size is : 7566
+Receiving totally lemitigate data (3, 78, 0.848771481192241)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (1, 5, 0.7701842780377941)
+4535172
+Done with delete request
+Cache hit on (3, 71, 0.28208530929606435)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7250>
+Cache hit on (3, 95, 0.3594333503316718)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7290>
+Cache hit on (3, 96, 0.14102027127554273)
+Cache hit on (3, 48, 0.08932880895066508)
+Cache hit on (3, 26, 0.17249781623732474)
+Cache hit on (3, 95, 0.3594333503316718)
+Cache hit on (3, 84, 0.7602737552467611)
+Cache hit on (3, 69, 0.692374536404731)
+Cache hit on (3, 63, 0.5003250637951888)
+Cache hit on (3, 47, 0.6230560488198761)
+Cache hit on (3, 48, 0.08932880895066508)
+Cache hit on (3, 42, 0.12593881029080534)
+Cache hit on (3, 78, 0.848771481192241)
+Cache hit on (3, 83, 0.1945629525281013)
+TIME:81.0009729862
+In dataset 0:34
+In dataset 1:57
+In dataset 2:65
+In dataset 3:143
+==========================================
+Cache hit on (3, 39, 0.424169074926957)
+Cache hit on (3, 25, 0.8901831355108138)
+Cache hit on (3, 76, 0.9107292303878726)
+Cache hit on (3, 48, 0.08932880895066508)
+Cache hit on (3, 12, 0.6445815054666872)
+Cache hit on (3, 0, 0.6529246362321403)
+Cache hit on (3, 96, 0.14102027127554273)
+Cache hit on (3, 65, 0.12397674302652517)
+Cache hit on (3, 25, 0.8901831355108138)
+Cache hit on (3, 24, 0.515933446563671)
+Cache hit on (3, 48, 0.08932880895066508)
+Cache hit on (3, 3, 0.9841316874007556)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7250>
+Cache hit on (3, 19, 0.6986921887796373)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7290>
+Cache hit on (3, 63, 0.5003250637951888)
+Cache hit on (3, 49, 0.7362087849349757)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7250>
+Cache hit on (3, 47, 0.6230560488198761)
+Cache hit on (3, 41, 0.3099881028794409)
+Size is : 7568
+Receiving totally lemitigate data (1, 20, 0.39782045168514313)
+Cache hit on (3, 97, 0.21545991590139613)
+Cache hit on (3, 92, 0.3062438861360489)
+Cache hit on (3, 96, 0.14102027127554273)
+Cache hit on (3, 0, 0.6529246362321403)
+Cache hit on (3, 42, 0.12593881029080534)
+Cache hit on (3, 17, 0.165933560174796)
+Cache hit on (3, 81, 0.3691645733942466)
+Cache hit on (3, 70, 0.5988496329993206)
+Cache hit on (3, 34, 0.0769779797379686)
+Cache hit on (3, 58, 0.9654041126313677)
+Cache hit on (3, 81, 0.3691645733942466)
+Cache hit on (2, 36, 0.7616883197672897)
+Cache hit on (3, 7, 0.2954814755007503)
+Cache hit on (3, 41, 0.3099881028794409)
+Cache hit on (3, 88, 0.9601766995444375)
+Cache hit on (3, 23, 0.991486849515598)
+Cache hit on (3, 40, 0.18942779444082136)
+Cache hit on (3, 6, 0.7391753518903819)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7250>
+Cache hit on (3, 86, 0.1617800798013429)
+<communication.ServerProbabilityUpdateMessage object at 0x23b72d0>
+Cache hit on (3, 59, 0.28765343958752077)
+Cache hit on (3, 89, 0.9307242813083016)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7250>
+Cache hit on (3, 28, 0.5021268081963328)
+Cache hit on (3, 17, 0.165933560174796)
+Cache hit on (3, 31, 0.3976189582967603)
+Cache hit on (3, 58, 0.9654041126313677)
+Cache hit on (3, 63, 0.5003250637951888)
+Cache hit on (3, 24, 0.515933446563671)
+Cache hit on (3, 11, 0.33665192679214584)
+Cache hit on (3, 44, 0.2610558516859486)
+Cache hit on (3, 73, 0.5565926037682182)
+Cache hit on (3, 92, 0.3062438861360489)
+Cache hit on (3, 43, 0.6349081176076409)
+Cache hit on (3, 44, 0.2610558516859486)
+Cache hit on (3, 48, 0.08932880895066508)
+Cache hit on (3, 0, 0.6529246362321403)
+Cache hit on (3, 81, 0.3691645733942466)
+Cache hit on (3, 22, 0.17441392928050758)
+Cache hit on (3, 37, 0.10784152074913667)
+Cache hit on (3, 31, 0.3976189582967603)
+Cache hit on (3, 38, 0.826077378251708)
+Cache hit on (3, 49, 0.7362087849349757)
+Cache hit on (3, 87, 0.2738859804343934)
+Cache hit on (3, 33, 0.3476903801033626)
+Cache hit on (3, 56, 0.5268299996921078)
+Cache hit on (3, 56, 0.5268299996921078)
+<communication.ServerProbabilityUpdateMessage object at 0x23b72d0>
+Cache hit on (3, 78, 0.848771481192241)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7250>
+Cache hit on (3, 7, 0.2954814755007503)
+<communication.ServerProbabilityUpdateMessage object at 0x23b72d0>
+Cache hit on (3, 55, 0.46384620428533796)
+Cache hit on (3, 46, 0.45152634356893373)
+Size is : 7568
+Receiving totally lemitigate data (0, 93, 0.6769376620541547)
+Cache hit on (3, 97, 0.21545991590139613)
+Cache hit on (3, 55, 0.46384620428533796)
+Cache hit on (3, 69, 0.692374536404731)
+Size is : 7568
+Receiving totally lemitigate data (3, 98, 0.4138226158411057)
+Cache hit on (3, 99, 0.33330805848569356)
+Cache hit on (3, 81, 0.3691645733942466)
+Cache hit on (3, 23, 0.991486849515598)
+Cache hit on (3, 26, 0.17249781623732474)
+Cache hit on (3, 50, 0.19467278153347678)
+Cache hit on (3, 91, 0.6336885892147315)
+Cache hit on (3, 12, 0.6445815054666872)
+Cache hit on (3, 94, 0.9349485654027445)
+Cache hit on (3, 53, 0.9857981697877979)
+Cache hit on (3, 10, 0.8615102677174804)
+Cache hit on (3, 93, 0.6769376620541547)
+Cache hit on (3, 61, 0.5610337771595438)
+Cache hit on (3, 69, 0.692374536404731)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7290>
+Size is : 7568
+Receiving totally lemitigate data (3, 45, 0.6106496510579194)
+Cache hit on (3, 74, 0.16924878416377942)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7290>
+Cache hit on (3, 22, 0.17441392928050758)
+<communication.ServerProbabilityUpdateMessage object at 0x23b72d0>
+Cache hit on (3, 18, 0.4094350294501341)
+Cache hit on (3, 28, 0.5021268081963328)
+Cache hit on (3, 56, 0.5268299996921078)
+Cache hit on (3, 8, 0.5775022303199868)
+Cache hit on (3, 12, 0.6445815054666872)
+Cache hit on (3, 81, 0.3691645733942466)
+Cache hit on (3, 99, 0.33330805848569356)
+Cache hit on (3, 21, 0.7854774132715057)
+Cache hit on (3, 34, 0.0769779797379686)
+Cache hit on (3, 43, 0.6349081176076409)
+Cache hit on (3, 69, 0.692374536404731)
+Cache hit on (3, 29, 0.9439441805990244)
+Cache hit on (3, 55, 0.46384620428533796)
+Cache hit on (3, 52, 0.9487878208843213)
+Cache hit on (3, 99, 0.33330805848569356)
+Cache hit on (3, 71, 0.28208530929606435)
+Cache hit on (3, 67, 0.8883094303800938)
+Cache hit on (3, 92, 0.3062438861360489)
+Cache hit on (3, 87, 0.2738859804343934)
+Cache hit on (3, 27, 0.40932923901694374)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7290>
+Size is : 7568
+Receiving totally lemitigate data (2, 97, 0.21545991590139613)
+Cache hit on (3, 9, 0.2932825309101079)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7290>
+Cache hit on (3, 88, 0.9601766995444375)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7250>
+Cache hit on (3, 16, 0.9490662972198751)
+Cache hit on (3, 41, 0.3099881028794409)
+Cache hit on (3, 8, 0.5775022303199868)
+Cache hit on (3, 11, 0.33665192679214584)
+Size is : 7568
+Receiving totally lemitigate data (3, 51, 0.4236584091302169)
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+{0: 0.01, 1: 0.01, 2: 0.01, 3: 0.97}
+{0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333}
+Replacing with 3, element (2, 19, 0.6986921887796373)
+4562084
+Done with delete request
+Cache hit on (3, 22, 0.17441392928050758)
+Cache hit on (3, 13, 0.25664677239358114)
+Cache hit on (3, 71, 0.28208530929606435)
+Cache hit on (3, 66, 0.34756785026880743)
+Cache hit on (3, 21, 0.7854774132715057)
+Cache hit on (3, 57, 0.6513561869435361)
+Cache hit on (3, 78, 0.848771481192241)
+Cache hit on (3, 50, 0.19467278153347678)
+Cache hit on (3, 43, 0.6349081176076409)
+Cache hit on (3, 4, 0.03563836269212928)
+Cache hit on (3, 1, 0.3330455036175394)
+Cache hit on (3, 12, 0.6445815054666872)
+Cache hit on (3, 87, 0.2738859804343934)
+Cache hit on (3, 61, 0.5610337771595438)
+Size is : 7568
+Receiving totally lemitigate data (3, 45, 0.6106496510579194)
+Cache hit on (3, 71, 0.28208530929606435)
+Cache hit on (3, 32, 0.39577266587907334)
+Cache hit on (3, 76, 0.9107292303878726)
+<communication.ServerProbabilityUpdateMessage object at 0x23b72d0>
+Cache hit on (3, 43, 0.6349081176076409)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7290>
+<communication.ServerProbabilityUpdateMessage object at 0x23b72d0>
+TIME:108.915910959
+In dataset 0:34
+In dataset 1:57
+In dataset 2:64
+In dataset 3:144
+==========================================
+Size is : 7568
+Receiving totally lemitigate data (3, 45, 0.6106496510579194)
+Cache hit on (3, 10, 0.8615102677174804)
+Cache hit on (3, 85, 0.07091507416771725)
+Cache hit on (3, 32, 0.39577266587907334)
+Cache hit on (3, 9, 0.2932825309101079)
+Cache hit on (3, 71, 0.28208530929606435)
+Cache hit on (3, 44, 0.2610558516859486)
+Cache hit on (3, 90, 0.6288348972216677)
+Cache hit on (3, 5, 0.7701842780377941)
+Cache hit on (3, 26, 0.17249781623732474)
+Cache hit on (3, 21, 0.7854774132715057)
+Cache hit on (3, 19, 0.6986921887796373)
+Cache hit on (0, 36, 0.7616883197672897)
+Cache hit on (3, 16, 0.9490662972198751)
+Cache hit on (3, 36, 0.7616883197672897)
+Cache hit on (3, 70, 0.5988496329993206)
+Cache hit on (3, 63, 0.5003250637951888)
+Cache hit on (3, 85, 0.07091507416771725)
+Cache hit on (3, 15, 0.22156467556606585)
+Cache hit on (3, 0, 0.6529246362321403)
+Cache hit on (3, 2, 0.8602469894076687)
+Cache hit on (3, 41, 0.3099881028794409)
+Cache hit on (3, 31, 0.3976189582967603)
+Cache hit on (3, 49, 0.7362087849349757)
+<communication.ServerProbabilityUpdateMessage object at 0x23b72d0>
+Cache hit on (3, 47, 0.6230560488198761)
+Cache hit on (3, 47, 0.6230560488198761)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7310>
+Cache hit on (3, 48, 0.08932880895066508)
+<communication.ServerProbabilityUpdateMessage object at 0x23b72d0>
+Cache hit on (3, 44, 0.2610558516859486)
+Size is : 7568
+Receiving totally lemitigate data (3, 45, 0.6106496510579194)
+Cache hit on (3, 66, 0.34756785026880743)
+Cache hit on (3, 12, 0.6445815054666872)
+Cache hit on (3, 58, 0.9654041126313677)
+Cache hit on (3, 29, 0.9439441805990244)
+Cache hit on (3, 11, 0.33665192679214584)
+Cache hit on (3, 15, 0.22156467556606585)
+Cache hit on (3, 97, 0.21545991590139613)
+Cache hit on (3, 46, 0.45152634356893373)
+Cache hit on (3, 69, 0.692374536404731)
+Cache hit on (3, 5, 0.7701842780377941)
+Cache hit on (3, 53, 0.9857981697877979)
+Cache hit on (3, 54, 0.5443508849874495)
+Cache hit on (3, 15, 0.22156467556606585)
+Cache hit on (3, 89, 0.9307242813083016)
+Cache hit on (3, 81, 0.3691645733942466)
+Cache hit on (3, 73, 0.5565926037682182)
+Cache hit on (3, 17, 0.165933560174796)
+Cache hit on (3, 47, 0.6230560488198761)
+Cache hit on (3, 17, 0.165933560174796)
+<communication.ServerProbabilityUpdateMessage object at 0x23b72d0>
+Cache hit on (3, 14, 0.8611910665091667)
+Cache hit on (3, 63, 0.5003250637951888)
+<communication.ServerProbabilityUpdateMessage object at 0x23b7290>
+Cache hit on (3, 59, 0.28765343958752077)
+<communication.ServerProbabilityUpdateMessage object at 0x23b72d0>
+Cache hit on (3, 10, 0.8615102677174804)
+Cache hit on (3, 49, 0.7362087849349757)
+Cache hit on (2, 6, 0.7391753518903819)
+Cache hit on (3, 2, 0.8602469894076687)
+Cache hit on (3, 80, 0.9790193772769754)
+Cache hit on (3, 22, 0.17441392928050758)
+Cache hit on (3, 50, 0.19467278153347678)
+Cache hit on (3, 17, 0.165933560174796)
+Cache hit on (3, 42, 0.12593881029080534)
+Cache hit on (3, 47, 0.6230560488198761)
+Cache hit on (3, 34, 0.0769779797379686)
+Cache hit on (3, 5, 0.7701842780377941)
+Cache hit on (3, 94, 0.9349485654027445)
+Cache hit on (3, 51, 0.4236584091302169)
+Cache hit on (3, 13, 0.25664677239358114)
+Cache hit on (3, 65, 0.12397674302652517)
+Cache hit on (3, 65, 0.12397674302652517)
+Cache hit on (3, 77, 0.037655619868319)
+Cache hit on (3, 86, 0.1617800798013429)
+Cache hit on (3, 96, 0.14102027127554273)
+Cache hit on (3, 51, 0.4236584091302169)
+Cache hit on (3, 26, 0.17249781623732474)
+Cache hit on (3, 63, 0.5003250637951888)

@@ -1,0 +1,2586 @@
+S1
+S2
+<communication.ServerHostListenMessage object at 0x12890d0>
+S1
+S2
+<communication.ServerRegisterDataSet object at 0x1289150>
+S1
+S2
+<communication.ServerRegisterDataSet object at 0x1289110>
+S1
+S2
+<communication.ServerRegisterDataSet object at 0x12890d0>
+S1
+S2
+<communication.ServerRegisterDataSet object at 0x1289150>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x12890d0>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x1289150>
+S1
+S2
+<communication.ServerProbabilityUpdateMessage object at 0x12890d0>
+S1
+S2
+<communication.ServerHostAlertMessage object at 0x1289190>
+L1
+L2
+L3
+L1
+L2
+L3
+L1
+L2
+L3
+L1
+L2
+L3
+C1
+C2
+C3
+S1
+S2
+<communication.ServerSayGoMessage object at 0x12891d0>
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 23, 0.991486849515598)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (1, 70, 0.5988496329993206)
+7014193
+Done with delete request
+L3
+C1
+C2
+C3
+Cache hit on (2, 61, 0.5610337771595438)
+Cache hit on (1, 64, 0.49125820209791415)
+C1
+C2
+C3
+Cache hit on (0, 23, 0.991486849515598)
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 41, 0.3099881028794409)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (3, 85, 0.07091507416771725)
+7014205
+Done with delete request
+L3
+C1
+C2
+C3
+TIME:3.58154988289
+In dataset 0:68
+In dataset 1:69
+In dataset 2:76
+In dataset 3:87
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 42, 0.12593881029080534)
+L3
+Cache hit on (0, 13, 0.25664677239358114)
+C1
+C2
+C3
+L1
+Size is : 7569
+L2
+Receiving totally lemitigate data (0, 77, 0.037655619868319)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (1, 17, 0.165933560174796)
+7049687
+Done with delete request
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 66, 0.34756785026880743)
+L3
+TIME:5.43564891815
+In dataset 0:70
+In dataset 1:67
+In dataset 2:76
+In dataset 3:87
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 71, 0.28208530929606435)
+L3
+TIME:5.87783789635
+In dataset 0:70
+In dataset 1:67
+In dataset 2:76
+In dataset 3:87
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 90, 0.6288348972216677)
+L3
+Cache hit on (2, 7, 0.2954814755007503)
+Cache hit on (2, 94, 0.9349485654027445)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 49, 0.7362087849349757)
+L3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 7, 0.2954814755007503)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (2, 45, 0.6106496510579194)
+7472726
+Done with delete request
+L3
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 7, 0.2954814755007503)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 59, 0.28765343958752077)
+L3
+TIME:8.65058302879
+In dataset 0:71
+In dataset 1:66
+In dataset 2:75
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 17, 0.165933560174796)
+L3
+TIME:9.07459592819
+In dataset 0:71
+In dataset 1:66
+In dataset 2:75
+In dataset 3:88
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 49, 0.7362087849349757)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 42, 0.12593881029080534)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 21, 0.7854774132715057)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (3, 53, 0.9857981697877979)
+7949434
+Done with delete request
+L3
+C1
+C2
+C3
+TIME:10.8155839443
+In dataset 0:71
+In dataset 1:66
+In dataset 2:76
+In dataset 3:87
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 30, 0.9933235943563021)
+L3
+C1
+C2
+C3
+Cache hit on (1, 64, 0.49125820209791415)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 26, 0.17249781623732474)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (0, 72, 0.11957068478090738)
+8031625
+Done with delete request
+L3
+Cache hit on (3, 27, 0.40932923901694374)
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 38, 0.826077378251708)
+L3
+Cache hit on (3, 28, 0.5021268081963328)
+Cache hit on (0, 16, 0.9490662972198751)
+Cache hit on (1, 99, 0.33330805848569356)
+C1
+C2
+C3
+Cache hit on (3, 96, 0.14102027127554273)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 95, 0.3594333503316718)
+L3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 39, 0.424169074926957)
+L3
+TIME:14.3627829552
+In dataset 0:70
+In dataset 1:66
+In dataset 2:80
+In dataset 3:84
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 19, 0.6986921887796373)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (2, 14, 0.8611910665091667)
+8367683
+Done with delete request
+L3
+Cache hit on (1, 68, 0.5637817757896867)
+C1
+C2
+C3
+TIME:15.6352620125
+In dataset 0:70
+In dataset 1:67
+In dataset 2:79
+In dataset 3:84
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 39, 0.424169074926957)
+L3
+C1
+C2
+C3
+TIME:16.1734750271
+In dataset 0:70
+In dataset 1:67
+In dataset 2:79
+In dataset 3:84
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 56, 0.5268299996921078)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (3, 91, 0.6336885892147315)
+8512081
+Done with delete request
+L3
+Cache hit on (2, 60, 0.006339022129503991)
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 67, 0.8883094303800938)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 3, element (0, 50, 0.19467278153347678)
+8512086
+Done with delete request
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (2, 83, 0.1945629525281013)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (0, 2, 0.8602469894076687)
+8531953
+Done with delete request
+L3
+TIME:18.3891839981
+In dataset 0:67
+In dataset 1:68
+In dataset 2:82
+In dataset 3:83
+==========================================
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7566
+L2
+Receiving totally lemitigate data (3, 78, 0.848771481192241)
+L3
+Cache hit on (2, 13, 0.25664677239358114)
+Cache hit on (1, 68, 0.5637817757896867)
+TIME:19.4656498432
+In dataset 0:66
+In dataset 1:68
+In dataset 2:83
+In dataset 3:83
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 76, 0.9107292303878726)
+L3
+TIME:19.9906098843
+In dataset 0:66
+In dataset 1:68
+In dataset 2:83
+In dataset 3:83
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 66, 0.34756785026880743)
+L3
+TIME:20.4152228832
+In dataset 0:66
+In dataset 1:68
+In dataset 2:83
+In dataset 3:83
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 18, 0.4094350294501341)
+L3
+TIME:20.9692230225
+In dataset 0:66
+In dataset 1:68
+In dataset 2:83
+In dataset 3:83
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 37, 0.10784152074913667)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (3, 4, 0.03563836269212928)
+8874472
+Done with delete request
+L3
+Cache hit on (0, 70, 0.5988496329993206)
+Cache hit on (2, 2, 0.8602469894076687)
+C1
+C2
+C3
+Cache hit on (0, 48, 0.08932880895066508)
+Cache hit on (2, 78, 0.848771481192241)
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 10, 0.8615102677174804)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (2, 85, 0.07091507416771725)
+8874487
+Done with delete request
+L3
+Cache hit on (2, 77, 0.037655619868319)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 23, 0.991486849515598)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 73, 0.5565926037682182)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (3, 29, 0.9439441805990244)
+8874498
+Done with delete request
+L3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 39, 0.424169074926957)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 3, element (2, 19, 0.6986921887796373)
+8979573
+Done with delete request
+L3
+Cache hit on (1, 1, 0.3330455036175394)
+Cache hit on (3, 37, 0.10784152074913667)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 97, 0.21545991590139613)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (0, 27, 0.40932923901694374)
+8979582
+Done with delete request
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 26, 0.17249781623732474)
+L3
+Cache hit on (1, 25, 0.8901831355108138)
+Cache hit on (0, 13, 0.25664677239358114)
+Cache hit on (1, 69, 0.692374536404731)
+C1
+C2
+C3
+TIME:27.5795450211
+In dataset 0:68
+In dataset 1:67
+In dataset 2:82
+In dataset 3:83
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 59, 0.28765343958752077)
+L3
+Cache hit on (2, 15, 0.22156467556606585)
+TIME:28.1128890514
+In dataset 0:68
+In dataset 1:67
+In dataset 2:82
+In dataset 3:83
+==========================================
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 92, 0.3062438861360489)
+L3
+TIME:28.7683050632
+In dataset 0:68
+In dataset 1:66
+In dataset 2:83
+In dataset 3:83
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 57, 0.6513561869435361)
+L3
+TIME:29.2136340141
+In dataset 0:68
+In dataset 1:66
+In dataset 2:83
+In dataset 3:83
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 14, 0.8611910665091667)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (3, 72, 0.11957068478090738)
+9376909
+Done with delete request
+L3
+Cache hit on (0, 67, 0.8883094303800938)
+TIME:30.0508210659
+In dataset 0:68
+In dataset 1:67
+In dataset 2:83
+In dataset 3:82
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 46, 0.45152634356893373)
+L3
+TIME:30.4768178463
+In dataset 0:68
+In dataset 1:67
+In dataset 2:83
+In dataset 3:82
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 72, 0.11957068478090738)
+L3
+TIME:30.9007389545
+In dataset 0:68
+In dataset 1:67
+In dataset 2:83
+In dataset 3:82
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 79, 0.5960469281347621)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (3, 68, 0.5637817757896867)
+9646037
+Done with delete request
+L3
+Cache hit on (0, 64, 0.49125820209791415)
+Cache hit on (2, 21, 0.7854774132715057)
+C1
+C2
+C3
+Cache hit on (2, 27, 0.40932923901694374)
+Cache hit on (0, 91, 0.6336885892147315)
+C1
+C2
+C3
+C1
+C2
+C3
+TIME:33.3027029037
+In dataset 0:68
+In dataset 1:68
+In dataset 2:83
+In dataset 3:81
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 22, 0.17441392928050758)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7569
+L2
+Receiving totally lemitigate data (1, 48, 0.08932880895066508)
+L3
+Cache hit on (2, 61, 0.5610337771595438)
+Cache hit on (3, 19, 0.6986921887796373)
+C1
+C2
+C3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 82, 0.37213874350087717)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (2, 99, 0.33330805848569356)
+9733025
+Done with delete request
+L3
+TIME:35.3751769066
+In dataset 0:70
+In dataset 1:68
+In dataset 2:81
+In dataset 3:81
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 11, 0.33665192679214584)
+L3
+TIME:35.8161129951
+In dataset 0:70
+In dataset 1:68
+In dataset 2:81
+In dataset 3:81
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 99, 0.33330805848569356)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (0, 67, 0.8883094303800938)
+9818178
+Done with delete request
+L3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 28, 0.5021268081963328)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 36, 0.7616883197672897)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 29, 0.9439441805990244)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 55, 0.46384620428533796)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (3, 12, 0.6445815054666872)
+9929313
+Done with delete request
+L3
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 86, 0.1617800798013429)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 45, 0.6106496510579194)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (0, 98, 0.4138226158411057)
+9929321
+Done with delete request
+L3
+C1
+C2
+C3
+TIME:39.4788379669
+In dataset 0:69
+In dataset 1:68
+In dataset 2:83
+In dataset 3:80
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 66, 0.34756785026880743)
+L3
+Cache hit on (3, 84, 0.7602737552467611)
+Cache hit on (2, 78, 0.848771481192241)
+C1
+C2
+C3
+Cache hit on (1, 67, 0.8883094303800938)
+C1
+C2
+C3
+TIME:40.6442658901
+In dataset 0:68
+In dataset 1:68
+In dataset 2:84
+In dataset 3:80
+==========================================
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (1, 18, 0.4094350294501341)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (3, 1, 0.3330455036175394)
+10150275
+Done with delete request
+L3
+Cache hit on (2, 42, 0.12593881029080534)
+Cache hit on (1, 78, 0.848771481192241)
+C1
+C2
+C3
+TIME:41.912186861
+In dataset 0:68
+In dataset 1:69
+In dataset 2:84
+In dataset 3:79
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 32, 0.39577266587907334)
+L3
+TIME:42.3375909328
+In dataset 0:68
+In dataset 1:69
+In dataset 2:84
+In dataset 3:79
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 29, 0.9439441805990244)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (0, 10, 0.8615102677174804)
+10484107
+Done with delete request
+L3
+Cache hit on (2, 38, 0.826077378251708)
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 84, 0.7602737552467611)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (2, 30, 0.9933235943563021)
+10484112
+Done with delete request
+L3
+C1
+C2
+C3
+Cache hit on (2, 15, 0.22156467556606585)
+C1
+C2
+C3
+Cache hit on (0, 40, 0.18942779444082136)
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 58, 0.9654041126313677)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 3, element (1, 45, 0.6106496510579194)
+10589001
+Done with delete request
+L3
+C1
+C2
+C3
+TIME:45.5391669273
+In dataset 0:66
+In dataset 1:69
+In dataset 2:85
+In dataset 3:80
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 25, 0.8901831355108138)
+L3
+TIME:46.0814568996
+In dataset 0:66
+In dataset 1:69
+In dataset 2:85
+In dataset 3:80
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 27, 0.40932923901694374)
+L3
+TIME:46.3053109646
+In dataset 0:66
+In dataset 1:69
+In dataset 2:85
+In dataset 3:80
+==========================================
+L1
+Size is : 7569
+L2
+Receiving totally lemitigate data (2, 85, 0.07091507416771725)
+L3
+Cache hit on (2, 73, 0.5565926037682182)
+TIME:46.9361898899
+In dataset 0:66
+In dataset 1:69
+In dataset 2:85
+In dataset 3:80
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 54, 0.5443508849874495)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (0, 59, 0.28765343958752077)
+10851758
+Done with delete request
+L3
+C1
+C2
+C3
+TIME:47.7037229538
+In dataset 0:65
+In dataset 1:69
+In dataset 2:86
+In dataset 3:80
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 12, 0.6445815054666872)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (3, 87, 0.2738859804343934)
+10863085
+Done with delete request
+L3
+Cache hit on (2, 17, 0.165933560174796)
+Cache hit on (2, 20, 0.39782045168514313)
+C1
+C2
+C3
+Cache hit on (3, 39, 0.424169074926957)
+C1
+C2
+C3
+Cache hit on (2, 49, 0.7362087849349757)
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 14, 0.8611910665091667)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 59, 0.28765343958752077)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (1, 39, 0.424169074926957)
+10916843
+Done with delete request
+L3
+C1
+C2
+C3
+TIME:50.8433749676
+In dataset 0:65
+In dataset 1:69
+In dataset 2:87
+In dataset 3:79
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 94, 0.9349485654027445)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 3, element (0, 90, 0.6288348972216677)
+10968436
+Done with delete request
+L3
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (2, 9, 0.2932825309101079)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (1, 15, 0.22156467556606585)
+10968440
+Done with delete request
+L3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 64, 0.49125820209791415)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (3, 9, 0.2932825309101079)
+11053865
+Done with delete request
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 17, 0.165933560174796)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 3, element (0, 45, 0.6106496510579194)
+11053869
+Done with delete request
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 50, 0.19467278153347678)
+L3
+C1
+C2
+C3
+Cache hit on (3, 95, 0.3594333503316718)
+Cache hit on (1, 2, 0.8602469894076687)
+Cache hit on (1, 79, 0.5960469281347621)
+C1
+C2
+C3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7569
+L2
+Receiving totally lemitigate data (3, 34, 0.0769779797379686)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 3, element (2, 56, 0.5268299996921078)
+11137953
+Done with delete request
+L3
+Cache hit on (2, 22, 0.17441392928050758)
+Cache hit on (0, 9, 0.2932825309101079)
+Cache hit on (1, 77, 0.037655619868319)
+C1
+C2
+C3
+Cache hit on (2, 61, 0.5610337771595438)
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (1, 1, 0.3330455036175394)
+L3
+C1
+C2
+C3
+TIME:57.2593779564
+In dataset 0:63
+In dataset 1:67
+In dataset 2:88
+In dataset 3:82
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 71, 0.28208530929606435)
+L3
+TIME:57.6000230312
+In dataset 0:63
+In dataset 1:67
+In dataset 2:88
+In dataset 3:82
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 82, 0.37213874350087717)
+L3
+TIME:58.023419857
+In dataset 0:63
+In dataset 1:67
+In dataset 2:88
+In dataset 3:82
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 63, 0.5003250637951888)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (3, 96, 0.14102027127554273)
+11330321
+Done with delete request
+L3
+C1
+C2
+C3
+TIME:58.9114170074
+In dataset 0:63
+In dataset 1:67
+In dataset 2:89
+In dataset 3:81
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 31, 0.3976189582967603)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (3, 16, 0.9490662972198751)
+11411051
+Done with delete request
+L3
+Cache hit on (0, 99, 0.33330805848569356)
+C1
+C2
+C3
+Cache hit on (1, 35, 0.1385799631447041)
+C1
+C2
+C3
+TIME:60.1074588299
+In dataset 0:64
+In dataset 1:68
+In dataset 2:88
+In dataset 3:80
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 49, 0.7362087849349757)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (0, 7, 0.2954814755007503)
+11485864
+Done with delete request
+L3
+TIME:60.6378009319
+In dataset 0:63
+In dataset 1:69
+In dataset 2:88
+In dataset 3:80
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 65, 0.12397674302652517)
+L3
+Cache hit on (2, 10, 0.8615102677174804)
+Cache hit on (0, 52, 0.9487878208843213)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 57, 0.6513561869435361)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (2, 66, 0.34756785026880743)
+11551355
+Done with delete request
+L3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 82, 0.37213874350087717)
+L3
+Cache hit on (2, 54, 0.5443508849874495)
+C1
+C2
+C3
+C1
+C2
+C3
+TIME:62.9347269535
+In dataset 0:63
+In dataset 1:69
+In dataset 2:87
+In dataset 3:81
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 91, 0.6336885892147315)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 3, element (2, 65, 0.12397674302652517)
+11556444
+Done with delete request
+L3
+C1
+C2
+C3
+TIME:63.3794820309
+In dataset 0:64
+In dataset 1:69
+In dataset 2:86
+In dataset 3:81
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 52, 0.9487878208843213)
+L3
+TIME:63.8145568371
+In dataset 0:64
+In dataset 1:69
+In dataset 2:86
+In dataset 3:81
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 63, 0.5003250637951888)
+L3
+TIME:64.1380400658
+In dataset 0:64
+In dataset 1:69
+In dataset 2:86
+In dataset 3:81
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 62, 0.3414425819011161)
+L3
+TIME:64.584444046
+In dataset 0:64
+In dataset 1:69
+In dataset 2:86
+In dataset 3:81
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 53, 0.9857981697877979)
+L3
+Cache hit on (2, 59, 0.28765343958752077)
+TIME:65.2321949005
+In dataset 0:63
+In dataset 1:69
+In dataset 2:86
+In dataset 3:82
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 92, 0.3062438861360489)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (1, 69, 0.692374536404731)
+11728701
+Done with delete request
+L3
+Cache hit on (2, 15, 0.22156467556606585)
+C1
+C2
+C3
+TIME:66.1021358967
+In dataset 0:63
+In dataset 1:68
+In dataset 2:86
+In dataset 3:83
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7569
+L2
+Receiving totally lemitigate data (2, 85, 0.07091507416771725)
+L3
+TIME:66.6479279995
+In dataset 0:63
+In dataset 1:68
+In dataset 2:86
+In dataset 3:83
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 25, 0.8901831355108138)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (3, 24, 0.515933446563671)
+11919127
+Done with delete request
+L3
+C1
+C2
+C3
+TIME:67.5247318745
+In dataset 0:64
+In dataset 1:68
+In dataset 2:86
+In dataset 3:82
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 25, 0.8901831355108138)
+L3
+TIME:67.8338589668
+In dataset 0:64
+In dataset 1:68
+In dataset 2:86
+In dataset 3:82
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 88, 0.9601766995444375)
+L3
+TIME:68.3756918907
+In dataset 0:64
+In dataset 1:68
+In dataset 2:86
+In dataset 3:82
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 25, 0.8901831355108138)
+L3
+Cache hit on (0, 99, 0.33330805848569356)
+Cache hit on (3, 80, 0.9790193772769754)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 14, 0.8611910665091667)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (2, 18, 0.4094350294501341)
+12128186
+Done with delete request
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 92, 0.3062438861360489)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 3, element (0, 36, 0.7616883197672897)
+12201460
+Done with delete request
+L3
+C1
+C2
+C3
+Cache hit on (2, 67, 0.8883094303800938)
+C1
+C2
+C3
+C1
+C2
+C3
+C1
+C2
+C3
+TIME:71.5607719421
+In dataset 0:64
+In dataset 1:67
+In dataset 2:83
+In dataset 3:86
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 81, 0.3691645733942466)
+L3
+TIME:71.9014070034
+In dataset 0:64
+In dataset 1:67
+In dataset 2:82
+In dataset 3:87
+==========================================
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 10, 0.8615102677174804)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 3, element (1, 2, 0.8602469894076687)
+12381994
+Done with delete request
+L3
+C1
+C2
+C3
+TIME:72.7519860268
+In dataset 0:64
+In dataset 1:66
+In dataset 2:82
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 20, 0.39782045168514313)
+L3
+Cache hit on (1, 56, 0.5268299996921078)
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (2, 3, 0.9841316874007556)
+L3
+Cache hit on (2, 16, 0.9490662972198751)
+Cache hit on (3, 70, 0.5988496329993206)
+C1
+C2
+C3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7569
+L2
+Receiving totally lemitigate data (0, 34, 0.0769779797379686)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (2, 13, 0.25664677239358114)
+12459266
+Done with delete request
+L3
+C1
+C2
+C3
+L1
+Size is : 7570
+L2
+Receiving totally lemitigate data (0, 60, 0.006339022129503991)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (1, 56, 0.5268299996921078)
+12459270
+Done with delete request
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 36, 0.7616883197672897)
+L3
+C1
+C2
+C3
+TIME:76.1217319965
+In dataset 0:67
+In dataset 1:65
+In dataset 2:81
+In dataset 3:87
+==========================================
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 86, 0.1617800798013429)
+L3
+TIME:76.2388939857
+In dataset 0:67
+In dataset 1:65
+In dataset 2:81
+In dataset 3:87
+==========================================
+Cache hit on (0, 9, 0.2932825309101079)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 82, 0.37213874350087717)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (0, 99, 0.33330805848569356)
+12599398
+Done with delete request
+L3
+Cache hit on (0, 9, 0.2932825309101079)
+C1
+C2
+C3
+Cache hit on (1, 23, 0.991486849515598)
+C1
+C2
+C3
+Cache hit on (3, 33, 0.3476903801033626)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 19, 0.6986921887796373)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 4, 0.03563836269212928)
+L3
+TIME:79.2237708569
+In dataset 0:66
+In dataset 1:65
+In dataset 2:82
+In dataset 3:87
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 10, 0.8615102677174804)
+L3
+Cache hit on (1, 14, 0.8611910665091667)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 12, 0.6445815054666872)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 53, 0.9857981697877979)
+L3
+Cache hit on (2, 95, 0.3594333503316718)
+TIME:80.9585459232
+In dataset 0:66
+In dataset 1:64
+In dataset 2:82
+In dataset 3:88
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 23, 0.991486849515598)
+L3
+Cache hit on (3, 73, 0.5565926037682182)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 84, 0.7602737552467611)
+L3
+Cache hit on (3, 19, 0.6986921887796373)
+Cache hit on (2, 16, 0.9490662972198751)
+C1
+C2
+C3
+Cache hit on (2, 31, 0.3976189582967603)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 35, 0.1385799631447041)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (3, 91, 0.6336885892147315)
+12710297
+Done with delete request
+L3
+C1
+C2
+C3
+Cache hit on (3, 6, 0.7391753518903819)
+C1
+C2
+C3
+TIME:83.4072909355
+In dataset 0:66
+In dataset 1:62
+In dataset 2:85
+In dataset 3:87
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 98, 0.4138226158411057)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (3, 2, 0.8602469894076687)
+12710303
+Done with delete request
+L3
+C1
+C2
+C3
+Cache hit on (0, 32, 0.39577266587907334)
+C1
+C2
+C3
+Cache hit on (1, 31, 0.3976189582967603)
+C1
+C2
+C3
+Cache hit on (2, 22, 0.17441392928050758)
+Cache hit on (2, 61, 0.5610337771595438)
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 22, 0.17441392928050758)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (3, 57, 0.6513561869435361)
+12710318
+Done with delete request
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 68, 0.5637817757896867)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (0, 53, 0.9857981697877979)
+12710324
+Done with delete request
+L3
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (1, 2, 0.8602469894076687)
+L3
+C1
+C2
+C3
+Cache hit on (1, 79, 0.5960469281347621)
+Cache hit on (0, 15, 0.22156467556606585)
+Cache hit on (2, 31, 0.3976189582967603)
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 62, 0.3414425819011161)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (3, 92, 0.3062438861360489)
+12719087
+Done with delete request
+L3
+Cache hit on (1, 62, 0.3414425819011161)
+TIME:89.2925639153
+In dataset 0:68
+In dataset 1:63
+In dataset 2:85
+In dataset 3:84
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 66, 0.34756785026880743)
+L3
+Cache hit on (1, 26, 0.17249781623732474)
+Cache hit on (2, 83, 0.1945629525281013)
+Cache hit on (3, 41, 0.3099881028794409)
+C1
+C2
+C3
+Cache hit on (2, 36, 0.7616883197672897)
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 9, 0.2932825309101079)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 87, 0.2738859804343934)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (3, 81, 0.3691645733942466)
+12917264
+Done with delete request
+L3
+Cache hit on (2, 12, 0.6445815054666872)
+Cache hit on (2, 33, 0.3476903801033626)
+C1
+C2
+C3
+TIME:92.6015410423
+In dataset 0:70
+In dataset 1:64
+In dataset 2:84
+In dataset 3:82
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 21, 0.7854774132715057)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (2, 43, 0.6349081176076409)
+13005496
+Done with delete request
+L3
+Cache hit on (3, 83, 0.1945629525281013)
+Cache hit on (3, 28, 0.5021268081963328)
+C1
+C2
+C3
+Cache hit on (3, 69, 0.692374536404731)
+Cache hit on (0, 79, 0.5960469281347621)
+C1
+C2
+C3
+Cache hit on (2, 46, 0.45152634356893373)
+C1
+C2
+C3
+C1
+C2
+C3
+TIME:94.8482618332
+In dataset 0:72
+In dataset 1:66
+In dataset 2:82
+In dataset 3:80
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 11, 0.33665192679214584)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (0, 38, 0.826077378251708)
+13138014
+Done with delete request
+L3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 56, 0.5268299996921078)
+L3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 76, 0.9107292303878726)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 93, 0.6769376620541547)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (0, 8, 0.5775022303199868)
+13207300
+Done with delete request
+L3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 91, 0.6336885892147315)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 3, element (0, 54, 0.5443508849874495)
+13283167
+Done with delete request
+L3
+C1
+C2
+C3
+TIME:97.9863739014
+In dataset 0:69
+In dataset 1:69
+In dataset 2:82
+In dataset 3:80
+==========================================
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 1, 0.3330455036175394)
+L3
+Cache hit on (1, 51, 0.4236584091302169)
+Cache hit on (0, 26, 0.17249781623732474)
+Cache hit on (2, 21, 0.7854774132715057)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 47, 0.6230560488198761)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 14, 0.8611910665091667)
+L3
+TIME:99.9024980068
+In dataset 0:69
+In dataset 1:68
+In dataset 2:83
+In dataset 3:80
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 70, 0.5988496329993206)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (0, 34, 0.0769779797379686)
+13429798
+Done with delete request
+L3
+C1
+C2
+C3
+TIME:100.480414867
+In dataset 0:69
+In dataset 1:68
+In dataset 2:83
+In dataset 3:80
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 66, 0.34756785026880743)
+L3
+Cache hit on (2, 9, 0.2932825309101079)
+Cache hit on (0, 28, 0.5021268081963328)
+Cache hit on (2, 21, 0.7854774132715057)
+Cache hit on (2, 78, 0.848771481192241)
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (1, 41, 0.3099881028794409)
+L3
+C1
+C2
+C3
+Cache hit on (2, 68, 0.5637817757896867)
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 59, 0.28765343958752077)
+L3
+Cache hit on (0, 24, 0.515933446563671)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 45, 0.6106496510579194)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 68, 0.5637817757896867)
+L3
+Cache hit on (1, 81, 0.3691645733942466)
+Cache hit on (3, 80, 0.9790193772769754)
+Cache hit on (3, 83, 0.1945629525281013)
+C1
+C2
+C3
+TIME:104.728194952
+In dataset 0:70
+In dataset 1:69
+In dataset 2:80
+In dataset 3:81
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 14, 0.8611910665091667)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 3, element (0, 14, 0.8611910665091667)
+13674211
+Done with delete request
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (1, 74, 0.16924878416377942)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (3, 30, 0.9933235943563021)
+13674217
+Done with delete request
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 93, 0.6769376620541547)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (2, 33, 0.3476903801033626)
+13674220
+Done with delete request
+L3
+C1
+C2
+C3
+Cache hit on (1, 16, 0.9490662972198751)
+C1
+C2
+C3
+TIME:107.012694836
+In dataset 0:71
+In dataset 1:70
+In dataset 2:79
+In dataset 3:80
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 88, 0.9601766995444375)
+L3
+TIME:107.56249404
+In dataset 0:71
+In dataset 1:70
+In dataset 2:79
+In dataset 3:80
+==========================================
+L1
+Size is : 7569
+L2
+Receiving totally lemitigate data (3, 48, 0.08932880895066508)
+L3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 76, 0.9107292303878726)
+L3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 51, 0.4236584091302169)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 64, 0.49125820209791415)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 3, element (2, 44, 0.2610558516859486)
+13854302
+Done with delete request
+L3
+Cache hit on (3, 54, 0.5443508849874495)
+C1
+C2
+C3
+Cache hit on (3, 38, 0.826077378251708)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 56, 0.5268299996921078)
+L3
+C1
+C2
+C3
+Cache hit on (3, 62, 0.3414425819011161)
+C1
+C2
+C3
+Cache hit on (0, 79, 0.5960469281347621)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 75, 0.5777862386634631)
+L3
+C1
+C2
+C3
+Cache hit on (2, 93, 0.6769376620541547)
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (1, 3, 0.9841316874007556)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (3, 62, 0.3414425819011161)
+13937857
+Done with delete request
+L3
+C1
+C2
+C3
+Cache hit on (2, 90, 0.6288348972216677)
+C1
+C2
+C3
+TIME:113.50877285
+In dataset 0:69
+In dataset 1:74
+In dataset 2:77
+In dataset 3:80
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7566
+L2
+Receiving totally lemitigate data (0, 5, 0.7701842780377941)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (2, 6, 0.7391753518903819)
+14018865
+Done with delete request
+L3
+Cache hit on (0, 40, 0.18942779444082136)
+TIME:114.47772193
+In dataset 0:70
+In dataset 1:74
+In dataset 2:76
+In dataset 3:80
+==========================================
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (0, 67, 0.8883094303800938)
+L3
+Cache hit on (0, 9, 0.2932825309101079)
+Cache hit on (3, 21, 0.7854774132715057)
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (3, 18, 0.4094350294501341)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7569
+L2
+Receiving totally lemitigate data (2, 48, 0.08932880895066508)
+L3
+TIME:116.086390972
+In dataset 0:69
+In dataset 1:75
+In dataset 2:76
+In dataset 3:80
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 87, 0.2738859804343934)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 2, element (1, 38, 0.826077378251708)
+14240362
+Done with delete request
+L3
+TIME:116.836254835
+In dataset 0:68
+In dataset 1:74
+In dataset 2:77
+In dataset 3:81
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (2, 37, 0.10784152074913667)
+L3
+Cache hit on (2, 26, 0.17249781623732474)
+TIME:117.276701927
+In dataset 0:68
+In dataset 1:74
+In dataset 2:77
+In dataset 3:81
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 29, 0.9439441805990244)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (3, 64, 0.49125820209791415)
+14331277
+Done with delete request
+L3
+Cache hit on (3, 58, 0.9654041126313677)
+C1
+C2
+C3
+Cache hit on (1, 19, 0.6986921887796373)
+Cache hit on (2, 49, 0.7362087849349757)
+TIME:118.899910927
+In dataset 0:69
+In dataset 1:74
+In dataset 2:77
+In dataset 3:80
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 62, 0.3414425819011161)
+L3
+Cache hit on (3, 27, 0.40932923901694374)
+TIME:119.531549931
+In dataset 0:69
+In dataset 1:74
+In dataset 2:77
+In dataset 3:80
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7570
+L2
+Receiving totally lemitigate data (1, 60, 0.006339022129503991)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 1, element (2, 77, 0.037655619868319)
+14439760
+Done with delete request
+L3
+Cache hit on (3, 80, 0.9790193772769754)
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 22, 0.17441392928050758)
+L3
+C1
+C2
+C3
+C1
+C2
+C3
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 52, 0.9487878208843213)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 3, element (2, 89, 0.9307242813083016)
+14439771
+Done with delete request
+L3
+C1
+C2
+C3
+TIME:121.545435905
+In dataset 0:67
+In dataset 1:75
+In dataset 2:76
+In dataset 3:82
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (3, 91, 0.6336885892147315)
+L3
+TIME:122.018785
+In dataset 0:67
+In dataset 1:75
+In dataset 2:76
+In dataset 3:82
+==========================================
+C1
+C2
+C3
+L1
+Size is : 7567
+L2
+Receiving totally lemitigate data (1, 83, 0.1945629525281013)
+L3
+TIME:122.460685015
+In dataset 0:67
+In dataset 1:75
+In dataset 2:76
+In dataset 3:82
+==========================================
+L1
+Size is : 7568
+L2
+Receiving totally lemitigate data (0, 82, 0.37213874350087717)
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+{0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Replacing with 0, element (2, 12, 0.6445815054666872)
+14642331
+Done with delete request
+L3
+S1
+S2

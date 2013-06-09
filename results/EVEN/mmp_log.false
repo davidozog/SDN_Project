@@ -1,0 +1,525 @@
+Listening to port 3490 ...
+bound
+accepting
+accepted
+('128.223.202.213', 35486)
+<socket._socketobject object at 0x284cd00>
+DATASET: 0
+Creating dataset named 0
+DATASET: 1
+Creating dataset named 1
+DATASET: 2
+Creating dataset named 2
+DATASET: 3
+Creating dataset named 3
+<socket._socketobject object at 0x284cd00>
+mmp: got connection 4 from ('10.0.0.2', 50726)
+Sending listen message to client
+Sent listen message to client
+mmp: got connection 6 from ('10.0.0.1', 49015)
+Sending listen message to client
+Sent listen message to client
+Creating dataset named 0
+Creating dataset named 0
+Creating dataset named 1
+Creating dataset named 1
+Creating dataset named 2
+Creating dataset named 2
+Creating dataset named 3
+Creating dataset named 3
+Alerting (('10.0.0.2', 50726), <communication.ClientSayEhlo object at 0x2897dd0>) to (('10.0.0.1', 49015), <communication.ClientSayEhlo object at 0x2897f10>)
+Alerted(('10.0.0.2', 50726), <communication.ClientSayEhlo object at 0x2897dd0>) to (('10.0.0.1', 49015), <communication.ClientSayEhlo object at 0x2897f10>)
+Alerting (('10.0.0.1', 49015), <communication.ClientSayEhlo object at 0x2897f10>) to (('10.0.0.2', 50726), <communication.ClientSayEhlo object at 0x2897dd0>)
+Alerted(('10.0.0.1', 49015), <communication.ClientSayEhlo object at 0x2897f10>) to (('10.0.0.2', 50726), <communication.ClientSayEhlo object at 0x2897dd0>)
+Sending say go
+Sent say go
+Sending say go
+Sent say go
+Controller Data
+Received Data From Controller2
+Size: 1307
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    0    0    0    0    0    
+    1    0    0    0    0    0    
+    TOTALFLOWAMOUNT:0.0115020275116:0
+CONTROLCHANNELFLOWAMOUNT:0.0115120410919:0
+
+
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Controller Data
+Received Data From Controller2
+Size: 1496
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    463    8671    463    603    1715    
+    1    463    463    8744    463    1567    
+    TOTALFLOWAMOUNT:2.69435214996:20333
+CONTROLCHANNELFLOWAMOUNT:2.6943590641:3282
+
+
+Return: {0: 0.04569229250962203, 1: 0.04569229250962203, 2: 0.8629231224711339, 3: 0.04569229250962203}
+Return: {0: 0.0453921568627451, 1: 0.8500980392156863, 2: 0.0453921568627451, 3: 0.05911764705882353}
+Accept: {0: 0.0, 1: 0.8986205386468141, 2: 0.0, 3: 0.13133208255159476}
+Accept: {0: 0.0, 1: 0.0, 2: 0.8994243510372543, 3: 0.0}
+Controller Data
+Received Data From Controller2
+Size: 2929
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    8207    66    8273    32960    38441    
+    1    16586    32959    8265    0    28322    
+    TOTALFLOWAMOUNT:7.73295712471:107316
+CONTROLCHANNELFLOWAMOUNT:7.73296403885:66763
+
+
+Return: {0: 0.2869053796920948, 1: 0.5701262757308424, 2: 0.14296834457706278, 3: 0.0}
+Return: {0: 0.16577788550882722, 1: 0.0013331717367591808, 2: 0.1671110572455864, 3: 0.6657778855088272}
+Accept: {0: 0.0, 1: 0.0, 2: 0.0004837344297980409, 3: 1.0}
+Accept: {0: 0.33795829467995, 1: 0.996003028009084, 2: 0.0, 3: 0.0}
+Controller Data
+Received Data From Controller2
+Size: 4134
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    16686    0    16480    16538    35514    
+    1    16471    8347    16545    24752    5537    
+    TOTALFLOWAMOUNT:12.7882421017:115819
+CONTROLCHANNELFLOWAMOUNT:12.7882480621:41051
+
+
+Return: {0: 0.2491265219692959, 1: 0.1262497164032368, 2: 0.2502457838614535, 3: 0.3743779777660138}
+Return: {0: 0.33570738773539355, 1: 0.0, 2: 0.3315628520843393, 3: 0.3327297601802672}
+Accept: {0: 0.0064843019573544046, 1: 0.0, 2: 0.0, 3: 0.0}
+Accept: {0: 0.0, 1: 1.0, 2: 0.001968205904617714, 3: 0.19893436667473965}
+Controller Data
+Received Data From Controller2
+Size: 5095
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    16406    16479    16480    16379    19904    
+    1    0    8339    0    66    34636    
+    TOTALFLOWAMOUNT:17.8397381306:74149
+CONTROLCHANNELFLOWAMOUNT:17.8397469521:54540
+
+
+Return: {0: 0.0, 1: 0.9921475312314099, 2: 0.0, 3: 0.007852468768590125}
+Return: {0: 0.24954368459479193, 1: 0.2506540520807983, 2: 0.25066926259430516, 3: 0.24913300073010464}
+Accept: {0: 1.0, 1: 0.3279877508260134, 2: 1.0, 3: 0.9919732441471572}
+Accept: {0: 0.0, 1: 0.0, 2: 0.0, 3: 0.0}
+Controller Data
+Received Data From Controller2
+Size: 6136
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    140    66    24884    132    36798    
+    1    16620    8200    16480    24751    27009    
+    TOTALFLOWAMOUNT:22.8555750847:91273
+CONTROLCHANNELFLOWAMOUNT:22.8555841446:63807
+
+
+Return: {0: 0.2516237452877322, 1: 0.12414649286157665, 2: 0.2495041710193638, 3: 0.3747255908313273}
+Return: {0: 0.005550709697882801, 1: 0.002616763143287606, 2: 0.9865990008722544, 3: 0.005233526286575212}
+Accept: {0: 0.0, 1: 0.0, 2: 0.20317184024755827, 3: 0.0}
+Accept: {0: 0.9832935560859188, 1: 0.9840309702395355, 2: 0.0, 3: 0.9893903468231322}
+Controller Data
+Received Data From Controller2
+Size: 7257
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    16471    140    8339    16546    11666    
+    1    32925    8272    8339    16612    19450    
+    TOTALFLOWAMOUNT:27.8883981705:107644
+CONTROLCHANNELFLOWAMOUNT:27.8884060383:31116
+
+
+Return: {0: 0.49774747535828745, 1: 0.12505291165265767, 2: 0.12606579186067607, 3: 0.2511338211283788}
+Return: {0: 0.3969298245614035, 1: 0.0033738191632928477, 2: 0.20095912859070753, 3: 0.39873722768459613}
+Accept: {0: 0.0, 1: 0.0, 2: 0.0, 3: 0.0}
+Accept: {0: 0.3331038950522309, 1: 0.9667142177841179, 2: 0.0, 3: 0.0019904698715242173}
+Controller Data
+Received Data From Controller2
+Size: 8337
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    0    16406    8207    8347    45296    
+    1    8333    8421    16545    16479    18810    
+    TOTALFLOWAMOUNT:32.9304201603:82738
+CONTROLCHANNELFLOWAMOUNT:32.9304280281:64106
+
+
+Return: {0: 0.16740327052111376, 1: 0.16917111977178673, 2: 0.3323757483225521, 3: 0.3310498613845474}
+Return: {0: 0.0, 1: 0.497754854368932, 2: 0.248998786407767, 3: 0.25324635922330097}
+Accept: {0: 0.0, 1: 0.32162564949450195, 2: 0.0, 3: 0.0}
+Accept: {0: 1.0, 1: 0.0, 2: 0.3368616677440207, 3: 0.3275598163215983}
+Controller Data
+Received Data From Controller2
+Size: 9779
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    24761    8272    66    24745    37180    
+    1    24791    24670    0    8339    21581    
+    TOTALFLOWAMOUNT:37.9563779831:115644
+CONTROLCHANNELFLOWAMOUNT:37.956387043:58761
+
+
+Return: {0: 0.4289100346020761, 1: 0.4268166089965398, 2: 0.0, 3: 0.14427335640138408}
+Return: {0: 0.4280651407233248, 1: 0.14300532466634397, 2: 0.001140999930848489, 3: 0.42778853467948275}
+Accept: {0: 0.0, 1: 0.0, 2: 1.0, 3: 0.49588925160198283}
+Accept: {0: 0.0006054246044559251, 1: 0.49778398397182927, 2: 0.0, 3: 0.0}
+Controller Data
+Received Data From Controller2
+Size: 11063
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    24810    8273    8273    140    53224    
+    1    8413    8273    0    24752    20563    
+    TOTALFLOWAMOUNT:42.971889019:82934
+CONTROLCHANNELFLOWAMOUNT:42.9718990326:73787
+
+
+Return: {0: 0.20302620782856315, 1: 0.1996476663931657, 2: 0.0, 3: 0.5973261257782712}
+Return: {0: 0.5978889531521111, 1: 0.19936861384229806, 2: 0.19936861384229806, 3: 0.0033738191632928477}
+Accept: {0: 0.4935436294133582, 1: 0.0, 2: 1.0, 3: 0.0}
+Accept: {0: 0.0, 1: 0.0, 2: 0.0, 3: 0.9887514060742407}
+Controller Data
+Received Data From Controller2
+Size: 12384
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    33026    16546    0    24613    45149    
+    1    32942    16546    16481    8339    21198    
+    TOTALFLOWAMOUNT:48.0372121334:148493
+CONTROLCHANNELFLOWAMOUNT:48.0372171402:66347
+
+
+Return: {0: 0.44331700489853043, 1: 0.22266781504010336, 2: 0.22179307746137697, 3: 0.11222210259998923}
+Return: {0: 0.4451843364561569, 1: 0.22303700208937116, 2: 0.0, 3: 0.33177866145447193}
+Accept: {0: 0.0012733446519524619, 1: 0.0, 2: 0.0, 3: 0.4938698713279922}
+Accept: {0: 0.0, 1: 0.0, 2: 1.0, 3: 0.0}
+Controller Data
+Received Data From Controller2
+Size: 13585
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    16479    8273    16546    8339    20684    
+    1    8273    8273    8273    16546    45475    
+    TOTALFLOWAMOUNT:53.0632901192:91002
+CONTROLCHANNELFLOWAMOUNT:53.0633130074:66159
+
+
+Return: {0: 0.2, 1: 0.2, 2: 0.2, 3: 0.4}
+Return: {0: 0.33199024920925924, 1: 0.16667002437697684, 2: 0.3333400487539537, 3: 0.16799967765981022}
+Accept: {0: 0.33152876535229475, 1: 0.0, 2: 0.3333333333333333, 3: 0.0}
+Accept: {0: 0.0, 1: 0.0, 2: 0.0, 3: 0.32979706650592727}
+Controller Data
+Received Data From Controller2
+Size: 14586
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    8339    8207    0    8273    35521    
+    1    24687    8273    8339    24753    19118    
+    TOTALFLOWAMOUNT:58.083917141:90871
+CONTROLCHANNELFLOWAMOUNT:58.0839250088:54639
+
+
+Return: {0: 0.3737509840731545, 1: 0.1252498031853691, 2: 0.1262490159268455, 3: 0.3747501968146309}
+Return: {0: 0.33599258632499296, 1: 0.3306740803416737, 2: 0.0, 3: 0.3333333333333333}
+Accept: {0: 0.0, 1: 0.0, 2: 0.0, 3: 0.0}
+Accept: {0: 0.49500393629261796, 1: 0.004004854368932039, 2: 1.0, 3: 0.4990007872585236}
+Controller Data
+Received Data From Controller2
+Size: 15865
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    16545    16546    24689    8273    20863    
+    1    132    16480    0    66    60373    
+    TOTALFLOWAMOUNT:63.1101090908:82731
+CONTROLCHANNELFLOWAMOUNT:63.1101341248:81236
+
+
+Return: {0: 0.007914618059719391, 1: 0.9881280729104209, 2: 0.0, 3: 0.0039573090298596954}
+Return: {0: 0.25048067460978307, 1: 0.2504958139675715, 2: 0.3737756044388597, 3: 0.12524790698378574}
+Accept: {0: 0.9841698147148767, 1: 0.001998425482952825, 2: 1.0, 3: 0.9841707638805612}
+Accept: {0: 0.0, 1: 0.0, 2: 0.0, 3: 0.0}
+Controller Data
+Received Data From Controller2
+Size: 15987
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    0    66    66    0    300    
+    1    0    0    0    8207    8886    
+    TOTALFLOWAMOUNT:68.1384279728:8339
+CONTROLCHANNELFLOWAMOUNT:68.1384370327:9186
+
+
+Return: {0: 0.0, 1: 0.0, 2: 0.0, 3: 1.0}
+Return: {0: 0.0, 1: 0.5, 2: 0.5, 3: 0.0}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 0.0}
+Accept: {0: 1.0, 1: 0.0, 2: 0.0, 3: 1.0}
+Controller Data
+Received Data From Controller2
+Size: 15987
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    0    0    0    0    461    
+    1    0    0    0    0    304    
+    TOTALFLOWAMOUNT:73.1807479858:0
+CONTROLCHANNELFLOWAMOUNT:73.1807570457:765
+
+
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Controller Data
+Received Data From Controller2
+Size: 15987
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    0    0    0    0    0    
+    1    0    0    0    0    0    
+    TOTALFLOWAMOUNT:78.2506430149:0
+CONTROLCHANNELFLOWAMOUNT:78.2506551743:0
+
+
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Controller Data
+Received Data From Controller2
+Size: 15987
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    0    0    0    0    152    
+    1    0    0    0    0    304    
+    TOTALFLOWAMOUNT:83.2456309795:0
+CONTROLCHANNELFLOWAMOUNT:83.2456390858:456
+
+
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Controller Data
+Received Data From Controller2
+Size: 15987
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    0    0    0    0    0    
+    1    0    0    0    0    0    
+    TOTALFLOWAMOUNT:88.3153851032:0
+CONTROLCHANNELFLOWAMOUNT:88.3153941631:0
+
+
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Controller Data
+Received Data From Controller2
+Size: 15987
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    0    0    0    0    0    
+    1    0    0    0    0    0    
+    TOTALFLOWAMOUNT:93.311383009:0
+CONTROLCHANNELFLOWAMOUNT:93.3113920689:0
+
+
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Controller Data
+Received Data From Controller2
+Size: 15987
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    0    0    0    0    78    
+    1    0    0    0    0    230    
+    TOTALFLOWAMOUNT:98.375895977:0
+CONTROLCHANNELFLOWAMOUNT:98.3759050369:308
+
+
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Controller Data
+Received Data From Controller2
+Size: 15987
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    0    0    0    0    0    
+    1    0    0    0    0    74    
+    TOTALFLOWAMOUNT:103.377025127:0
+CONTROLCHANNELFLOWAMOUNT:103.377032995:74
+
+
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Controller Data
+Received Data From Controller2
+Size: 15987
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    0    0    0    0    74    
+    1    0    0    0    0    0    
+    TOTALFLOWAMOUNT:108.420570135:0
+CONTROLCHANNELFLOWAMOUNT:108.420578957:74
+
+
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Controller Data
+Received Data From Controller2
+Size: 15987
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    0    0    0    0    0    
+    1    0    0    0    0    0    
+    TOTALFLOWAMOUNT:113.476814985:0
+CONTROLCHANNELFLOWAMOUNT:113.476823092:0
+
+
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Controller Data
+Received Data From Controller2
+Size: 15987
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    0    0    0    0    0    
+    1    0    0    0    0    0    
+    TOTALFLOWAMOUNT:118.51921916:0
+CONTROLCHANNELFLOWAMOUNT:118.519227982:0
+
+
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Return: {0: 0.25, 1: 0.25, 2: 0.25, 3: 0.25}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Accept: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Controller Data
+Received Data From Controller2
+Size: 15987
+
+
+
+  Traffic Matrix:
+
+    (0, 1)    (1, 2)    (0, 0)    (1, 1)    (1, 3)    (1, 0)    (0, -1)    (0, 3)    (1, -1)    (0, 2)    
+    0    0    0    0    0    0    
+    1    0    0    0    0    0    
+    TOTALFLOWAMOUNT:123.523300171:0
+CONTROLCHANNELFLOWAMOUNT:123.523308039:0
